@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{enumitem}
+\title{第 1 章\ 质点运动学\ 例题答案}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[label=\textbf{例\arabic*.}, leftmargin=*]
+
+% === 例 1 ===
+\item \textbf{滑轮拉船}
+\begin{enumerate}[label=\textbf{解}（\arabic*）]
+  \item 设某时刻绳与水面夹角为 $\theta$，由几何关系 $x = \sqrt{l^2 - h^2}$，其中 $l = l_0 - v_0 t$。故
+  \[
+    x(t) = \sqrt{(l_0 - v_0 t)^2 - h^2}.
+  \]
+  \item 由 $x^2 = (l_0 - v_0 t)^2 - h^2$ 两边对 $t$ 求导：
+  \[
+    2x\,\dot{x} = 2(l_0 - v_0 t)(-v_0) \;\Rightarrow\; v_{\text{船}} = \dot{x} = -\frac{v_0(l_0 - v_0 t)}{x} = -\frac{v_0\,l}{x}.
+  \]
+  由几何 $l\cos\theta = x$，故 $v_{\text{船}} = -v_0/\cos\theta$（大小为 $v_0/\cos\theta$）。
+  \item 继续对 $t$ 求导得加速度
+  \[
+    a_{\text{船}} = \dot{v}_{\text{船}} = -\frac{v_0^2 h^2}{x^3} = -\frac{v_0^2 h^2}{(l^2 - h^2)^{3/2}}.
+  \]
+  负号表示加速度方向沿 $x$ 轴负方向（指向滑轮）。
+\end{enumerate}
+
+% === 例 2 ===
+\item $\vec{r}(t) = 2t\,\vec{i} + (2-t^2)\,\vec{j}$
+\begin{enumerate}[label=（\arabic*）]
+  \item $t=1$: $\vec{r}_1 = 2\vec{i} + \vec{j}$；$t=2$: $\vec{r}_2 = 4\vec{i} - 2\vec{j}$。
+  \[
+    \Delta\vec{r} = \vec{r}_2 - \vec{r}_1 = 2\vec{i} - 3\vec{j},\quad \langle\vec{v}\rangle = \frac{\Delta\vec{r}}{1} = 2\vec{i} - 3\vec{j}\;\mathrm{m/s}.
+  \]
+  \item $\vec{v} = \dfrac{\mathrm{d}\vec{r}}{\mathrm{d}t} = 2\vec{i} - 2t\,\vec{j}$；$\vec{a} = -2\vec{j}$。
+  \item 由 $x = 2t \Rightarrow t = x/2$，代入 $y = 2 - t^2$：
+  \[
+    y = 2 - \frac{x^2}{4}\quad\text{（抛物线）}.
+  \]
+\end{enumerate}
+
+% === 例 3 ===
+\item \textbf{匀速圆周运动}\\
+设 $t=0$ 时质点在 $(R,0)$，则 $\vec{r}(t) = R\cos\omega t\,\vec{i} + R\sin\omega t\,\vec{j}$。\\
+$\vec{v} = -R\omega\sin\omega t\,\vec{i} + R\omega\cos\omega t\,\vec{j}$，$|\vec{v}| = R\omega$。\\
+$\vec{a} = -R\omega^2\cos\omega t\,\vec{i} - R\omega^2\sin\omega t\,\vec{j}$，$|\vec{a}| = R\omega^2$，方向始终指向圆心。
+
+% === 例 4 ===
+\item \textbf{直杆滑动问题}\\
+设 $B$ 端坐标 $(x,0)$，$A$ 端坐标 $(0,y)$，杆长 $l$ 不变：
+\[
+  x^2 + y^2 = l^2,\quad y = l\sin\varphi,\; x = l\cos\varphi,\quad \varphi = \omega t.
+\]
+$B$ 端速度 $v = \dot{x} = -l\omega\sin\omega t$。\\
+$A$ 端速度 $v_A = \dot{y} = l\omega\cos\omega t$。\\
+$A$ 端加速度 $a_A = \ddot{y} = -l\omega^2\sin\omega t$。\\
+也可表示为 $v_A = v\cot\varphi$，$a_A = -v^2/l \cdot \cot\varphi$（因 $v=l\omega$ 恒定）。
+
+% === 例 5 ===
+\item \textbf{滑轮拉船}（与例 1 同方法）\\
+设某时刻绳长 $l$，$x = \sqrt{l^2 - h^2}$，$l\cos\theta = x$。\\
+（1）$v_{\text{船}} = -\dfrac{\mathrm{d}l}{\mathrm{d}t}\dfrac{l}{x} = \dfrac{v_0}{\cos\theta}$，因为 $\mathrm{d}l/\mathrm{d}t = -v_0$。\\
+（2）由 $v = v_0/\cos\theta$，对 $t$ 求导：
+\[
+  a = \frac{v_0\sin\theta}{\cos^2\theta}\cdot\dot{\theta},\quad \dot{\theta} = \frac{v_0 h}{l^2}\sin\theta \;\Rightarrow\; a = \frac{v_0^2 h \sin^2\theta}{l^2 \cos^3\theta} = \frac{v_0^2 h^2}{x^3}.
+\]
+（3）$\theta\to 0$ 时 $\cos\theta\to 1$，$l\to h$，$x\to 0$，故 $v_{\text{船}}\to v_0$。这表明船在滑轮正下方时速率最小。
+
+% === 例 6 ===
+\item $a = 100 - 4t^2$，$v(0) = 0$，$x(0) = 0$。
+\begin{enumerate}[label=（\arabic*）]
+  \item $v(t) = \displaystyle\int_0^t (100 - 4\tau^2)\,\mathrm{d}\tau = 100t - \frac{4}{3}t^3.$
+  \item $x(t) = \displaystyle\int_0^t v(\tau)\,\mathrm{d}\tau = 50t^2 - \frac{1}{3}t^4.$
+\end{enumerate}
+
+% === 例 7 ===
+\item \textbf{斜抛运动}\\
+取抛出点为原点，水平方向为 $x$ 轴，竖直向上为 $y$ 轴：
+\begin{enumerate}[label=（\arabic*）]
+  \item $\begin{cases} x = v_0\cos\theta\,t \\ y = v_0\sin\theta\,t - \dfrac{1}{2}gt^2 \end{cases}$
+  \item 轨迹方程：$y = x\tan\theta - \dfrac{g}{2v_0^2\cos^2\theta}\,x^2$。
+  \item 落地 $y=0$：$t(v_0\sin\theta - gt/2)=0 \Rightarrow t_{\text{飞}} = \dfrac{2v_0\sin\theta}{g}$。
+  \item 水平射程 $X = v_0\cos\theta\cdot t_{\text{飞}} = \dfrac{v_0^2 \sin 2\theta}{g}$，$\theta = 45°$ 时最大。
+  \item $H = \dfrac{v_0^2\sin^2\theta}{2g}$。
+\end{enumerate}
+
+% === 例 8 ===
+\item $s = 20t - 0.2t^2$，$R = 1000$ m。\\
+$v = \dot{s} = 20 - 0.4t$；$a_\tau = \ddot{s} = -0.4\,\mathrm{m/s^2}$（恒定，匀减速）。\\
+$a_n = \dfrac{v^2}{R} = \dfrac{(20 - 0.4t)^2}{1000}$。\\
+$t=5$: $v = 18$ m/s，$a_\tau = -0.4$ m/s²，$a_n = 18^2/1000 = 0.324$ m/s²。\\
+$a = \sqrt{a_\tau^2 + a_n^2} = \sqrt{0.16 + 0.105} \approx 0.515$ m/s²。
+
+% === 例 9 ===
+\item $a = v\,\dfrac{\mathrm{d}v}{\mathrm{d}x} = kx$（链式法则 $a = \mathrm{d}v/\mathrm{d}t = (\mathrm{d}v/\mathrm{d}x)\cdot(\mathrm{d}x/\mathrm{d}t) = v\,\mathrm{d}v/\mathrm{d}x}$）。\\
+积分 $v\,\mathrm{d}v = kx\,\mathrm{d}x$：$\dfrac{v^2}{2} = \dfrac{kx^2}{2}$，由 $v(0)=0$ 得 $v = \sqrt{k}\,x$（取正方向）。
+
+% === 例 10 ===
+\item $\omega = kt^2$。
+\begin{enumerate}[label=（\arabic*）]
+  \item $\beta = \dfrac{\mathrm{d}\omega}{\mathrm{d}t} = 2kt$。
+  \item $\theta = \displaystyle\int_0^t k\tau^2\,\mathrm{d}\tau = \frac{1}{3}kt^3$。
+  \item 切向加速度 $a_\tau = R\beta = 2Rkt$；法向加速度 $a_n = R\omega^2 = R k^2 t^4$。
+\end{enumerate}
+
+% === 例 11 ===
+\item \textbf{细杆转动}
+\begin{enumerate}[label=（\arabic*）]
+  \item $A$ 端坐标 $y_A = l\sin\theta$。
+  \item $v_A = \dot{y}_A = l\cos\theta\cdot\dot\theta = l\omega\cos\theta$；$a_A = -l\omega^2\sin\theta + l\beta\cos\theta$。
+  \item 由 $\beta = \dfrac{3g}{2l}\cos\theta$ 和 $\omega\,\mathrm{d}\omega = \beta\,\mathrm{d}\theta$，积分：
+  \[
+    \int_0^\omega \omega\,\mathrm{d}\omega = \int_0^{\pi/3} \frac{3g}{2l}\cos\theta\,\mathrm{d}\theta \Rightarrow \frac{\omega^2}{2} = \frac{3g}{2l}\sin\theta\Big|_0^{\pi/3} = \frac{3g}{2l}\cdot\frac{\sqrt{3}}{2}.
+  \]
+  \[
+    \omega^2 = \frac{3\sqrt{3}\,g}{2l},\quad \omega = \sqrt{\frac{3\sqrt{3}\,g}{2l}}.
+  \]
+  $A$ 端速度 $v_A = l\omega\cos\theta\big|_{\theta=\pi/3} = l\cdot\dfrac{1}{2}\sqrt{\dfrac{3\sqrt{3}\,g}{2l}} = \dfrac{1}{2}\sqrt{\dfrac{3\sqrt{3}\,g\,l}{2}}$。
+\end{enumerate}
+
+% === 例 12 ===
+\item \textbf{雨滴相对卡车}（伽利略速度变换）\\
+$\vec{v}_{绝对} = \vec{v}_{相对} + \vec{v}_{牵连}$，故 $\vec{v}_{相对} = \vec{v}_{绝对} - \vec{v}_{牵连}$。\\
+$\vec{v}_{绝对} = \vec{v}_2$（雨滴竖直下落），$\vec{v}_{牵连} = \vec{v}_1$（卡车水平行驶）。\\
+$\vec{v}_{\text{雨对车}} = \vec{v}_2 - \vec{v}_1$。\\
+其方向与竖直方向夹角 $\varphi$ 满足 $\tan\varphi = v_1/v_2$，指向斜后方。
+
+\end{enumerate}
+
+\end{document}

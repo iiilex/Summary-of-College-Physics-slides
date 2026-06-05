@@ -1,0 +1,179 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{enumitem}
+\title{第 6 章\ 刚体力学\ 例题答案}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[label=\textbf{例\arabic*.}, leftmargin=*]
+
+% === 例 1 ===
+\item 端点轴的转动惯量 $J = \dfrac{1}{3}mL^2$；水平位置重力矩 $M = mg\cdot\dfrac{L}{2}$。
+(1) 初始角加速度 $\beta_0 = \dfrac{M}{J} = \dfrac{mgL/2}{mL^2/3} = \dfrac{3g}{2L}$。
+(2) 由机械能守恒（水平到竖直，重心下降 $L/2$）：
+\[
+  \frac{1}{2}J\omega^2 = mg\frac{L}{2} \;\Rightarrow\; \omega = \sqrt{\frac{3g}{L}}.
+\]
+
+% === 例 2 ===
+\item 取距 $O$ 为 $x$ 处的质元 $\mathrm{d}m = \dfrac{M}{L}\mathrm{d}x$，所受摩擦力 $\mathrm{d}f = \mu g\,\mathrm{d}m = \mu\dfrac{M}{L}g\,\mathrm{d}x$，力臂为 $x$，故
+\[
+  M' = \int_0^L \mu\frac{M}{L}g\,x\,\mathrm{d}x = \frac{1}{2}\mu MgL.
+\]
+方向沿 $y$ 轴负向（阻碍运动）。
+
+% === 例 3 ===
+\item 切一薄圆片 $\mathrm{d}M$（距中心 $x$），对 $x$ 轴 $J_x=\tfrac{1}{2}\mathrm{d}M\,R^2$；由垂直轴定理 $J_{z'}=\tfrac{1}{2}J_x=\tfrac{1}{4}\mathrm{d}M\,R^2$。
+由平行轴定理 $\mathrm{d}J_z = \tfrac{1}{4}\mathrm{d}M\,R^2 + \mathrm{d}M\,x^2$，其中 $\mathrm{d}M=\tfrac{M}{L}\mathrm{d}x$。积分：
+\[
+  J_z = \int_{-L/2}^{L/2}\!\left(\frac{1}{4}\frac{M}{L}R^2 + \frac{M}{L}x^2\right)\mathrm{d}x = \frac{1}{4}MR^2 + \frac{1}{12}ML^2.
+\]
+极限检验：$L\!\to\!0$ 得 $J=\tfrac{1}{4}MR^2$（薄圆盘直径转动惯量），$L\gg R$ 得 $J\approx\tfrac{1}{12}ML^2$（细杆绕中心），均正确。
+
+% === 例 4 ===
+\item 圆盘对中心轴 $I_c = \tfrac{1}{2}MR^2$；两平行轴距离 $d=R$，由平行轴定理：
+\[
+  I = I_c + Md^2 = \frac{1}{2}MR^2 + MR^2 = \frac{3}{2}MR^2.
+\]
+
+% === 例 5 ===
+\item 大圆盘对中心轴 $J = \tfrac{1}{2}MR^2$。
+挖去小圆盘（半径 $r$、质量 $m' = M\dfrac{r^2}{R^2}$，中心在 $R/2$ 处）对中心轴的转动惯量（先用平行轴再减半）：
+\[
+  J_\text{小} = \frac{1}{2}m' r^2 + m'\!\left(\frac{R}{2}\right)^2 = \frac{Mr^2}{R^2}\!\left(\frac{r^2}{2}+\frac{R^2}{4}\right).
+\]
+剩余部分
+\[
+  J_\text{剩} = J - 2J_\text{小} = \frac{1}{2}MR^2 - 2\cdot\frac{Mr^2}{R^2}\!\left(\frac{r^2}{2}+\frac{R^2}{4}\right)
+  = \frac{1}{2}MR^2 - \frac{Mr^4}{R^2} - \frac{Mr^2}{2}.
+\]
+化简：$J_\text{剩} = \dfrac{M}{2R^2}\bigl(R^4 - 2r^4 - R^2r^2\bigr)$。
+
+% === 例 6 ===
+\item 对滑轮 $J_0 = \tfrac{1}{2}MR^2$；隔离 $m_1,m_2$ 及滑轮：
+\[
+  T_1R - T_2R = J_0\beta,\quad m_1g-T_1=m_1a,\quad T_2-m_2g=m_2a,\quad a=R\beta.
+\]
+解得
+\[
+  a = \frac{(m_1-m_2)g}{m_1+m_2+\tfrac{1}{2}M},\quad
+  \beta = \frac{a}{R} = \frac{1}{R}\frac{(m_1-m_2)g}{m_1+m_2+\tfrac{1}{2}M},
+\]
+\[
+  T_1 = \frac{(2m_1m_2+\tfrac{1}{2}Mm_1)g}{m_1+m_2+\tfrac{1}{2}M},\quad
+  T_2 = \frac{(2m_1m_2+\tfrac{1}{2}Mm_2)g}{m_1+m_2+\tfrac{1}{2}M}.
+\]
+$M=0$ 时回到中学结果 $a=\dfrac{m_1-m_2}{m_1+m_2}g$，$T_1=T_2=\dfrac{2m_1m_2}{m_1+m_2}g$。
+
+% === 例 7 ===
+\item 设轮 1 受力矩 $M_1$ 方向为正方向；皮带无滑动 $\omega_1R_1=\omega_2R_2$，$\beta_1R_1=\beta_2R_2$；不计皮带质量 $T_1=T_1'$，$T_2=T_2'$。
+\[
+  \tfrac{1}{2}m_1R_1^2\beta_1 = M_1 + T_1R_1 - T_2R_1,\quad
+  \tfrac{1}{2}m_2R_2^2\beta_2 = -M_2 + T_2'R_2 - T_1'R_2.
+\]
+联立解得
+\[
+  \beta_1 = \frac{2(R_2M_1 - R_1M_2)}{(m_1+m_2)R_1^2R_2}.
+\]
+
+% === 例 8 ===
+\item 取距 $A$ 端 $r$ 处线元 $\mathrm{d}m=\lambda\,\mathrm{d}r$，重力对 $z$ 轴力矩
+\[
+  \mathrm{d}M_z = -\lambda g r\sin\theta\,\mathrm{d}r,\quad
+  M_z = -g\sin\theta\!\int_0^l\!(a+br)r\,\mathrm{d}r = -gl^2\!\left(\frac{a}{2}+\frac{b}{3}l\right)\sin\theta.
+\]
+\[
+  A = \int_{\pi/2}^{0} M_z\,\mathrm{d}\theta = gl^2\!\left(\frac{a}{2}+\frac{b}{3}l\right).
+\]
+
+% === 例 9 ===
+\item 由机械能守恒 $mgs = \tfrac{1}{2}mv^2+\tfrac{1}{2}J_z\omega^2$，其中 $v=R\omega$，$J_z=\tfrac{1}{2}MR^2$。
+\[
+  mgs = \frac{1}{2}mR^2\omega^2 + \frac{1}{4}MR^2\omega^2
+  \;\Rightarrow\; \omega = \frac{2}{R}\sqrt{\frac{mgs}{2m+M}}.
+\]
+对 $s$ 求导：$\beta = \dfrac{\mathrm{d}\omega}{\mathrm{d}t} = \dfrac{2mg}{R(2m+M)}$（常数）。
+
+% === 例 10 ===
+\item 盘面单位面积上压力 $\dfrac{F}{\pi R^2}$；取半径 $r$、宽 $\mathrm{d}r$ 的环：$\mathrm{d}F = \dfrac{F}{\pi R^2}2\pi r\,\mathrm{d}r$，
+$\mathrm{d}f = \mu\,\mathrm{d}F = \mu\dfrac{F}{R^2}2r\,\mathrm{d}r$，对轴力矩 $\mathrm{d}M = r\,\mathrm{d}f = \mu\dfrac{2F}{R^2}r^2\,\mathrm{d}r$。
+总摩擦力矩
+\[
+  M = \int_0^R \mu\frac{2F}{R^2}r^2\,\mathrm{d}r = \frac{2}{3}\mu F R.
+\]
+由动能定理 $-M\varphi = 0 - \tfrac{1}{2}J\omega_0^2$，$J=\tfrac{1}{2}MR^2$，得
+\[
+  \varphi = \frac{3MR\omega_0^2}{8\mu F}.
+\]
+
+% === 例 11 ===
+\item 系统对轴的外力矩为零，动量矩守恒。初始 $L_0 = \bigl[\tfrac{1}{2}(4m)R^2+2mR^2+2m(R/2)^2\bigr]\omega_0 = \bigl(4mR^2\bigr)\omega_0$。
+末态边沿两人速度 $v_1 = u+\omega R$，$R/2$ 处两人速度 $v_2 = 2u+\omega(R/2)$，系统动量矩
+\[
+  L = 2mR(u+\omega R) + 2m\frac{R}{2}\!\left(2u+\omega\frac{R}{2}\right) + \frac{1}{2}(4m)R^2\omega.
+\]
+化简后 $L_0 = L$ 给出
+\[
+  \omega = \omega_0 - \frac{8u}{9R}.
+\]
+(2) 令 $\omega=0$ 得 $u = \dfrac{9}{8}R\omega_0$。
+
+% === 例 12 ===
+\item 分三阶段：
+\textbf{第一阶段}（杆下摆）：机械能守恒 $\tfrac{1}{2}J_z\omega^2 = MgL/2$，$J_z=\tfrac{1}{3}ML^2$，得 $\omega = \sqrt{3g/L}$。
+\textbf{第二阶段}（完全非弹性碰撞）：杆与 $A$ 系统对轴动量矩守恒（轴作用力不冲量矩，$M_\text{轴}=0$）
+\[
+  J_z\omega = J_z\omega' + mL^2\omega' \;\Rightarrow\;
+  \omega' = \frac{M\sqrt{3g/L}}{M+3m} = \frac{M}{M+3m}\sqrt{\frac{3g}{L}}.
+\]
+注意：动量不守恒（轴反力冲量不为零），只有动量矩守恒。
+\textbf{第三阶段}（$A$ 滑动）：$\tfrac{1}{2}m(L\omega')^2 = \mu mg\,s$，故
+\[
+  s = \frac{(L\omega')^2}{2\mu g} = \frac{3LM^2}{2\mu(M+3m)^2}.
+\]
+
+% === 例 13 ===
+\item 子弹射入为完全非弹性碰撞，子弹嵌入前对 $O$ 点的动量矩为 $mvR$（$v\perp R$）。
+碰撞后：子弹视作在盘边上的质点，子弹的动量矩 $mv'R = mR^2\omega$（$v'=\omega R$）。系统总动量矩守恒（碰撞瞬间轴反力冲量矩不计）：
+\[
+  mvR = (J_\text{盘}+mR^2)\omega = \left(\frac{1}{2}MR^2 + mR^2\right)\omega.
+\]
+解得 $\omega = \dfrac{2mv}{(M+2m)R}$。
+
+% === 例 14 ===
+\item 昆虫落到杆上：完全非弹性碰撞（轴反力不计冲量矩），对 $O$ 动量矩守恒：
+\[
+  mv_0\frac{l}{4} = \left(\frac{1}{12}ml^2 + m\!\left(\frac{l}{4}\right)^2\right)\omega
+  \;\Rightarrow\; \omega = \frac{12v_0}{7l}.
+\]
+杆和虫重力矩 $M_z = mgr\cos\theta$（仅虫产生，虫在距 $O$ 为 $r$ 处）；系统转动惯量 $J_z = \tfrac{1}{12}ml^2 + mr^2$。
+要 $\omega$ 为常量：
+\[
+  mgr\cos\theta = \frac{\mathrm{d}J_z}{\mathrm{d}t}\omega = 2mr\frac{\mathrm{d}r}{\mathrm{d}t}\omega \;\Rightarrow\;
+  v = \frac{\mathrm{d}r}{\mathrm{d}t} = \frac{g\cos\theta}{2\omega} = \frac{g}{2\omega}\cos\omega t
+  = \frac{7lg}{24v_0}\cos\!\left(\frac{12v_0}{7l}t\right).
+\]
+
+% === 例 15 ===
+\item \textbf{(1)} 子弹射入过程（极短）系统对 $O$ 动量矩守恒：
+\[
+  \frac{1}{9}Mv\cdot\frac{3L}{4} = \left[\frac{1}{9}M\!\left(\frac{3L}{4}\right)^2+\frac{1}{3}ML^2\right]\omega.
+\]
+解得 $\omega = \dfrac{4v}{19L} = 2.10\,\mathrm{rad/s}$（$L=1\,\mathrm{m}$）。
+\textbf{(2)} 子弹嵌入后共同摆动过程机械能守恒。最大角度 $\theta$ 时 $\omega=0$。
+子弹质心升高 $\frac{3L}{4}(1-\cos\theta)$，杆质心升高 $\frac{L}{2}(1-\cos\theta)$。
+\[
+  \frac{1}{2}\!\left[\frac{1}{9}M\!\left(\frac{3L}{4}\right)^2+\frac{1}{3}ML^2\right]\omega^2
+  = Mg\frac{3L}{4}\!\left(1-\cos\theta\right) + \frac{1}{2}MgL(1-\cos\theta).
+\]
+代入 $L=1$、$v=10$ 化简：$1-\cos\theta = \dfrac{2v^2}{133Lg} \approx 0.1534$，得 $\cos\theta \approx 0.8466$，$\theta = 32.16°$。
+
+\end{enumerate}
+
+\end{document}

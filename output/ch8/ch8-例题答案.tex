@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{enumitem}
+\title{第 8 章\ 机械波\ 例题答案}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[label=\textbf{例\arabic*.}, leftmargin=*]
+
+% === 例 1 ===
+\item 将所给波函数改写为标准形式：
+\[
+  y = 0.04\cos 2\pi\!\left(\frac{50}{2}t-\frac{0.10}{2}x\right).
+\]
+(1) 比较 $y = A\cos[2\pi(t/T - x/\lambda)+\varphi_0]$，得
+\[
+  A = 0.04\,\mathrm{m},\quad T = \frac{2}{50} = 0.04\,\mathrm{s},\quad
+  \lambda = \frac{2}{0.10}=20\,\mathrm{m},\quad u = \frac{\lambda}{T}=500\,\mathrm{m/s}.
+\]
+(2) $v = \partial y/\partial t = -0.04\times 50\pi\sin[\cdots]$，故 $v_{\max}=0.04\times 50\pi = 6.28\,\mathrm{m/s}\neq u$（波速是相速度，质点振动速度是另一回事）。
+
+% === 例 2 ===
+\item (1) 标准形式 $y = A\cos[2\pi(t/T - x/\lambda)+\varphi]$，由 $t=0$、$x=0$、$y=0$、$v>0$ 得 $\varphi=-\pi/2$。故
+\[
+  y = 1.0\cos\!\left[2\pi\!\left(\frac{t}{2.0}-\frac{x}{4.0}\right)-\frac{\pi}{2}\right]\;\mathrm{m}.
+\]
+(2) 将 $t=1.0$ 代入：$y=1.0\cos[2\pi(0.5-x/4.0)-\pi/2]=1.0\cos(\pi/2-\pi x/2)=1.0\sin(\pi x/2)$。
+(3) 将 $x=1.0$ 代入：$y=1.0\cos[2\pi(t/2.0-1.0/4.0)-\pi/2]=1.0\cos(\pi t-\pi)$。
+
+% === 例 3 ===
+\item 由图：$\lambda=200\,\mathrm{m}$，$O$ 点在 $t=0$ 时 $y_O = \frac{\sqrt{2}}{2}A$（位于 $x$ 轴上 $y>0$ 部分）。
+\[
+  u = \lambda\nu = 200\times 250 = 5\times 10^4\,\mathrm{m/s},\quad \omega = 2\pi\nu = 500\pi\,\mathrm{rad/s}.
+\]
+$O$ 处质点向下运动（$v_O<0$），由 $y_O = A\cos\varphi = \frac{\sqrt{2}}{2}A$ 和 $v_O = -A\omega\sin\varphi<0$ 得 $\varphi = \pi/4$。
+(1) 沿 $-x$ 方向传播：$y = A\cos[2\pi(250 t+x/200)+\pi/4]\,\mathrm{m}$。
+(2) 沿 $-x$ 移动 $\Delta x = u\cdot T/8 = \lambda/8 = 25\,\mathrm{m}$，即将 $t=0$ 波形向 $-x$ 平移 25 m。
+(3) $y_{100}(t) = A\cos(500\pi t + 2\pi\times 100/200 + \pi/4) = A\cos(500\pi t + 5\pi/4)\,\mathrm{m}$；
+$v_{100} = -500\pi A\sin(500\pi t + 5\pi/4)\,\mathrm{m/s}$。
+
+% === 例 4 ===
+\item 由 $\Delta\varphi = 2\pi\Delta x/\lambda = \pi/3$，得 $\lambda = u/\nu = 3\,\mathrm{m}$，故
+\[
+  \Delta x = \frac{\lambda}{6} = 0.5\,\mathrm{m}.
+\]
+故选 (C)。
+
+% === 例 5 ===
+\item 由图 $u=20\,\mathrm{m/s}$，$\lambda=20\,\mathrm{m}$，$A=0.10\,\mathrm{m}$，$T=\lambda/u=1\,\mathrm{s}$，$\omega=2\pi\,\mathrm{rad/s}$。
+$P$ 点在 $t=0$ 时 $y_P = 0.05\,\mathrm{m}=0.10\cos\varphi$，故 $\cos\varphi = 1/2$，$\varphi = \pm\pi/3$。
+$P$ 点向上运动，$v_P = -A\omega\sin\varphi > 0$，$\sin\varphi <0$，故 $\varphi = -\pi/3$。
+\[
+  y_P = 0.10\cos(2\pi t - \pi/3)\;\mathrm{m}.
+\]
+故选 (B)。
+
+% === 例 6 ===
+\item (1) 以 $D$ 为原点时，由波形图（$D$ 点 $y=0$ 且 $D$ 即将向上运动），$y_D$ 初相为 $\pi$，故
+\[
+  y(x,t) = A\cos\!\left[2\pi f\!\left(t-\frac{x}{u}\right)+\pi\right].
+\]
+(2) 以 $B$ 为原点，$B$ 为波节说明入射波和反射波在 $B$ 点反相（半波损失）。入射波在 $B$ 处的相位为 $\pi-\pi = 0$（入射波在 $B$ 处的相位是入射波从 $D$ 传到 $B$ 的相位 $0-2\pi(DB)/\lambda$，结合 $DB=3\lambda/4$ 得入射波在 $B$ 初相 $0$）；反射波在 $B$ 处与入射波反相，故反射波在 $B$ 初相 $\pi$：
+\[
+  y_{\text{入}} = A\cos\!\left[2\pi f\!\left(t-\frac{x}{u}\right)-\frac{\pi}{2}\right],\quad
+  y_{\text{反}} = A\cos\!\left[2\pi f\!\left(t-\frac{x}{u}\right)+\frac{\pi}{2}\right].
+\]
+(3) 合成驻波：
+\[
+  y = y_{\text{入}}+y_{\text{反}} = 2A\cos\!\left(2\pi f\frac{x}{u}+\frac{\pi}{2}\right)\cos(2\pi ft)
+  = -2A\sin\!\left(2\pi f\frac{x}{u}\right)\cos(2\pi ft).
+\]
+波腹：$|\sin(2\pi fx/u)|=1$，$2\pi fx/u=(2k+1)\pi/2$，$x=(2k+1)u/(4f)=(2k+1)\lambda/4$，$k=-1,-2,\cdots$（$B$ 点为波节，腹在 $-x$ 侧）。
+波节：$\sin(2\pi fx/u)=0$，$2\pi fx/u=k\pi$，$x=ku/(2f)=k\lambda/2$，$k=0,-1,-2,\cdots$（$k=0$ 即 $B$ 点）。
+
+% === 例 7 ===
+\item (1) 波源与人都向同一方向运动（警笛前，人在后），人向波源靠近、波源远离人。
+\[
+  \nu_R = \frac{u+v_O}{u+v_S}\nu_0 = \frac{330+6}{330+22}\times 1500 = 1432\,\mathrm{Hz}.
+\]
+(2) 警笛后方空气中声波频率（观察者静止、波源运动；警笛后 $v_S$ 远离该处 $v_S<0$）：
+\[
+  \nu = \frac{u}{u+v_S}\nu_0 = \frac{330}{330+22}\times 1500 = 1406\,\mathrm{Hz},
+\]
+波长 $\lambda = u/\nu = 330/1406 = 0.235\,\mathrm{m}\approx 0.23\,\mathrm{m}$。
+
+% === 例 8 ===
+\item 波函数 $y = A\cos(\omega t - bx + \varphi_0)$，则波数 $k=b$，$\lambda = 2\pi/b$。
+(1) $\Delta\varphi = b\Delta x = \pi/3$，$\Delta x = \pi/(3b)$。
+(2) 相位差 $\pi/2$ 的相邻两点的最小距离：$\Delta x = \pi/(2b)$。
+
+% === 例 9 ===
+\item (1) 沿 $+x$ 方向传播，$y = A\cos(\omega t - \omega x/u + \varphi_0)$。
+(2) 能流密度 $J = wu = \rho A^2\omega^2\sin^2[\cdots]\,u$；强度 $I = \bar J = \dfrac{1}{2}\rho A^2\omega^2 u$。
+(3) 若 $A(x) = A_0 e^{-\alpha x/2}$，则 $I(x) = \dfrac{1}{2}\rho A_0^2\omega^2 u\, e^{-\alpha x} = I_0 e^{-\alpha x}$（与朗伯定律一致）。
+
+% === 例 10 ===
+\item (1) 相长条件：$\Delta\varphi = \varphi_2-\varphi_1 = \pm 2k\pi$。$A_{\max} = 2A$。
+(2) 相消条件：$\Delta\varphi = \varphi_2-\varphi_1 = \pm(2k+1)\pi$。$A_{\min} = 0$。
+(3) 合强度 $I = I_1+I_2+2\sqrt{I_1I_2}\cos\Delta\varphi = 2I_0(1+\cos\Delta\varphi) = 4I_0\cos^2(\Delta\varphi/2)$。
+
+% === 例 11 ===
+\item 入射波 $y_1 = A\cos[2\pi(t/T - x/\lambda)]$。
+(1) 在 $x=0$ 处反射，反射点为波节（半波损失，反射波相位突变 $\pi$），故反射波
+\[
+  y_2 = A\cos\!\left[2\pi\!\left(\frac{t}{T}+\frac{x}{\lambda}\right)+\pi\right].
+\]
+(2) 合成驻波
+\[
+  y = y_1+y_2 = -2A\sin\!\left(\frac{2\pi x}{\lambda}\right)\sin\!\left(\frac{2\pi t}{T}\right).
+\]
+(3) 波节：$\sin(2\pi x/\lambda)=0$，$x = k\lambda/2$（$k=0,\pm 1,\pm 2,\cdots$）。
+波腹：$|\sin(2\pi x/\lambda)|=1$，$x = (2k+1)\lambda/4$。
+
+% === 例 12 ===
+\item (1) 汽笛到墙：墙为观察者，汽笛为波源，$v_S$ 指向墙（靠近墙）$v_S=20\,\mathrm{m/s}$，墙静止 $v_O=0$。
+\[
+  f_1 = \frac{u}{u-v_S}f = \frac{340}{340-20}\times 1000 = 1062.5\,\mathrm{Hz}.
+\]
+(2) 墙以 $v_W=10\,\mathrm{m/s}$ 迎着汽笛运动，墙接收的反射波再以频率 $f_1$ 作为新"波源"，但墙在运动（相当于新波源以 $v_W$ 远离汽笛）。汽笛接收到的频率为
+\[
+  f_2 = \frac{u+v_O}{u-v_S}f_1
+  = \frac{340+0}{340+10}\times 1062.5 = 1031.6\,\mathrm{Hz}.
+\]
+注意：第二式中 $v_S$ 改为 $+v_W=10$（墙在远离汽笛方向发出反射波），$v_O=0$（汽笛静止）。
+（综合公式：$f_2 = \dfrac{u}{u+v_W}\cdot\dfrac{u}{u-v_S}\cdot f = \dfrac{340}{350}\times\dfrac{340}{320}\times 1000 \approx 1031.6\,\mathrm{Hz}$。）
+
+\end{enumerate}
+
+\end{document}

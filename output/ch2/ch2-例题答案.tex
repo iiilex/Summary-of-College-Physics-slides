@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{enumitem}
+\title{第 2 章\ 牛顿运动定律\ 例题答案}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[label=\textbf{例\arabic*.}, leftmargin=*]
+
+% === 例 1 ===
+\item \textbf{椭圆轨道受力}
+\[
+  \vec{a} = \frac{\mathrm{d}^2\vec{r}}{\mathrm{d}t^2} = -A\omega^2\cos\omega t\,\vec{i} - B\omega^2\sin\omega t\,\vec{j} = -\omega^2\vec{r},
+\]
+\[
+  \vec{F} = m\vec{a} = -m\omega^2\vec{r}.
+\]
+合力始终指向原点，是线性回复力。
+
+% === 例 2 ===
+\item \textbf{水平力 $F=F_0 t$ 作用下的粒子轨迹}\\
+水平方向 $F_x = F_0 t = m a_x$：$\displaystyle\int_0^{v_x} \mathrm{d}v_x = \int_0^t \frac{F_0 t}{m}\mathrm{d}t \Rightarrow v_x = \frac{F_0 t^2}{2m}$，$x = \dfrac{F_0}{6m}t^3$。\\
+竖直方向 $F_y = 0$：$y = v_0 t$。\\
+消去 $t$：$t = y/v_0$，代入 $x$：$x = \dfrac{F_0}{6m v_0^3}\,y^3$。
+
+% === 例 3 ===
+\item \textbf{粘性阻力} $f=-cv$。\\
+$-cv = m\dfrac{\mathrm{d}v}{\mathrm{d}t} \Rightarrow \dfrac{\mathrm{d}v}{v} = -\dfrac{c}{m}\mathrm{d}t$，积分 $\ln v = -\dfrac{c}{m}t + c_1$。\\
+由 $t=0$ 时 $v=v_0$：$c_1 = \ln v_0$。故
+\[
+  v(t) = v_0\,e^{-(c/m)t}.
+\]
+
+% === 例 4 ===
+\item \textbf{链条离开桌面}\\
+$F(x) = m(x)g = \dfrac{M}{L}x\,g = M\dfrac{\mathrm{d}v}{\mathrm{d}t} = Mv\dfrac{\mathrm{d}v}{\mathrm{d}x}$。\\
+$\displaystyle\int_0^L \frac{M}{L}g x\,\mathrm{d}x = \int_0^v Mv\,\mathrm{d}v \Rightarrow \frac{MgL}{2} = \frac{1}{2}Mv^2$，$v = \sqrt{gL}$。
+
+% === 例 5 ===
+\item \textbf{带阻力竖直上抛}\\
+$f = -m(g + \alpha v^2) = m\dfrac{\mathrm{d}v}{\mathrm{d}t} = m v\dfrac{\mathrm{d}v}{\mathrm{d}y}$。\\
+$\dfrac{1}{2}\dfrac{\mathrm{d}(v^2)}{\mathrm{d}y} = -(g + \alpha v^2)$，令 $u = g + \alpha v^2$：$\dfrac{1}{2\alpha}\dfrac{\mathrm{d}u}{u} = -\mathrm{d}y$。\\
+积分：$\dfrac{1}{2\alpha}\ln(g + \alpha v^2)\Big|_{v_0}^{0} = -H$，
+\[
+  H = \frac{1}{2\alpha}\ln\!\left(\frac{g + \alpha v_0^2}{g}\right).
+\]
+
+% === 例 6 ===
+\item \textbf{第二宇宙速度}\\
+$F = G\dfrac{Mm}{x^2} = \dfrac{mgR^2}{x^2}$；$m\dfrac{\mathrm{d}v}{\mathrm{d}t} = -\dfrac{mgR^2}{x^2}$。\\
+用 $v\dfrac{\mathrm{d}v}{\mathrm{d}x}$ 代换：$v\mathrm{d}v = -gR^2 \dfrac{\mathrm{d}x}{x^2}$。\\
+$\displaystyle\int_{v_0}^{v} v\,\mathrm{d}v = \int_R^x -gR^2\frac{\mathrm{d}x}{x^2} \Rightarrow v^2 = v_0^2 - 2gR^2\!\left(\frac{1}{R} - \frac{1}{x}\right)$。\\
+$x\to\infty$，$v\ge0$，临界 $v=0$：$v_0 = \sqrt{2gR} = 11.2$ km/s。
+
+% === 例 7 ===
+\item \textbf{变质量提绳}\\
+被提绳段 $m = \dfrac{M}{L}y$，由 $F_{\text{合}} = \dfrac{\mathrm{d}(mv)}{\mathrm{d}t}$：
+\[
+  F - \frac{M}{L}yg = \frac{M}{L}\dot{y}\,v + \frac{M}{L}y\,\dot{v}.
+\]
+设 $\dot y = v,\; \dot v = a$（$a$ 为常量）：$v^2 = 2ay$，代入：
+\[
+  F = \frac{M}{L}(yg + 2ay + ya) = \frac{M}{L}y(g + 3a).
+\]
+提起高度 $y=l$：$F = \dfrac{Ml}{L}(g + 3a)$。\\
+若以恒定速度 $v$ 提，$a=0$：$F = \dfrac{M}{L}l(g + \dfrac{v^2}{l}) = \dfrac{M}{L}(lg + v^2)$。
+
+% === 例 8 ===
+\item \textbf{漏沙车}\\
+取车和沙为系统，$\dot{m} = -\rho$，$m = M - \rho t$：
+\[
+  f = \frac{\mathrm{d}(mv)}{\mathrm{d}t} = \dot{m}\,v + m\dot{v} = -\rho v + (M - \rho t)\frac{\mathrm{d}v}{\mathrm{d}t}.
+\]
+$\dfrac{\mathrm{d}v}{f + \rho v} = \dfrac{\mathrm{d}t}{M - \rho t}$，积分：
+\[
+  \ln\!\left(\frac{f + \rho v}{f}\right) = -\ln\!\left(\frac{M - \rho t}{M}\right),
+\]
+\[
+  v = \frac{f}{\rho}\!\left(\frac{M}{M - \rho t} - 1\right).
+\]
+
+% === 例 9 ===
+\item \textbf{旋转抛物面}\\
+流体表面取小体元 $\Delta m$，受重力 $mg$（向下）与支持力 $N$（垂直于液面）。设 $N$ 与 $y$ 轴夹角为 $\theta$。\\
+$x$ 方向：$N\sin\theta = \Delta m x\omega^2$（向心加速度 $a_n = x\omega^2$）。\\
+$y$ 方向：$N\cos\theta = \Delta m g$。\\
+两式相除：$\tan\theta = \dfrac{\omega^2}{g}x$。又 $\tan\theta = \mathrm{d}y/\mathrm{d}x$，故
+\[
+  \mathrm{d}y = \frac{\omega^2}{g}x\,\mathrm{d}x \Rightarrow \int_0^y \mathrm{d}y = \int_0^x \frac{\omega^2}{g}x\,\mathrm{d}x \Rightarrow y = \frac{\omega^2}{2g}x^2.
+\]
+
+% === 例 10 ===
+\item \textbf{电梯内滑轮}\\
+取电梯为参考系，加惯性力 $-m\vec{a}_0$。对 $m_1$（向下为正）：$m_1 g - T - m_1 a_0 = m_1 a'$；\\
+对 $m_2$（向上为正）：$m_2 g - T - m_2 a_0 = -m_2 a'$。\\
+联立解出
+\[
+  a' = \frac{m_1 - m_2}{m_1 + m_2}(g - a_0),\quad
+  T = \frac{2m_1 m_2}{m_1 + m_2}(g - a_0).
+\]
+$a_0 = g/2$ 时，$a' = \dfrac{m_1 - m_2}{2(m_1 + m_2)}g$，$T = \dfrac{m_1 m_2}{m_1 + m_2}g$。\\
+地面参考系：$a_1 = a' + a_0 = \dfrac{m_1 - m_2}{2(m_1 + m_2)}g + \dfrac{g}{2}$，$a_2 = -a' + a_0$。
+
+% === 例 11 ===
+\item \textbf{升降机内斜面}\\
+取升降机为参考系，加惯性力 $-m\vec{a}_0$。沿斜面方向（$x$）和垂直斜面方向（$y$）分解：
+\[
+  N\sin\alpha = m a_r\cos\alpha,\quad N\cos\alpha - mg - ma_0 = -m a_r\sin\alpha.
+\]
+联立解得
+\[
+  N = m(g + a_0)\cos\alpha,\quad a_r = (g + a_0)\sin\alpha.
+\]
+物体对斜面的压力大小等于 $N$，方向沿斜面法向。
+
+% === 例 12 ===
+\item \textbf{思考题}\\
+取升降机为参考系（$a = g/4$ 向上），$A$ 受水平张力 $F_T$、支持力 $F_N$、重力 $mg$、惯性力 $ma$（向下）。$B$ 受 $F_T$（向上）、重力 $mg$、惯性力 $ma$（向下）。\\
+设 $A$ 相对升降机加速度 $a'$ 水平向右，$B$ 相对升降机加速度 $a'$ 向下。\\
+对 $A$：$F_T = m a'$；\\
+对 $B$：$mg + ma - F_T = m a'$。\\
+代入 $a = g/4$：$F_T = m a'$，$\dfrac{5}{4}mg - ma' = ma' \Rightarrow a' = \dfrac{5}{8}g$。\\
+$F_T = m\cdot \dfrac{5}{8}g = \dfrac{5}{8}mg$。答案：\textbf{B}。
+
+\end{enumerate}
+
+\end{document}

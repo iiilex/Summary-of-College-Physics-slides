@@ -1,0 +1,131 @@
+# 第 9 章 静电场
+
+## 一、知识点总结
+
+### 9.1 电荷 库仑定律
+- **电荷的基本性质**：正负性、量子性（$Q=ne$，$e=1.602\times10^{-19}\,\text{C}$）、守恒性、相对论不变性。
+- **点电荷**：当带电体的大小、形状与带电体间的距离相比可以忽略时，可视为带电的几何点。
+- **库仑定律**（真空、静止）：两个点电荷间的作用力沿连线，大小与电量成正比、与距离平方成反比。
+- 静电力是有心力，平方反比，静电场是有心力场（保守场）；库仑定律适用条件：真空、静止。
+
+### 9.2 静电场 电场强度
+- **电场**是物质的一种形态，电磁场可脱离电荷和电流独立存在，以光速传播。
+- **电场强度** $\vec E$：单位正电荷所受的力，方向为正电荷受力方向，$\vec E=\vec F/q_0$。
+- **电场强度叠加原理**：点电荷系的电场等于各点电荷单独产生电场的矢量和。
+- **电偶极子**：一对相距很近的等量异号电荷组成；电偶极矩 $\vec p=q\vec l$，方向由负电荷指向正电荷。延长线上和中垂线上场强均与 $r^3$ 成反比。
+- **连续带电体**的电场通过积分求解：$\vec E=\int \dfrac{\mathrm d q}{4\pi\varepsilon_0 r^2}\vec r^0$；选取电荷元 $\mathrm dq=\lambda\,\mathrm dl$（线）、$\sigma\,\mathrm dS$（面）、$\rho\,\mathrm dV$（体）。
+
+### 9.3 电通量 高斯定理
+- **电场线**（电力线）：非闭合、不相交；始于正电荷终止于负电荷；场强方向沿切线、疏密反映强弱。
+- **电通量** $\Phi_e=\int_S \vec E\cdot\mathrm d\vec S$（闭合曲面外法线为正）。
+- **高斯定理**（真空）：$\displaystyle\oint_S \vec E\cdot\mathrm d\vec S=\dfrac{1}{\varepsilon_0}\sum q_i$（点电荷），或 $\displaystyle\oint_S \vec E\cdot\mathrm d\vec S=\dfrac{1}{\varepsilon_0}\int_V \rho\,\mathrm dV$。
+- **高斯面**选取原则：经过所求场点；面上 $E$ 大小方向尽量一致或法向与 $\vec E$ 垂直。
+- **典型应用**：球对称（同心球面）、轴对称（圆柱面）、面对称（柱形高斯面）。
+
+### 9.4 静电场的环路定理 电势能
+- 静电力作功与路径无关，是保守力，静电场是保守场。
+- **环路定理**：$\displaystyle\oint_L \vec E\cdot\mathrm d\vec l=0$（即 $\nabla\times\vec E=0$，静电场无旋）。
+- **电势能**：$W_a=A_{a0}=\displaystyle\int_a^0 q_0\vec E\cdot\mathrm d\vec l$；电势能与零点选择有关，但两点差值与零点无关。
+- **电势零点选择**：有限范围源电荷选无穷远；无限大带电体选有限远处；实际应用取大地或仪器外壳。
+
+### 9.5 电势 电势差
+- **电势差**：$u_{ab}=\dfrac{W_a-W_b}{q_0}=\displaystyle\int_a^b \vec E\cdot\mathrm d\vec l$。
+- **电势**：$u_a=\dfrac{W_a}{q_0}=\displaystyle\int_a^0 \vec E\cdot\mathrm d\vec l$。
+- **电势叠加原理**：点电荷系的电势等于各点电荷电势的代数和（标量叠加）。
+- **电势计算方法**：已知电荷分布 $u=\displaystyle\int\dfrac{\mathrm dq}{4\pi\varepsilon_0 r}$；已知场强 $u_P=\displaystyle\int_P^0 \vec E\cdot\mathrm d\vec l$。
+
+### 9.6 等势面 电势与电场强度的微分关系
+- **等势面**：电场中电势相等的点连成的面；电场线与等势面处处正交；等势面密处场强大。
+- **微分关系**：$\vec E=-\nabla u=-\left(\dfrac{\partial u}{\partial x}\vec i+\dfrac{\partial u}{\partial y}\vec j+\dfrac{\partial u}{\partial z}\vec k\right)$，电场方向指向电势降落方向。
+
+### 9.7 静电场中的导体
+- **静电平衡条件**：$\vec E_{\text{内}}=0$，导体表面 $\vec E\perp$ 表面；导体为等势体，表面为等势面。
+- **电荷分布**：静电平衡时电荷只分布在导体表面，体内 $\rho=0$；孤立导体曲率大处面密度大（尖端放电）。
+- **静电屏蔽**：空腔导体（无论腔内有无电荷）使腔内/腔外互不影响。
+- **孤立导体电容**：$C=Q/u$；单位为法拉 (F)；半径为 $R$ 的孤立球 $C=4\pi\varepsilon_0 R$。
+- **电容器**：$C=Q/\Delta u$；取决于极板形状、大小、相对位置和介质。
+  - 平行板：$C=\varepsilon S/d$；球形：$C=\dfrac{4\pi\varepsilon R_1R_2}{R_2-R_1}$；柱形：$C=\dfrac{2\pi\varepsilon l}{\ln(R_2/R_1)}$。
+- **串并联**：串联 $\dfrac{1}{C}=\sum\dfrac{1}{C_i}$；并联 $C=\sum C_i$。
+
+### 9.8 电场能量
+- **电容器储能**：$W=\dfrac{1}{2}CU^2=\dfrac{Q^2}{2C}=\dfrac{1}{2}QU$。
+- **电场能量密度**：$w_e=\dfrac{1}{2}\varepsilon_0 E^2$（真空中）；$w_e=\dfrac{1}{2}\vec D\cdot\vec E$（一般情况）。
+- **总能量**：$W=\displaystyle\int_V w_e\,\mathrm dV$。
+
+### 9.9 静电场中的电介质
+- **电介质极化**：无极分子（位移极化）、有极分子（取向极化）；极化产生**束缚电荷** $\sigma'$，削弱介质内场。
+- **电极化强度**：$\vec P=\chi_e\varepsilon_0\vec E$；$\sigma'=P_n$。
+- **电位移矢量**：$\vec D=\varepsilon_0\vec E+\vec P=\varepsilon_0\varepsilon_r\vec E=\varepsilon\vec E$。
+- **介质中高斯定理**：$\displaystyle\oint_S \vec D\cdot\mathrm d\vec S=\sum q_{0,\text{自由}}$；$\nabla\cdot\vec D=\rho_0$。
+- **边值关系**：界面无自由电荷时 $D_{1n}=D_{2n}$，$E_{1t}=E_{2t}$，电势连续。
+- **充满介质后的影响**：$C=\varepsilon_r C_0$，$E=E_0/\varepsilon_r$，能量密度 $w_e=\dfrac{1}{2}\varepsilon_0\varepsilon_r E^2$。
+
+---
+
+## 二、公式汇总
+
+- **库仑定律**：
+  $$ \vec F_{21}=k\dfrac{q_1 q_2}{r^2}\vec r_{21}^0=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r^2}\vec r_{21}^0 $$
+  说明：$k=9\times10^9\,\text{N}\cdot\text{m}^2/\text{C}^2$，$\varepsilon_0=8.854\times10^{-12}\,\text{F/m}$。
+
+- **电场强度（点电荷）**：
+  $$ \vec E=\dfrac{\vec F}{q_0}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{r^2}\vec r^0 $$
+  说明：方向沿径向（正电荷向外）。
+
+- **电偶极子场强**：
+  $$ \vec E_{\text{延}}=\dfrac{2\vec p}{4\pi\varepsilon_0 r^3},\quad \vec E_{\text{垂}}=-\dfrac{\vec p}{4\pi\varepsilon_0 r^3} $$
+  说明：远区 $r\gg l$，$p=ql$。
+
+- **电通量与高斯定理**：
+  $$ \mathrm d\Phi_e=\vec E\cdot\mathrm d\vec S,\quad \Phi_e=\int_S\vec E\cdot\mathrm d\vec S,\quad \oint_S\vec E\cdot\mathrm d\vec S=\dfrac{1}{\varepsilon_0}\sum q_i $$
+  说明：通过闭合曲面的通量只与内部电荷有关。
+
+- **环路定理**：
+  $$ \oint_L \vec E\cdot\mathrm d\vec l=0,\quad \nabla\times\vec E=0 $$
+  说明：静电场无旋，是保守场。
+
+- **电势与电势差**：
+  $$ u_{ab}=\int_a^b \vec E\cdot\mathrm d\vec l,\quad u_a=\int_a^0 \vec E\cdot\mathrm d\vec l $$
+  说明：取无穷远为电势零点时 $u_a=\displaystyle\int_a^\infty \vec E\cdot\mathrm d\vec l$。
+
+- **点电荷电势**（无穷远为零点）：
+  $$ u=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{r} $$
+  说明：连续带电体 $u=\displaystyle\int\dfrac{\mathrm dq}{4\pi\varepsilon_0 r}$。
+
+- **场强与电势的微分关系**：
+  $$ \vec E=-\nabla u=-\left(\frac{\partial u}{\partial x}\vec i+\frac{\partial u}{\partial y}\vec j+\frac{\partial u}{\partial z}\vec k\right) $$
+  说明：电场方向指向电势降落最快的方向。
+
+- **常见对称场强**：
+  $$ \text{无限长直线：}E=\dfrac{\lambda}{2\pi\varepsilon_0 r};\quad \text{无限大平面：}E=\dfrac{\sigma}{2\varepsilon_0};\quad \text{均匀带电球面：}E=\dfrac{Q}{4\pi\varepsilon_0 r^2}\,(r>R),\;E=0\,(r<R) $$
+
+- **电偶极子在均匀电场中的力矩**：
+  $$ \vec M=\vec p\times\vec E $$
+  说明：$M=plE\sin\theta$；$\theta=0$ 稳定平衡，$\theta=\pi$ 不稳定平衡。
+
+- **孤立导体电容**：
+  $$ C=\dfrac{Q}{u} $$
+  说明：单位法拉 (F)；与带电量、电势无关，只与几何因素和介质有关。
+
+- **典型电容器**：
+  $$ C_{\text{平}}=\dfrac{\varepsilon S}{d},\quad C_{\text{球}}=\dfrac{4\pi\varepsilon R_1 R_2}{R_2-R_1},\quad C_{\text{柱}}=\dfrac{2\pi\varepsilon l}{\ln(R_2/R_1)} $$
+  说明：$\varepsilon=\varepsilon_0\varepsilon_r$ 为介电常量。
+
+- **电容器串并联**：
+  $$ \text{串联：}\dfrac{1}{C}=\sum\dfrac{1}{C_i};\quad \text{并联：}C=\sum C_i $$
+
+- **电场能量**：
+  $$ W=\dfrac{1}{2}CU^2=\dfrac{Q^2}{2C}=\dfrac{1}{2}QU $$
+  说明：能量储存在电场中。
+
+- **电场能量密度**：
+  $$ w_e=\dfrac{1}{2}\varepsilon_0 E^2 \quad(\text{真空}),\quad w_e=\dfrac{1}{2}\vec D\cdot\vec E \quad(\text{一般}),\quad W=\int_V w_e\,\mathrm dV $$
+  说明：电场是能量的载体。
+
+- **电极化强度**：
+  $$ \vec P=\chi_e\varepsilon_0\vec E,\quad \sigma'=P_n,\quad \vec D=\varepsilon_0\vec E+\vec P $$
+  说明：$\chi_e=\varepsilon_r-1$ 为电极化率。
+
+- **介质中的高斯定理与边值关系**：
+  $$ \oint_S \vec D\cdot\mathrm d\vec S=\sum q_{0,\text{自由}},\quad D_{1n}=D_{2n},\quad E_{1t}=E_{2t} $$
+  说明：界面无自由电荷时，$D$ 法向连续、$E$ 切向连续、电势连续。

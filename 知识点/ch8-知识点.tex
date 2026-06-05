@@ -1,0 +1,246 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{listings}
+
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setlist{nosep,leftmargin=2em}
+
+\title{第8章\quad 机械波}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{知识点总结}
+
+\subsection{机械波的产生和传播}
+
+\begin{itemize}
+    \item \textbf{机械波}：机械振动以一定速度在弹性介质中由近及远地传播出去所形成。
+    \begin{itemize}
+        \item 产生条件：\textbf{波源}（作机械振动的物体）+ \textbf{弹性介质}。
+    \end{itemize}
+    \item \textbf{横波}：介质质点的振动方向与波传播方向相互垂直（如柔绳上的波）。
+    \item \textbf{纵波}：介质质点的振动方向与波传播方向相互平行（如空气中传播的声波）。
+    \item \textbf{波动是物质的振动状态和能量在时空中传播和分布的一种普遍形式}。
+    \item \textbf{结论}：(1) 波动中各质点并不随波前进；(2) 各个质点的相位依次落后，波动是相位的传播；(3) 波动曲线与振动曲线不同。
+    \item \textbf{波面}：波传播过程中任一时刻媒质中振动相位相同的点连结成的面。
+    \item \textbf{波线}：沿波的传播方向作的有方向的线；在各向同性均匀媒质中波线 $\perp$ 波面。
+    \item \textbf{波前}：某一时刻波传播到的最前面的波面；按波面形状分\textbf{球面波}（点波源）和\textbf{柱面波}（线波源），离波源很远时近似为\textbf{平面波}。
+    \item \textbf{波长 $\lambda$}：同一波线上相邻两个相位差为 $2\pi$ 的质点之间的距离（一次完全振动波前进的距离）；反映波的空间周期性。
+    \item \textbf{周期 $T$}：波前进一个波长距离所需的时间；反映波的时间周期性。
+    \item \textbf{频率 $\nu$}：单位时间内波前进距离中完整波的数目；$\nu = 1/T$；与波源振动频率相同，与媒质性质无关。
+    \item \textbf{波速 $u$}：振动状态在媒质中的传播速度（相速度）；由媒质性质决定，与波频率无关。
+    \begin{itemize}
+        \item 弦线/绳索横波：$u = \sqrt{T/\mu}$（$T$ 张力、$\mu$ 线密度）；
+        \item 细棒纵波：$u = \sqrt{Y/\rho}$（$Y$ 杨氏模量、$\rho$ 密度）。
+    \end{itemize}
+    \item 基本关系：\fbox{$u = \lambda\nu = \lambda/T$}。
+\end{itemize}
+
+\subsection{平面简谐波}
+
+\begin{itemize}
+    \item \textbf{简谐波}：介质传播的是谐振动，波所到之处各质点作同频率的谐振动。
+    \item \textbf{平面简谐波波函数}（沿 $+x$ 方向传播，$O$ 点振动 $y_O = A\cos(\omega t+\varphi_0)$）：
+    \[
+        y(x,t) = A\cos\!\left[\omega\!\left(t-\frac{x}{u}\right)+\varphi_0\right].
+    \]
+    沿 $-x$ 方向：将 $x/u$ 换成 $+x/u$。
+    \item 其它等价形式（沿 $+x$ 方向）：
+    \begin{itemize}
+        \item $y = A\cos\!\left[2\pi\!\left(\nu t-\dfrac{x}{\lambda}\right)+\varphi_0\right]$；
+        \item $y = A\cos\!\left[2\pi\!\left(\dfrac{t}{T}-\dfrac{x}{\lambda}\right)+\varphi_0\right]$；
+        \item $y = A\cos\!\left[\dfrac{2\pi}{\lambda}(ut-x)+\varphi_0\right]$。
+    \end{itemize}
+    \item \textbf{波函数的物理意义}：
+    \begin{enumerate}
+        \item 振动状态的空间周期性：$y(x+\lambda,t) = y(x,t)$；
+        \item 波形传播的时间周期性：$y(x,t+T) = y(x,t)$；
+        \item $x$ 给定，$y=y(t)$ 是 $x$ 处的振动方程；
+        \item $t$ 给定，$y=y(x)$ 是 $t$ 时刻的波形图；
+        \item $x$、$t$ 都变，体现波形传播和分布的时空周期性。
+    \end{enumerate}
+    \item \textbf{相位差}（沿 $+x$ 方向，$x_2>x_1$）：$\Delta\varphi = -\dfrac{\omega}{u}(x_2-x_1) = \dfrac{2\pi}{\lambda}(x_1-x_2)$；$x_2$ 处质点振动相位总落后于 $x_1$。
+    \item \textbf{波速的相位含义}：$u$ 实际上是振动相位的传播速度：$u = \Delta x/\Delta t$。
+    \item \textbf{一维波动微分方程}：
+    \[
+        \frac{\partial^2 y}{\partial x^2} - \frac{1}{u^2}\frac{\partial^2 y}{\partial t^2} = 0.
+    \]
+    （由牛顿第二定律对完全柔软均匀弦的张力分析可导出，$u = \sqrt{T/\rho}$。）
+\end{itemize}
+
+\subsection{波的能量}
+
+\begin{itemize}
+    \item 线元 $\Delta m = \rho\Delta x$；
+    \item \textbf{线元动能} $W_k = \dfrac{1}{2}\Delta m v^2 = \dfrac{1}{2}\rho\Delta x\!\left(\dfrac{\partial y}{\partial t}\right)^2$；
+    \item \textbf{线元势能}（小振动近似）$W_p = \dfrac{1}{2}T\Delta x\!\left(\dfrac{\partial y}{\partial x}\right)^2$；
+    \item \textbf{线元机械能} $W = W_k+W_p = \rho\Delta x A^2\omega^2\sin^2\!\left[\omega(t-x/u)+\varphi_0\right]$。
+    \item 重要结论：媒质中任一质元的\textbf{动能和势能同步变化}（$W_k=W_p$），与简谐振子不同（相位差 $\pi$）。A 点（$|\partial y/\partial x|$ 最小处）机械能最小，B 点（$|\partial y/\partial x|$ 最大处）最大；表明波动过程是能量传播过程。
+    \item \textbf{能量密度} $w = W/(S\Delta x) = \rho A^2\omega^2\sin^2[\cdots]$。
+    \item \textbf{平均能量密度} $\bar w = \dfrac{1}{2}\rho A^2\omega^2$。
+    \item \textbf{能流密度（坡印廷矢量）} $\vec J = w\vec u$，大小 $J = wu$。
+    \item \textbf{波的强度}（一个周期内能流密度的平均值）：
+    \[
+        I = \bar wu = \frac{1}{2}\rho A^2\omega^2 u \propto A^2.
+    \]
+    \item \textbf{平面波振幅}：在媒质不吸收时，$A_1 = A_2$（振幅不变）。
+    \item \textbf{球面波振幅}：$A_1r_1 = A_2r_2$，即 $A = A_0/r$；球面简谐波波函数
+    \[
+        y(r,t) = \frac{A_0}{r}\cos\!\left[\omega\!\left(t-\frac{r}{u}\right)+\varphi_0\right],\quad r>0.
+    \]
+    \item \textbf{波的吸收}（吸收媒质）：$\mathrm{d}I = -\alpha I\,\mathrm{d}x$，积分 $I = I_0 e^{-\alpha x}$，$\alpha$ 为吸收系数。
+\end{itemize}
+
+\subsection{惠更斯原理}
+
+\begin{itemize}
+    \item \textbf{惠更斯原理}：
+    \begin{enumerate}
+        \item 行进中的波面上任一点都可看作新的子波源；
+        \item 所有子波源各自向外发出许多子波；
+        \item 各子波所形成的\textbf{包络面}就是原波面在一定时间内所传播到的新波面。
+    \end{enumerate}
+    \item 应用：可解释\textbf{衍射、反射、折射}现象；也适用于电磁波及非均匀和各向异性媒质。
+    \item \textbf{不足}：未涉及振幅、相位等的分布规律。
+\end{itemize}
+
+\subsection{波的干涉}
+
+\begin{itemize}
+    \item \textbf{波的叠加原理}（仅适用于线性波）：几列波在传播中相遇再分开后仍保持各自的频率、波长、振动方向等特性；相遇区域内任一质点的振动为各波单独引起振动的合振动：$y = y_1+y_2+\cdots$。
+    \item \textbf{相干条件}：频率相同、振动方向相同、相位差恒定。
+    \item \textbf{干涉规律}（两列同频率相干波，振幅 $A_1$、$A_2$ 不变）：
+    \begin{itemize}
+        \item 相位差 $\Delta\varphi = (\varphi_2-\varphi_1) - 2\pi\dfrac{r_2-r_1}{\lambda}$；
+        \item 合振幅 $A^2 = A_1^2+A_2^2+2A_1A_2\cos\Delta\varphi$；
+        \item 合强度 $I = I_1+I_2+2\sqrt{I_1I_2}\cos\Delta\varphi$。
+        \item \textbf{干涉相长}：$\Delta\varphi = \pm 2k\pi$（$k=0,1,2,\cdots$），$A_{\max}=A_1+A_2$，$I_{\max}=I_1+I_2+2\sqrt{I_1I_2}$；
+        \item \textbf{干涉相消}：$\Delta\varphi = \pm(2k+1)\pi$，$A_{\min}=|A_1-A_2|$，$I_{\min}=I_1+I_2-2\sqrt{I_1I_2}$。
+    \end{itemize}
+    \item 当 $\varphi_1=\varphi_2$（初相相同）时可用\textbf{波程差}判断：$\delta = r_1-r_2 = \pm k\lambda$ 相长；$\delta = \pm(2k+1)\lambda/2$ 相消。
+    \item 当 $A_1=A_2=A$ 时 $A_{\max}=2A$，$I_{\max}=4I_0$；$A_{\min}=0$，$I_{\min}=0$。
+\end{itemize}
+
+\subsection{驻波}
+
+\begin{itemize}
+    \item \textbf{驻波}：两列等振幅相干波沿相反方向传播时叠加形成。
+    \item 设 $y_1 = A\cos 2\pi(\nu t - x/\lambda)$，$y_2 = A\cos 2\pi(\nu t + x/\lambda)$，合成
+    \[
+        y = 2A\cos\!\left(2\pi\frac{x}{\lambda}\right)\cos(2\pi\nu t) = A'(x)\cos(\omega t).
+    \]
+    是\textbf{振幅按余弦分布的"特殊谐振动"}，无相位传播。
+    \item \textbf{波腹}（$|A'|=A'_{\max}$）：$\cos(2\pi x/\lambda)=\pm 1$，$x = k\lambda/2$，$k=0,\pm 1,\pm 2,\cdots$。
+    \item \textbf{波节}（$|A'|=A'_{\min}=0$）：$\cos(2\pi x/\lambda)=0$，$x = (2k+1)\lambda/4$，$k=0,\pm 1,\pm 2,\cdots$。
+    \item 相邻两波腹/两波节之间的距离均为 $\lambda/2$。
+    \item 所有波节将媒质划分为 $\lambda/2$ 长的许多段：同段内相位相同，相邻段间相位相反。
+    \item \textbf{弦线形成驻波的条件}（两端固定）：$L = n\lambda/2$（$n=1,2,3,\cdots$）。
+    \item \textbf{简正模式（驻波频率）}：$\nu = u/\lambda = nu/(2L)$（$n=1,2,3,\cdots$）。
+    \item \textbf{环上驻波条件}：$2\pi R = n\lambda$。
+    \item \textbf{半波损失}：波从波疏媒质垂直入射到波密媒质界面反射时，反射波在反射点发生 $\pi$ 的相位突变（相当于损失 $\lambda/2$ 波程），反射点为波节；反之从波密到波疏反射时，反射点为波腹。
+\end{itemize}
+
+\subsection{多普勒效应}
+
+\begin{itemize}
+    \item \textbf{多普勒效应}：因波源或观察者相对媒质运动，使观察者接收到的频率与波源发出的频率不同的现象。
+    \item \textbf{波源静止，观察者运动}（$v_O$ 沿二者连线，正向为靠近）：
+    \[
+        f = \frac{u+v_O}{u}f_0 = \left(1+\frac{v_O}{u}\right)f_0.
+    \]
+    靠近 $v_O>0$，远离 $v_O<0$。
+    \item \textbf{观察者静止，波源运动}（$v_S$ 沿二者连线，正向为靠近）：波长变为 $\lambda' = uT - v_ST = (u-v_S)/f_0$，
+    \[
+        f = \frac{u}{\lambda'} = \frac{u}{u-v_S}f_0.
+    \]
+    靠近 $v_S>0$，远离 $v_S<0$。
+    \item \textbf{波源和观察者同时运动}（符号同上）：
+    \[
+        f = \frac{u+v_O}{u-v_S}f_0.
+    \]
+    \item 讨论：
+    \begin{enumerate}
+        \item 沿二者联线垂直方向运动时无多普勒效应；
+        \item 当 $v_S>u$ 时形成\textbf{冲击波}，马赫角 $\sin\theta = u/v_S$；
+        \item \textbf{电磁波}的多普勒效应（$v$ 为光源与接收器相对速度）：
+        $f_{\text{接近}} = \sqrt{(1+v/c)/(1-v/c)}\,f_s$，$f_{\text{远离}} = \sqrt{(1-v/c)/(1+v/c)}\,f_s$。
+    \end{enumerate}
+    \item 应用：测速雷达（多普勒雷达）、血流测量、卫星测速等。
+\end{itemize}
+
+\section{公式汇总}
+
+\begin{enumerate}[leftmargin=3em,label=\textbf{公式\arabic*}：,ref=公式\arabic*]
+
+    \item $u = \lambda\nu = \lambda/T$，$\nu = 1/T$
+
+    说明：波速、波长、周期、频率四者关系；$T$、$\nu$ 由波源决定与媒质无关，$u$、$\lambda$ 由媒质决定。
+
+    \item $y(x,t) = A\cos\!\left[\omega\!\left(t-\dfrac{x}{u}\right)+\varphi_0\right]$
+
+    说明：沿 $+x$ 方向传播的平面简谐波波函数（$O$ 点初相 $\varphi_0$）；沿 $-x$ 方向时将 $x/u$ 换成 $+x/u$；$A$ 为振幅，$\omega$ 为角频率。
+
+    \item $u = \sqrt{T/\mu}$（绳/弦横波），$u = \sqrt{Y/\rho}$（细棒纵波）
+
+    说明：波速（相速度）由媒质的弹性与惯性决定，与频率无关；$T$ 张力、$\mu$ 线密度；$Y$ 杨氏模量、$\rho$ 密度。
+
+    \item $\dfrac{\partial^2 y}{\partial x^2} - \dfrac{1}{u^2}\dfrac{\partial^2 y}{\partial t^2} = 0$
+
+    说明：一维波动微分方程（数学物理方程）；一切平面简谐波都满足；$u^2$ 等于弹性模量与质量密度之比。
+
+    \item $W = W_k+W_p = \rho\Delta x A^2\omega^2\sin^2[\cdots]$；$\bar w = \dfrac{1}{2}\rho A^2\omega^2$
+
+    说明：波动线元机械能与平均能量密度；媒质质元动能与势能同步变化（与弹簧振子不同）；证明波动是能量传播过程。
+
+    \item $I = \bar wu = \dfrac{1}{2}\rho A^2\omega^2 u \propto A^2$
+
+    说明：波的强度（能流密度平均值）等于平均能量密度乘波速；正比于振幅平方。
+
+    \item 球面简谐波 $y(r,t) = \dfrac{A_0}{r}\cos\!\left[\omega\!\left(t-\dfrac{r}{u}\right)+\varphi_0\right]$（$A\propto 1/r$）
+
+    说明：不吸收媒质中球面波振幅与距离成反比；强度按 $1/r^2$ 衰减（能量守恒）。
+
+    \item $I = I_0 e^{-\alpha x}$（吸收媒质）
+
+    说明：朗伯吸收定律；$\alpha$ 为媒质吸收系数，与媒质性质、温度、频率有关。
+
+    \item $\Delta\varphi = (\varphi_2-\varphi_1) - 2\pi\dfrac{r_2-r_1}{\lambda}$；$A^2 = A_1^2+A_2^2+2A_1A_2\cos\Delta\varphi$
+
+    说明：两列相干波叠加合振幅公式；干涉相长 $\Delta\varphi = \pm 2k\pi$、相消 $\Delta\varphi = \pm(2k+1)\pi$。
+
+    \item $\delta = r_1-r_2 = \pm k\lambda$（相长）；$\delta = \pm(2k+1)\lambda/2$（相消）
+
+    说明：$\varphi_1=\varphi_2$ 时的简化判据；$\delta$ 为波程差。
+
+    \item $y = 2A\cos\!\left(2\pi\dfrac{x}{\lambda}\right)\cos(2\pi\nu t) = A'(x)\cos\omega t$
+
+    说明：驻波波函数；振幅 $A'(x) = 2A\cos(2\pi x/\lambda)$ 按余弦分布；驻波无相位传播。
+
+    \item 波腹 $x = k\lambda/2$，波节 $x = (2k+1)\lambda/4$（$k=0,\pm 1,\pm 2,\cdots$）
+
+    说明：驻波波腹/波节位置公式；相邻波腹或相邻波节间距均为 $\lambda/2$。
+
+    \item $L = n\lambda/2$，$\nu = u/\lambda = nu/(2L)$（$n=1,2,3,\cdots$）
+
+    说明：两端固定弦线形成驻波（简正模式）条件与驻波频率；环上驻波条件 $2\pi R = n\lambda$。
+
+    \item $f = \dfrac{u+v_O}{u-v_S}f_0$
+
+    说明：多普勒效应公式（机械波，$v_O$、$v_S$ 沿二者连线方向，靠近取正、远离取负）；$f_0$ 为波源频率。
+
+    \item $\sin\theta = u/v_S$（$v_S>u$）
+
+    说明：冲击波（马赫锥）马赫角公式；$v_S/u$ 为马赫数。
+
+\end{enumerate}
+
+\end{document}

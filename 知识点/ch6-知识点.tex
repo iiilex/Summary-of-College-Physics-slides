@@ -1,0 +1,235 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{array}
+
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setlist{nosep,leftmargin=2em}
+
+\title{第6章\quad 刚体力学}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{知识点总结}
+
+\subsection{刚体运动的描述}
+
+\begin{itemize}
+    \item \textbf{刚体的定义}：刚体是组内任意两质点间的距离保持不变的质点组；考虑体积效应、忽略形变。
+    \item \textbf{自由度}：确定一个物体位置所需的独立坐标数。
+    \begin{itemize}
+        \item 质点：3 个自由度；
+        \item \textbf{自由刚体}：6 个自由度 = 3 个平动自由度 + 3 个转动自由度（绕定点的两个方位角 + 绕转动轴转过的角度）。
+    \end{itemize}
+    \item \textbf{刚体的平动}：刚体运动时，体内任一条直线都始终保持和自身平行。
+    \begin{itemize}
+        \item 特点 1：刚体中各质点的运动情况相同（轨迹、速度、加速度）：$\vec{v}_A = \vec{v}_B$，$\vec{a}_A = \vec{a}_B$；
+        \item 特点 2：刚体的平动可归结为质点运动（用质心运动代表）。
+    \end{itemize}
+    \item \textbf{定轴转动}：刚体内各点都绕同一直线（转轴）作圆周运动；转轴固定不动。
+    \begin{itemize}
+        \item \textbf{角位移} $\theta = f(t)$（rad），右手定则确定正负；
+        \item \textbf{角速度} $\omega = \dfrac{\mathrm{d}\theta}{\mathrm{d}t}$（rad/s），右手定则；
+        \item \textbf{角加速度} $\beta = \dfrac{\mathrm{d}\omega}{\mathrm{d}t} = \dfrac{\mathrm{d}^2\theta}{\mathrm{d}t^2}$（rad/s²）；
+        \item 任意时刻刚体上各点的 $\omega$、$\beta$ 都相同。
+    \end{itemize}
+    \item \textbf{角量与线量关系}（$r'$ 为质点到转轴距离）：
+    \begin{itemize}
+        \item 速度 $v = r'\omega$；
+        \item 切向加速度 $a_\tau = r'\beta$；
+        \item 法向加速度 $a_n = r'\omega^2$；
+        \item 加速度大小 $|\vec{a}| = r'\sqrt{\beta^2 + \omega^4}$，方向 $\tan\alpha = \dfrac{a_\tau}{a_n} = \dfrac{\beta}{\omega^2}$；
+        \item 矢量式：$\vec{v} = \vec{\omega}\times\vec{r}$，$\vec{a} = \vec{\beta}\times\vec{r} + \vec{\omega}\times\vec{v}$。
+    \end{itemize}
+\end{itemize}
+
+\subsection{力矩与刚体绕定轴转动的转动定律}
+
+\begin{itemize}
+    \item \textbf{力对点的力矩}（矢量）：$\vec{M}_O = \vec{r}\times\vec{F}$，大小 $M_O = rF\sin\alpha$；方向由右螺旋法则确定。
+    \item \textbf{力对定轴 $z$ 的力矩}：$M_z = F_\tau r = F_\perp h$，$M_z = M_O\cos\alpha$；定轴转动中力矩只有两个指向（$+,-$）。
+    \item 力矩求和只能对同一参考点（或轴）进行；一个刚体所受合外力为 0 与所受合力矩为 0 是不等价的；刚体的合内力矩恒为 0。
+    \item \textbf{转动惯量} $J$：描述刚体转动惯性的物理量（与 $m$ 类比），单位 $\mathrm{kg\cdot m^2}$。
+    \begin{itemize}
+        \item 定义式（不连续分布）：$J = \sum \Delta m_i r_i^2$；
+        \item 连续分布：$J = \int r^2 \mathrm{d}m$，其中 $\mathrm{d}m = \rho\,\mathrm{d}V$ 或 $\sigma\,\mathrm{d}S$ 或 $\lambda\,\mathrm{d}l$；
+        \item 转动惯量仅取决于刚体本身性质：总质量、质量分布、转轴位置。
+    \end{itemize}
+    \item \textbf{刚体绕定轴转动的转动定律}：
+    \[
+        M_z = J_z\beta = J_z\frac{\mathrm{d}\omega}{\mathrm{d}t}.
+    \]
+    $M$ 是所有外力对 $z$ 轴力矩的代数和；力矩越大，$\beta$ 越大；$J$ 越大，越难改变转动状态。
+    \item \textbf{典型刚体的转动惯量}（绕对称轴）：
+    \begin{itemize}
+        \item 细杆绕中心：$J = \dfrac{1}{12}ML^2$；绕端点：$J = \dfrac{1}{3}ML^2$；
+        \item 圆环（质量全在边缘）：$J = MR^2$；
+        \item 圆盘（实心圆柱）：$J = \dfrac{1}{2}MR^2$；
+        \item 空心圆柱/圆环（内外半径 $R_1,R_2$）：$J = \dfrac{1}{2}M(R_1^2+R_2^2)$；
+        \item 球壳：$J = \dfrac{2}{3}MR^2$；实心球：$J = \dfrac{2}{5}MR^2$。
+    \end{itemize}
+    \item \textbf{平行轴定理}（$z$ 过质心，$z'$ 与 $z$ 平行且距离为 $L$）：
+    \[
+        J_{z'} = J_z + ML^2.
+    \]
+    \item \textbf{垂直轴定理}（薄板，$x,y$ 在板内，$z$ 垂直板面）：
+    \[
+        J_z = J_x + J_y.
+    \]
+\end{itemize}
+
+\subsection{绕定轴转动刚体的动能}
+
+\begin{itemize}
+    \item \textbf{转动动能}：绕定轴转动刚体的动能等于刚体对转轴的转动惯量与其角速度平方乘积的一半，
+    \[
+        E_k = \sum \frac{1}{2}\Delta m_i v_i^2 = \frac{1}{2}\Bigl(\sum \Delta m_i r_i^2\Bigr)\omega^2 = \frac{1}{2}J\omega^2.
+    \]
+    \item \textbf{力矩的功}（力矩的空间累积）：
+    \begin{itemize}
+        \item 微分形式：$\mathrm{d}A = M\,\mathrm{d}\theta$；
+        \item 积分形式：$A = \displaystyle\int_{\theta_1}^{\theta_2} M\,\mathrm{d}\theta$；当 $M$ 为常量时 $A = M(\theta_2-\theta_1)$；
+        \item 功率 $P = \dfrac{\mathrm{d}A}{\mathrm{d}t} = M\omega$。
+        \item 合力矩的功 $A = \sum A_i$；\textbf{刚体内力矩的功之和为零}（因各质点角位移总相等）。
+    \end{itemize}
+    \item \textbf{转动动能定理}（力矩的功的效果）：
+    \[
+        A = \int_{\theta_1}^{\theta_2}M\,\mathrm{d}\theta = \frac{1}{2}J\omega_2^2 - \frac{1}{2}J\omega_1^2 = \Delta E_k.
+    \]
+    \item \textbf{重力势能}：刚体重力势能等于全部质量集中于质心时的势能，$E_p = mgh_C$。
+    \item \textbf{机械能守恒}：$A_{\text{合外力}}+A_{\text{非保守内力}}+A_{\text{合外力矩}}=0$ 时，
+    \[
+        \frac{1}{2}J\omega^2 + mgh_C = \text{常数}.
+    \]
+\end{itemize}
+
+\subsection{动量矩（角动量）和动量矩守恒定律}
+
+\begin{itemize}
+    \item \textbf{质点对定点 $O$ 的动量矩}（回顾）：$\vec{L}_O = \vec{r}\times m\vec{v}$，大小 $L_O = mrv\sin\varphi$；圆周运动 $L = mrv$。
+    \item \textbf{刚体定轴转动的动量矩}：
+    \[
+        L_z = \sum \Delta m_i v_i r_i = \Bigl(\sum \Delta m_i r_i^2\Bigr)\omega = J_z\omega.
+    \]
+    \item \textbf{动量矩定理}（微分形式）：
+    \[
+        M_z = \frac{\mathrm{d}L_z}{\mathrm{d}t} = \frac{\mathrm{d}(J_z\omega)}{\mathrm{d}t}.
+    \]
+    \item \textbf{动量矩定理}（积分形式）：
+    \[
+        \int_{t_1}^{t_2} M_z\,\mathrm{d}t = J_z\omega_2 - J_z\omega_1.
+    \]
+    定轴转动刚体所受合外力矩的冲量矩等于其动量矩的增量。
+    \item \textbf{动量矩守恒定律}：当 $M_z = 0$（合外力矩为零）时，$L_z = J_z\omega = \text{常数}$。
+    \begin{itemize}
+        \item 对系统：$J_i,\omega_i$ 都可以变，但 $\sum J_i\vec{\omega}_i$ 不变；
+        \item 对变形体：$J,\omega$ 都可以变，但 $J\vec{\omega}$ 不变；
+        \item 与动量守恒定律彼此独立。
+        \item 守恒条件为 $\vec{M}_{\text{外}}=0$（或对轴 $M_{\text{轴}}=0$），不是 $\int\vec{M}_{\text{外}}\,\mathrm{d}t=0$。
+        \item 适用于质点、刚体、形变体及一切宏观、微观物体的转动问题。
+    \end{itemize}
+\end{itemize}
+
+\subsection{进动}
+
+\begin{itemize}
+    \item 高速自转的陀螺在重力矩作用下，其动量矩 $\vec{L}=J\vec{\omega}$ 的方向不断绕铅垂轴转动而大小不变的现象称为\textbf{进动}。
+    \item 由动量矩定理 $|\mathrm{d}\vec{L}| = |\vec{M}|\,\mathrm{d}t$，且 $|\mathrm{d}\vec{L}| = L\sin\theta\,\mathrm{d}\Theta$，可得进动角速度：
+    \[
+        \Omega = \frac{M}{J\omega\sin\theta} \propto \frac{1}{\omega}.
+    \]
+    自转角速度 $\omega$ 越大，进动 $\Omega$ 越慢；该式仅适用 $\omega \gg \Omega$ 的高速自转情形。
+\end{itemize}
+
+\subsection{质点运动与刚体定轴转动规律对比}
+
+\begin{table}[h]
+\centering
+\caption{质点运动与刚体定轴转动规律对比}
+\begin{tabular}{>{\centering\arraybackslash}p{6cm}>{\centering\arraybackslash}p{6cm}}
+\toprule
+\textbf{质点运动} & \textbf{刚体定轴转动} \\
+\midrule
+速度 $\vec{v}=\mathrm{d}\vec{r}/\mathrm{d}t$ & 角速度 $\omega=\mathrm{d}\theta/\mathrm{d}t$ \\
+加速度 $\vec{a}=\mathrm{d}\vec{v}/\mathrm{d}t$ & 角加速度 $\alpha=\mathrm{d}\omega/\mathrm{d}t$ \\
+质量 $m$，力 $F$ & 转动惯量 $J$，力矩 $M$ \\
+力的功 $A=\int\vec{F}\cdot\mathrm{d}\vec{r}$ & 力矩的功 $A=\int M\mathrm{d}\theta$ \\
+动能 $E_k=\frac{1}{2}mv^2$ & 转动动能 $E_k=\frac{1}{2}J\omega^2$ \\
+势能 $E_p=mgh$ & 转动势能 $E_p=mgh_C$ \\
+牛顿定律 $\vec{F}=m\vec{a}$ & 转动定律 $\vec{M}=J\vec{\alpha}$ \\
+动量定理 $\int\vec{F}\mathrm{d}t=m\vec{v}-m_0\vec{v}_0$ & 角动量定理 $\int M\mathrm{d}t=J\omega-J_0\omega_0$ \\
+动量守恒 $\sum m_i\vec{v}_i=\sum m_i\vec{v}_{i0}$ & 角动量守恒 $J\vec{\omega}=J_0\vec{\omega}_0$ \\
+动能定理 $A=\frac{1}{2}mv^2-\frac{1}{2}mv_0^2$ & 转动动能定理 $A=\frac{1}{2}J\omega^2-\frac{1}{2}J\omega_0^2$ \\
+机械能守恒 $E_k+E_p=\text{const}$ & 机械能守恒 $E_k+E_p=\text{const}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{公式汇总}
+
+\begin{enumerate}[leftmargin=3em,label=\textbf{公式\arabic*}：,ref=公式\arabic*]
+
+    \item $M_z = F_\tau r = F_\perp h$；$M_O = rF\sin\alpha$；$\vec{M}_O = \vec{r}\times\vec{F}$
+
+    说明：力对定点 $O$ 的力矩；定轴情形下大小等于力臂乘力、或力乘力臂；矢量方向由右螺旋法则确定。
+
+    \item $\vec{v} = \vec{\omega}\times\vec{r}$，$\vec{a} = \vec{\beta}\times\vec{r} + \vec{\omega}\times\vec{v}$
+
+    说明：定轴转动刚体上任一点的速度与角速度、加速度与角加速度的矢量关系；$a_\tau = r\beta$，$a_n = r\omega^2$。
+
+    \item $J = \sum \Delta m_i r_i^2$ 或 $J = \int r^2\,\mathrm{d}m$
+
+    说明：刚体对定轴的转动惯量；是描述刚体转动惯性的物理量，单位 $\mathrm{kg\cdot m^2}$；与 $m$ 在质点力学中的地位相当。
+
+    \item $M_z = J_z\beta$
+
+    说明：刚体绕定轴的转动定律；$M_z$ 为外力对 $z$ 轴力矩的代数和；与牛顿第二定律 $\vec{F}=m\vec{a}$ 完全对应（$M\leftrightarrow F$，$J\leftrightarrow m$，$\beta\leftrightarrow a$）。
+
+    \item $J_{z'} = J_z + ML^2$
+
+    说明：平行轴定理；$z$ 过质心，$z'$ 与 $z$ 平行且相距 $L$；常用于把质心轴的已知 $J$ 转换为任意平行轴的 $J$。
+
+    \item $J_z = J_x + J_y$（薄板，$x,y$ 在板内，$z\perp$ 板面）
+
+    说明：垂直轴定理；仅对薄板成立，原点须在质心（否则用平行轴定理变换）。
+
+    \item $E_k = \dfrac{1}{2}J\omega^2$
+
+    说明：绕定轴转动刚体的动能；与平动动能 $E_k=\frac{1}{2}mv^2$ 对应。
+
+    \item $A = \int M\,\mathrm{d}\theta$；$P = M\omega$
+
+    说明：力矩的功（空间累积）与功率；合力矩的功等于各力矩功的代数和；内力矩的功之和为零。
+
+    \item $A = \dfrac{1}{2}J\omega_2^2 - \dfrac{1}{2}J\omega_1^2$
+
+    说明：转动动能定理；与平动动能定理 $A=\frac{1}{2}mv_2^2-\frac{1}{2}mv_1^2$ 对应。
+
+    \item $L_z = J_z\omega$
+
+    说明：刚体对定轴的动量矩（角动量）；与质点动量 $\vec{p}=m\vec{v}$ 对应。
+
+    \item $M_z = \dfrac{\mathrm{d}L_z}{\mathrm{d}t}$；$\displaystyle\int_{t_1}^{t_2} M_z\,\mathrm{d}t = L_{z2}-L_{z1}$
+
+    说明：动量矩定理（微分与积分形式）；冲量矩等于动量矩的增量；轴向合外力矩为零时 $L_z$ 守恒。
+
+    \item $M_z=0 \Rightarrow J_z\omega = \text{常数}$
+
+    说明：动量矩守恒定律；对系统 $\sum J_i\vec{\omega}_i$ 不变；对变形体 $J\vec{\omega}$ 不变；与动量守恒定律彼此独立；是空间旋转对称性的体现。
+
+    \item $\Omega = \dfrac{M}{J\omega\sin\theta}\propto\dfrac{1}{\omega}$
+
+    说明：高速自转陀螺的进动角速度；$\omega$ 越大进动越慢；仅在 $\omega\gg\Omega$（高速自转）时成立。
+
+\end{enumerate}
+
+\end{document}

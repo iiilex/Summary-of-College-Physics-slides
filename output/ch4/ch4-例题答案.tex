@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{enumitem}
+\title{第 4 章\ 冲量和动量\ 例题答案}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[label=\textbf{例\arabic*.}, leftmargin=*]
+
+% === 例 1 ===
+\item 重力始终为 $-mg\vec{j}$，下落与回到原高度所用时间 $t = \dfrac{2v_0\sin\theta}{g}$。
+\[
+  \vec{I}_{重} = -mg t \vec{j} = -2mv_0\sin\theta\,\vec{j}.
+\]
+\[
+  \Delta\vec{P} = m\vec{v} - m\vec{v}_0 = -2mv_0\sin\theta\,\vec{j}.
+\]
+（验证：动量增量等于重力冲量。）
+
+% === 例 2 ===
+\item 选反弹方向为正：$\Delta\vec{P} = m\vec{v} - m\vec{v}_0 = 0.5 \times 8 - 0.5 \times (-10) = 9\,\mathrm{kg\cdot m/s}$。
+\[
+  \bar{F} = \frac{\Delta P}{\Delta t} = \frac{9}{0.1} = 90\,\mathrm{N}.
+\]
+
+% === 例 3 ===
+\item 水平方向动量守恒：$0 = M V + m v$。$t$ 时刻分别积分得 $MS = ms$。结合 $S + s = L$：
+\[
+  S = \frac{m}{M + m}L = \frac{50}{200} \times 4 = 1\,\mathrm{m},\quad s = L - S = 3\,\mathrm{m}.
+\]
+
+% === 例 4 ===
+\item 子弹穿过第一木块时，两木块速度相同 $v_1$：
+\[
+  F\Delta t_1 = (m_1 + m_2)v_1 - 0 \Rightarrow v_1 = \frac{F\Delta t_1}{m_1 + m_2}.
+\]
+子弹穿过第二木块（此时第一木块已脱离研究对象）：
+\[
+  F\Delta t_2 = m_2 v_2 - m_2 v_1 \Rightarrow v_2 = \frac{F\Delta t_1}{m_1 + m_2} + \frac{F\Delta t_2}{m_2}.
+\]
+
+% === 例 5 ===
+\item 落盘链条重力 $mg = \dfrac{M}{L}gx$；附加冲力 $F = \dfrac{\mathrm{d}m}{\mathrm{d}t}v = \dfrac{M}{L} \cdot 2gx = \dfrac{2M}{L}gx$。
+\[
+  N = \frac{M}{L}gx + \frac{2M}{L}gx = \frac{3M}{L}gx.
+\]
+是已落盘链条重量的 3 倍。
+
+% === 例 6 ===
+\item 设 $m$ 相对斜面速度 $v_r$（沿斜面向下），斜面相对地速度 $V$（向左）。水平动量守恒：
+\[
+  m v_x = M V,\quad v_x = v_r\cos\theta - V.
+\]
+机械能守恒：$mg(H - h) = \dfrac{1}{2}MV^2 + \dfrac{1}{2}m(v_r^2\cos^2\theta + v_r^2\sin^2\theta) = \dfrac{1}{2}(M + m)V^2 + m V v_r\cos\theta$。
+联立得：
+\[
+  V = m\sqrt{\frac{2g(H - h)\cos^2\theta}{(M + m)(M + m\sin^2\theta)}},\quad
+  v_r = \sqrt{\frac{2g(H - h)(M + m)}{M + m\sin^2\theta}}.
+\]
+
+% === 例 7 ===
+\item 动量守恒：$m_1 v_{10} + m_2 v_{20} = m_1 v_1 + m_2 v_2$。\\
+动能守恒：$\dfrac{1}{2}m_1 v_{10}^2 + \dfrac{1}{2}m_2 v_{20}^2 = \dfrac{1}{2}m_1 v_1^2 + \dfrac{1}{2}m_2 v_2^2$。
+\[
+  v_1 = \frac{(m_1 - m_2)v_{10} + 2m_2 v_{20}}{m_1 + m_2},\quad
+  v_2 = \frac{(m_2 - m_1)v_{20} + 2m_1 v_{10}}{m_1 + m_2}.
+\]
+
+% === 例 8 ===
+\item 嵌入型，完全非弹性碰撞：$v = \dfrac{m_1 v_0}{m_1 + m_2}$。\\
+动能损失：$\Delta E_k = \dfrac{1}{2}m_1 v_0^2 - \dfrac{1}{2}(m_1 + m_2)v^2 = \dfrac{1}{2}\dfrac{m_1 m_2}{m_1 + m_2}v_0^2$。
+
+% === 例 9 ===
+\item 动量守恒：$m_1 v_{10} + m_2 v_{20} = m_1 v_1 + m_2 v_2$。\\
+恢复系数：$e = \dfrac{v_2 - v_1}{v_{10} - v_{20}}$。\\
+联立解：
+\[
+  v_1 = v_{10} - \frac{(1 + e)m_2(v_{10} - v_{20})}{m_1 + m_2},\quad
+  v_2 = v_{20} + \frac{(1 + e)m_1(v_{10} - v_{20})}{m_1 + m_2}.
+\]
+
+% === 例 10 ===
+\item 火箭喷气：$m\,\mathrm{d}v = -u\,\mathrm{d}m$，积分：
+\[
+  \int_0^v \mathrm{d}v = -u\int_{M_0}^{M}\frac{\mathrm{d}m}{m} \Rightarrow v = u\ln\frac{M_0}{M}.
+\]
+
+% === 例 11 ===
+\item 取杆左端为原点，$\mathrm{d}m = \dfrac{M}{L}\mathrm{d}x$。
+\[
+  x_C = \frac{\int_0^L x\,\mathrm{d}m}{M} = \frac{1}{M}\int_0^L \frac{M}{L}x\,\mathrm{d}x = \frac{1}{2}L.
+\]
+质心位于杆中点。
+
+% === 例 12 ===
+\item (1) 水平方向动量守恒：$0 = M V + m(v_x - V)$，其中炮弹相对地速度 $v_x = u\cos\alpha - V$。
+\[
+  V = -\frac{mu\cos\alpha}{M + m}.
+\]
+反冲速度大小 $|V| = \dfrac{mu\cos\alpha}{M + m}$（方向与 $u$ 水平分量相反）。\\
+(2) 水平方向质心位置不变：$0 = \Delta t \cdot M \cdot \bar{V} + m \cdot l\cos\alpha$（平均动量守恒积分得位移）：
+\[
+  s_M = \frac{ml\cos\alpha}{M + m}.
+\]
+
+% === 例 13 ===
+\item (1) 由动量定理 $\mu m g t = mv - 0 \Rightarrow t = \dfrac{v}{\mu g}$。\\
+(2) 由动能定理 $\mu m g x = \dfrac{1}{2}mv^2 \Rightarrow x = \dfrac{v^2}{2\mu g}$。\\
+(3) 摩擦耗能 $\Delta E = \mu m g (x - x')$，其中 $x' = vt$：
+\[
+  \Delta E = \mu m g\left(\frac{v^2}{2\mu g} - v \cdot \frac{v}{\mu g}\right) = -\frac{1}{2}mv^2.
+\]
+耗能恰等于行李获得的动能（系统内转化为热）。
+
+% === 例 14 ===
+\item 水平方向动量守恒：$mv + m'V = 0$，机械能守恒：$mgR = \dfrac{1}{2}mv^2 + \dfrac{1}{2}m'V^2$。
+设 $B$ 点 $m$ 相对地速度 $v$、$m'$ 速度 $V$。$B$ 点两物体共速系下 $m$ 相对 $m'$ 速度 $u_{rel}$：
+\[
+  u_{rel}^2 = (v - V)^2 = (v + m v/m')^2 = \frac{(m + m')^2}{m'^2}v^2.
+\]
+由机械能守恒 $mgR = \dfrac{1}{2}\dfrac{m(m + m')}{m'}u_{rel}^2$，解得 $u_{rel}^2 = \dfrac{2m'gR}{m + m'}$。
+
+在 $B$ 点，$m$ 相对 $m'$ 做圆周运动，向心加速度 $a_n = \dfrac{u_{rel}^2}{R} = \dfrac{2m'g}{m + m'}$。\\
+$m'$ 视为非惯性系，惯性力水平作用不影响竖直方向。对 $m$ 写牛顿第二定律（竖直向上为正）：
+\[
+  N - mg = m a_n \Rightarrow N = mg + m \cdot \frac{2m'g}{m + m'} = \frac{(3m + 2m')mg}{m + m'}.
+\]
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,202 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{listings}
+
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setlist{nosep,leftmargin=2em}
+
+\title{第10章\quad 恒定磁场}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{知识点总结}
+
+\subsection{稳恒电流}
+
+\begin{itemize}
+    \item \textbf{电流}：单位时间通过导体横截面的电量，$I=\mathrm dQ/\mathrm dt$，方向为正电荷运动方向，单位 A。
+    \item \textbf{电流密度} $\vec j$：$\vec j=\dfrac{\mathrm dI}{\mathrm dS_\perp}\vec n$，方向为正电荷定向运动方向。
+    \item \textbf{电流与电流密度的关系}：$\mathrm dI=\vec j\cdot\mathrm d\vec S$，$I=\displaystyle\int_S\vec j\cdot\mathrm d\vec S$。
+    \item \textbf{电流连续性方程}（积分式）：$\displaystyle\oint_S\vec j\cdot\mathrm d\vec S=-\dfrac{\mathrm d}{\mathrm dt}\iiint_V\rho_e\mathrm dV$；微分式：$\nabla\cdot\vec j+\partial\rho_e/\partial t=0$。
+    \item \textbf{稳恒电流条件}：$\displaystyle\oint_S\vec j\cdot\mathrm d\vec S=0$，$\nabla\cdot\vec j=0$；电流线为无头无尾的闭合曲线；沿电流管各截面电流相等。
+    \item \textbf{欧姆定律微分形式}：$\vec j=\sigma\vec E$，$\sigma$ 为电导率，$\rho=1/\sigma$ 为电阻率；经典微观式 $\sigma=Nq^2\tau/m$。
+    \item \textbf{电动势}：将单位正电荷从负极通过电源内部推到正极，非静电力所做的功 $\varepsilon=\displaystyle\int_E^+\vec E_K\cdot\mathrm d\vec l$；闭合回路 $\varepsilon=\displaystyle\oint\vec E_K\cdot\mathrm d\vec l$。
+    \item 考虑非静电场后欧姆定律：$\vec j=\sigma(\vec E+\vec E_K)$；稳恒时 $\nabla\cdot\vec E=0$，导体内部宏观自由电荷密度 $\rho=0$。
+\end{itemize}
+
+\subsection{磁场与毕奥-萨伐尔定律}
+
+\begin{itemize}
+    \item \textbf{磁场性质}：对运动电荷（电流）有力的作用；具有能量。
+    \item \textbf{磁感应强度} $\vec B$：方向沿电流元受力为零的方向，大小 $B=\mathrm dF_\text{max}/(I\,\mathrm dl)$。
+    \item \textbf{安培力公式}：$\mathrm d\vec F=I\,\mathrm d\vec l\times\vec B$。
+    \item \textbf{毕奥-萨伐尔定律}：$\mathrm d\vec B=\dfrac{\mu_0}{4\pi}\dfrac{I\,\mathrm d\vec l\times\vec r^0}{r^2}$，$\mu_0=4\pi\times10^{-7}\,\text{N/A}^2$。
+    \item \textbf{整个载流导线的磁场}：$\vec B=\displaystyle\int\mathrm d\vec B=\dfrac{\mu_0}{4\pi}\displaystyle\int\dfrac{I\,\mathrm d\vec l\times\vec r^0}{r^2}$。
+    \item \textbf{典型结果}：
+    \begin{itemize}
+        \item 无限长直导线（距导线 $a$）：$B=\dfrac{\mu_0 I}{2\pi a}$（方向：右螺旋）。
+        \item 有限长直导线端点外：$B=\dfrac{\mu_0 I}{4\pi a}(\cos\theta_1-\cos\theta_2)$，$\theta_1,\theta_2$ 为电流元方向与径向的夹角。
+        \item 载流圆环轴线：$B=\dfrac{\mu_0 IR^2}{2(R^2+x^2)^{3/2}}$；圆心处 $B=\dfrac{\mu_0 I}{2R}$。
+        \item 一段圆弧在圆心处：$B=\dfrac{\mu_0 I\phi}{4\pi R}$（$\phi$ 圆心角）。
+        \item $N$ 匝圆线圈圆心：$B=\dfrac{\mu_0 NI}{2R}$。
+        \item 螺线管轴线：$B=\dfrac{\mu_0 nI}{2}(\cos\beta_2-\cos\beta_1)$；无限长 $B=\mu_0 nI$；半无限长 $B=\mu_0 nI/2$。
+        \item 无限大载流平板：$B=\mu_0 i/2$。
+    \end{itemize}
+    \item \textbf{磁矩}：$\vec p_m=I S\vec n$（$\vec n$ 为线圈平面法向，按右螺旋），远区 $B=\dfrac{\mu_0}{2\pi}\dfrac{\vec p_m}{x^3}$。
+    \item \textbf{运动电荷的磁场}：$\vec B=\dfrac{\mu_0}{4\pi}\dfrac{q\vec v\times\vec r^0}{r^2}$。
+\end{itemize}
+
+\subsection{磁高斯定理}
+
+\begin{itemize}
+    \item \textbf{磁感应线（磁力线）}：无头无尾的闭合曲线，与电流右手螺旋套连，不相交；疏密反映 $B$ 大小。
+    \item \textbf{磁通量}：$\Phi_m=\displaystyle\int_S\vec B\cdot\mathrm d\vec S$；闭合曲面 $\Phi_m=\displaystyle\oint_S\vec B\cdot\mathrm d\vec S=0$（穿出为正）。
+    \item \textbf{磁高斯定理}：$\displaystyle\oint_S\vec B\cdot\mathrm d\vec S=0$，$\nabla\cdot\vec B=0$——磁场是\textbf{无源场}。
+\end{itemize}
+
+\subsection{安培环路定理}
+
+\begin{itemize}
+    \item \textbf{安培环路定理}（真空）：$\displaystyle\oint_L\vec B\cdot\mathrm d\vec l=\mu_0\sum I_{i,\text{内}}$（右螺旋为正）；微分式 $\nabla\times\vec B=\mu_0\vec j$。
+    \item 磁场是\textbf{有旋场}；定理只适用于闭合电流，对一段载流导线不成立。
+    \item \textbf{典型应用}：
+    \begin{itemize}
+        \item 无限长圆柱面电流：$r>R$ 时 $B=\mu_0 I/(2\pi r)$；$r<R$ 时 $B=0$。
+        \item 无限长圆柱体电流：$r>R$ 时 $B=\mu_0 I/(2\pi r)$；$r<R$ 时 $B=\mu_0 I r/(2\pi R^2)$。
+        \item 无限长螺线管：管内 $B=\mu_0 nI$，管外 $B=0$。
+        \item 螺绕环：$B_{\text{内}}=\mu_0 NI/(2\pi r)$，$B_{\text{外}}=0$；细环近似 $B=\mu_0 nI$。
+        \item 无限大平面电流：$B=\mu_0 i/2$；厚板 $B_{\text{内}}=\mu_0 jx$（$x$ 到中面距离），$B_{\text{外}}=\mu_0 jd/2$。
+    \end{itemize}
+\end{itemize}
+
+\subsection{磁场对电流的作用}
+
+\begin{itemize}
+    \item \textbf{安培定律}：$\mathrm d\vec F=I\,\mathrm d\vec l\times\vec B$，$\vec F=\displaystyle\int\mathrm d\vec F$。
+    \item \textbf{匀强磁场中闭合电流}：$\vec F=\bigl(\displaystyle\oint I\,\mathrm d\vec l\bigr)\times\vec B=0$。
+    \item \textbf{平行长直载流导线单位长度作用力}：$f=\mu_0 I_1 I_2/(2\pi a)$，同向相吸，反向相斥。
+    \item \textbf{匀强磁场对平面载流线圈}：
+    \begin{itemize}
+        \item $\sum\vec F=0$（线圈无平动）；
+        \item 用磁矩表示：$\vec M=\vec p_m\times\vec B$，$M_{\max}=p_m B$。
+        \item $N$ 匝：$\vec M=N\vec p_m\times\vec B$。
+    \end{itemize}
+    \item \textbf{稳定/非稳定平衡}：$\varphi=0$ 时稳定；$\varphi=\pi$ 时非稳定。
+    \item \textbf{磁力做功}：
+    \begin{itemize}
+        \item 转动：$A=\displaystyle\int_{\Phi_{m1}}^{\Phi_{m2}}I\,\mathrm d\Phi_m=I(\Phi_{m2}-\Phi_{m1})=I\Delta\Phi_m$。
+        \item 平移：$A=\displaystyle\int\vec F\cdot\mathrm d\vec l$。
+    \end{itemize}
+    \item \textbf{注意}：洛伦兹力不做功，但安培力做功——因为载流子还受电场力。
+\end{itemize}
+
+\subsection{带电粒子在磁场中的运动}
+
+\begin{itemize}
+    \item \textbf{洛伦兹力}：$\vec f=q\vec v\times\vec B$；$\vec f\perp\vec v$，对运动电荷不做功。
+    \item \textbf{一般受力}：$\vec F=q\vec E+q\vec v\times\vec B=\mathrm d\vec p/\mathrm dt$。
+    \item \textbf{$\vec v\parallel\vec B$}：直线运动。
+    \item \textbf{$\vec v\perp\vec B$}：圆周运动，半径 $R=\dfrac{mv}{qB}$，周期 $T=\dfrac{2\pi m}{qB}$，频率 $f=\dfrac{qB}{2\pi m}$（与 $v$ 无关）。
+    \item \textbf{一般情况}（$\vec v$ 与 $\vec B$ 成 $\theta$ 角）：
+    \begin{itemize}
+        \item $v_\parallel=v\cos\theta,\ v_\perp=v\sin\theta$；
+        \item 螺旋半径 $R=\dfrac{mv\sin\theta}{qB}$，螺距 $h=v_\parallel T=\dfrac{2\pi mv\cos\theta}{qB}$。
+    \end{itemize}
+    \item \textbf{磁聚焦}：当 $\theta$ 很小时，发散粒子束经一个周期重新会聚。
+    \item \textbf{磁约束与磁镜}：强磁场约束带电粒子绕磁力线运动，纵向速度减小可被"反射"形成磁瓶。
+    \item \textbf{霍尔效应}：载流导体板垂直磁场时两侧出现电势差 $U_{ab}=\dfrac{IB}{nqd}$，霍尔系数 $K=\dfrac{1}{nq}$；$K>0$ 为 P 型，$K<0$ 为 N 型。
+\end{itemize}
+
+\subsection{物质的磁性}
+
+\begin{itemize}
+    \item \textbf{磁介质的分类}：$B/B_0=\mu_r$。
+    \begin{itemize}
+        \item 顺磁质：$\mu_r>1$，$B>B_0$（锰、铬、铂、氧等）；
+        \item 抗磁质：$\mu_r<1$，$B<B_0$（锌、铜、水银、铅等）；
+        \item 铁磁质：$\mu_r\gg 1$（$10^2\sim10^4$），非恒定，磁滞回线。
+    \end{itemize}
+    \item \textbf{磁化强度}：$\vec M=\displaystyle\lim_{\Delta V\to 0}\dfrac{\sum\vec p_i}{\Delta V}$，单位 A/m。
+    \item \textbf{分子磁矩} $\vec p_m=\sum\vec p_{m_i}$；抗磁质 $\vec p_m=0$，顺磁质 $\vec p_m\neq 0$。
+    \item \textbf{磁化电流（束缚电流）}：分子环流叠加形成表面电流 $I_S$；$\vec i\,'=\vec M\times\vec e_n$，$\displaystyle\oint_L\vec M\cdot\mathrm d\vec l=\sum I_i$。
+    \item \textbf{磁场强度} $\vec H=\vec B/\mu_0-\vec M$；单位 A/m。
+    \item \textbf{$\vec B$、$\vec M$、$\vec H$ 关系}（各向同性线性介质）：$\vec M=\chi_m\vec H$，$\mu_r=1+\chi_m$，$\vec B=\mu_0\mu_r\vec H=\mu\vec H$。
+    \item \textbf{有磁介质时的安培环路定理}：$\displaystyle\oint_L\vec H\cdot\mathrm d\vec l=\sum I_{0,\text{内}}$（只计传导电流）。
+    \item \textbf{有磁介质时的磁高斯定理}：$\displaystyle\oint_S\vec B\cdot\mathrm d\vec S=0$ 仍成立。
+    \item \textbf{磁场的边值关系}：$\vec n\times(\vec H_2-\vec H_1)=\vec j$，$\vec n\cdot(\vec B_2-\vec B_1)=0$；无自由电流时 $B_{n1}=B_{n2}$，$H_{t1}=H_{t2}$。
+    \item \textbf{迈斯纳效应}：超导体体内 $\vec B=0$。
+    \item \textbf{居里点}：铁磁质温度高于 $T_C$ 时转变为顺磁质。
+\end{itemize}
+
+\section{公式汇总}
+
+\begin{enumerate}[leftmargin=3em,label=\textbf{公式\arabic*}：,ref=公式\arabic*]
+
+    \item \textbf{电流强度}：$I=\dfrac{\mathrm dQ}{\mathrm dt}$；\textbf{电流密度}：$\vec j=\dfrac{\mathrm dI}{\mathrm dS_\perp}\vec n$，$\mathrm dI=\vec j\cdot\mathrm d\vec S$。
+
+    \item \textbf{电流连续性方程}：$\displaystyle\oint_S\vec j\cdot\mathrm d\vec S=-\dfrac{\mathrm d}{\mathrm dt}\iiint_V\rho_e\mathrm dV$，$\nabla\cdot\vec j+\partial\rho_e/\partial t=0$；稳恒 $\nabla\cdot\vec j=0$。
+
+    \item \textbf{欧姆定律（微分）}：$\vec j=\sigma\vec E$；\textbf{电导率微观}：$\sigma=Nq^2\tau/m$。
+
+    \item \textbf{电动势}：$\varepsilon=\displaystyle\int_B^A\vec E_K\cdot\mathrm d\vec l$；闭合 $\varepsilon=\displaystyle\oint\vec E_K\cdot\mathrm d\vec l$。
+
+    \item \textbf{毕奥-萨伐尔定律}：$\mathrm d\vec B=\dfrac{\mu_0}{4\pi}\dfrac{I\,\mathrm d\vec l\times\vec r^0}{r^2}$，$\mu_0=4\pi\times10^{-7}\,\text{N/A}^2$。
+
+    \item \textbf{典型磁场}：
+    \begin{itemize}
+        \item 无限长直导线：$B=\dfrac{\mu_0 I}{2\pi a}$；
+        \item 圆环轴线：$B=\dfrac{\mu_0 IR^2}{2(R^2+x^2)^{3/2}}$；圆心 $B=\dfrac{\mu_0 I}{2R}$；一段圆弧 $B=\dfrac{\mu_0 I\phi}{4\pi R}$；
+        \item 螺线管：$B=\dfrac{\mu_0 nI}{2}(\cos\beta_2-\cos\beta_1)$；半无限 $B=\mu_0 nI/2$；无限 $B=\mu_0 nI$；
+        \item 无限大平面电流：$B=\mu_0 i/2$；\textbf{磁矩}：$\vec p_m=IS\vec n$。
+    \end{itemize}
+
+    \item \textbf{运动电荷磁场}：$\vec B=\dfrac{\mu_0}{4\pi}\dfrac{q\vec v\times\vec r^0}{r^2}$。
+
+    \item \textbf{磁通量}：$\Phi_m=\displaystyle\int_S\vec B\cdot\mathrm d\vec S$；\textbf{磁高斯定理}：$\displaystyle\oint_S\vec B\cdot\mathrm d\vec S=0$，$\nabla\cdot\vec B=0$。
+
+    \item \textbf{安培环路定理}（真空）：$\displaystyle\oint_L\vec B\cdot\mathrm d\vec l=\mu_0\sum I_{i,\text{内}}$，$\nabla\times\vec B=\mu_0\vec j$。
+
+    \item \textbf{典型应用}：
+    \begin{itemize}
+        \item 无限长圆柱面电流 $r>R$：$B=\mu_0 I/(2\pi r)$，$r<R$：$B=0$；
+        \item 圆柱体电流 $r<R$：$B=\mu_0 I r/(2\pi R^2)$；
+        \item 螺绕环 $B=\mu_0 NI/(2\pi r)$；
+        \item 无限大平面电流 $B=\mu_0 i/2$。
+    \end{itemize}
+
+    \item \textbf{安培力}：$\mathrm d\vec F=I\,\mathrm d\vec l\times\vec B$；\textbf{平行长直导线}：$f=\mu_0 I_1 I_2/(2\pi a)$。
+
+    \item \textbf{磁力矩}：$\vec M=\vec p_m\times\vec B$（$N$ 匝 $\vec M=N\vec p_m\times\vec B$）。
+
+    \item \textbf{磁力做功}：$A=\displaystyle\int_{\Phi_{m1}}^{\Phi_{m2}}I\,\mathrm d\Phi_m=I\Delta\Phi_m$。
+
+    \item \textbf{洛伦兹力}：$\vec f=q\vec v\times\vec B$；\textbf{总力}：$\vec F=q\vec E+q\vec v\times\vec B$。
+
+    \item \textbf{圆周运动}：$R=\dfrac{mv}{qB}$，$T=\dfrac{2\pi m}{qB}$，$f=\dfrac{qB}{2\pi m}$。
+
+    \item \textbf{螺旋运动}：$R=\dfrac{mv_\perp}{qB}=\dfrac{mv\sin\theta}{qB}$，$h=\dfrac{2\pi mv_\parallel}{qB}=\dfrac{2\pi mv\cos\theta}{qB}$。
+
+    \item \textbf{霍尔效应}：$U_{ab}=\dfrac{IB}{nqd}$，$K=\dfrac{1}{nq}$（霍尔系数）。
+
+    \item \textbf{磁介质}：
+    \begin{itemize}
+        \item $\vec M=\displaystyle\lim_{\Delta V\to 0}\dfrac{\sum\vec p_i}{\Delta V}$，$\vec i\,'=\vec M\times\vec e_n$；
+        \item $\vec H=\vec B/\mu_0-\vec M$，$\vec M=\chi_m\vec H$，$\mu_r=1+\chi_m$；
+        \item $\vec B=\mu_0\mu_r\vec H=\mu\vec H$；
+        \item \textbf{有介质安培环路定理}：$\displaystyle\oint_L\vec H\cdot\mathrm d\vec l=\sum I_{0,\text{内}}$。
+    \end{itemize}
+
+    \item \textbf{边值关系}：$\vec n\times(\vec H_2-\vec H_1)=\vec j$，$\vec n\cdot(\vec B_2-\vec B_1)=0$；无自由电流时 $B_{n1}=B_{n2}$，$H_{t1}=H_{t2}$。
+
+\end{enumerate}
+
+\end{document}

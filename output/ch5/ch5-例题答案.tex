@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{enumitem}
+\title{第 5 章\ 质点的动量矩与动量矩守恒\ 例题答案}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[label=\textbf{例\arabic*.}, leftmargin=*]
+
+% === 例 1 ===
+\item $\vec{P} = m\vec{v} = 0.1 \times (2\vec{i} - 5\vec{j})\,\mathrm{kg\cdot m/s}$，$\vec{r} = (3\vec{i} + 4\vec{j})\,\mathrm{m}$。
+\[
+  \vec{L} = \vec{r}\times m\vec{v} = 0.1\begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ 3 & 4 & 0 \\ 2 & -5 & 0 \end{vmatrix} = 0.1 \times (3 \cdot (-5) - 4 \cdot 2)\vec{k} = -2.3\,\vec{k}\,\mathrm{kg\cdot m^2/s}.
+\]
+
+% === 例 2 ===
+\item 对圆心 $O$：$\vec{v}\perp\vec{r}$，$L_O = mRv$；方向沿 $\vec{\omega}$ 方向。
+对圆周上某点 $A$：设 $\vec{r} = \vec{OA} + \vec{AP}$，$\vec{r}\times m\vec{v}$ 中 $m\vec{v}$ 始终垂直于 $OA$ 平面内由 $A$ 指向 $P$ 的方向，得 $L_A = mRv$（结果与对圆心相同，方向在 $A$ 点处沿 $\vec{\omega}$ 方向）。
+
+% === 例 3 ===
+\item 对圆心 $O$：$\vec{v}\perp\vec{r}$，$L_O = mRv = 0.1 \times 0.5 \times 2 = 0.1\,\mathrm{kg\cdot m^2/s}$；方向由右螺旋法则，沿 $\vec{\omega}$ 方向（向上或向下取决于圆周方向）。
+
+% === 例 4 ===
+\item 设球位矢 $\vec{r}_1$（从 $B$ 出发）。$\vec{L}_B = \vec{r}_1\times m\vec{v}$，$|\vec{L}_B| = r_1 mv$。因 $v\perp$ 杆所在竖直平面内的某一径向方向，利用 $v = r\omega$、$r_1\sin\alpha = r$：
+\[
+  |\vec{L}_B| = r_1 \cdot mv = \frac{r}{\sin\alpha} \cdot m r\omega = \frac{mr^2\omega}{\sin\alpha}.
+\]
+方向在 $B$ 点不固定（绕 $z$ 轴旋转），但沿 $z$ 轴的投影 $L_{Bz} = L_B\sin\alpha = mr^2\omega$（守恒）。
+
+% === 例 5 ===
+\item 质点做直线运动，$\vec{r} = x\vec{i}$，$\vec{v} = \dot{x}\vec{i}$，$\vec{a} = \ddot{x}\vec{i}$，$\vec{F} = m\ddot{x}\vec{i}$。
+\[
+  \vec{M} = \vec{r}\times\vec{F} = x\vec{i}\times m\ddot{x}\vec{i} = 0.
+\]
+直线运动中，对路径上原点的力矩恒为零（力的作用线过原点）。
+
+% === 例 6 ===
+\item 引力是有心力，对地心的力矩为零，卫星对地心动量矩守恒。
+$R_A = 439 + 6370 = 6809\,\mathrm{km}$，$R_B = 2384 + 6370 = 8754\,\mathrm{km}$。
+$mv_A R_A = mv_B R_B$
+\[
+  v_B = v_A \cdot \frac{R_A}{R_B} = 8.12 \times \frac{6809}{8754} \approx 6.32\,\mathrm{km/s}.
+\]
+
+% === 例 7 ===
+\item (1) 绳作用力是有心力（指向 $O$），对 $O$ 力矩为零，动量矩守恒：
+\[
+  mv_0 r_0 = mvr \Rightarrow v = \frac{v_0 r_0}{r}.
+\]
+(2) 由动能定理：
+\[
+  A = \frac{1}{2}mv^2 - \frac{1}{2}mv_0^2 = \frac{1}{2}mv_0^2\biggl[\biggl(\frac{r_0}{r}\biggr)^2 - 1\biggr].
+\]
+
+% === 例 8 ===
+\item 有心力下动量矩守恒：$mr_0^2\omega_0 = mr^2\omega$
+\[
+  \omega = \frac{r_0^2}{r^2}\omega_0 = \biggl(\frac{r_0}{r}\biggr)^2 \omega_0.
+\]
+（角速度反比于半径平方，与书中例题 1 结论一致。）
+
+% === 例 9 ===
+\item (1) 以滑轮轴为参考点，外力矩只有两小孩所受重力矩，大小相等方向相反，系统角动量守恒：$J = mR(v_1 - v_2) = $ 常数。初始 $v_1 = v_2 = 0$，$J = 0$，故 $v_1 = v_2$ 始终成立——**同时到达滑轮**。\\
+(2) 若 $m_1 \ne m_2$：外力矩 $M = (m_2 - m_1)gR \ne 0$，$\mathrm{d}J/\mathrm{d}t = (m_2 - m_1)gR$。\\
+若 $m_1 > m_2$：$\mathrm{d}J/\mathrm{d}t < 0$，$J < 0$，$m_1 v_1 < m_2 v_2$，$v_1 < v_2$，$m_1$ 慢；$m_2$ 端（较轻的小孩）上升快，先到滑轮。
+**结论：体轻的小孩先到滑轮。**
+
+% === 例 10 ===
+\item 引力场（有心力），故动量矩守恒 + 机械能守恒：
+\begin{align}
+  \frac{1}{2}mv_0^2 - \frac{GMm}{4R} &= \frac{1}{2}mv^2 - \frac{GMm}{R} \\
+  mv_0 \cdot 4R \cdot \sin\theta &= mvR
+\end{align}
+由 (2)：$v = 4v_0\sin\theta$。\\
+代入 (1)：$\dfrac{1}{2}v_0^2 - \dfrac{GM}{4R} = \dfrac{1}{2}(4v_0\sin\theta)^2 - \dfrac{GM}{R}$。
+整理：
+\[
+  8v_0^2\sin^2\theta - v_0^2 = \frac{3GM}{2R} \Rightarrow \sin^2\theta = \frac{1}{4}\biggl(1 + \frac{3GM}{2Rv_0^2}\biggr)
+\]
+\[
+  \sin\theta = \frac{1}{2}\sqrt{1 + \frac{3GM}{2Rv_0^2}},\quad v = v_0\sqrt{1 + \frac{3GM}{2Rv_0^2}}.
+\]
+
+% === 例 11 ===
+\item 库仑引力为有心力（始终指向原子核 $O$），故 $\vec{M}_O = \vec{r}\times\vec{F} = 0$。
+由动量矩定理：$\dfrac{\mathrm{d}\vec{L}}{\mathrm{d}t} = 0$，故 $\vec{L} = mvr\sin\varphi = $ 常数。
+面积速度：
+\[
+  \frac{\mathrm{d}S}{\mathrm{d}t} = \frac{1}{2}rv\sin\varphi = \frac{L}{2m} = \text{常数}.
+\]
+（开普勒第二定律。）
+
+% === 例 12 ===
+\item (1) 对太阳中心动量矩守恒：$mv_1 r_1 = mv_2 r_2$
+\[
+  \frac{v_1}{v_2} = \frac{r_2}{r_1} = \frac{5.3 \times 10^{12}}{8.8 \times 10^{10}} \approx 60.2.
+\]
+(2) 由机械能守恒（近日点与远日点速度垂直于位矢）：
+\[
+  \frac{1}{2}mv_1^2 - \frac{GM_\odot m}{r_1} = \frac{1}{2}mv_2^2 - \frac{GM_\odot m}{r_2}.
+\]
+代入 $v_2 = v_1 r_1/r_2$：
+\[
+  v_1^2\biggl(1 - \frac{r_1^2}{r_2^2}\biggr) = \frac{2GM_\odot}{1}\biggl(\frac{1}{r_1} - \frac{1}{r_2}\biggr).
+\]
+\[
+  v_1 = \sqrt{\frac{2GM_\odot r_2}{r_1(r_1 + r_2)}} = \sqrt{\frac{2 \times 1.33 \times 10^{20} \times 5.3 \times 10^{12}}{8.8 \times 10^{10} \times (8.8 \times 10^{10} + 5.3 \times 10^{12})}} \approx 5.46 \times 10^4\,\mathrm{m/s}.
+\]
+
+\end{enumerate}
+
+\end{document}
