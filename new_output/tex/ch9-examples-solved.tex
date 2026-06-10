@@ -1,0 +1,317 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第9章 静电场} --- 例题解答}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+\item 已知两杆电荷线密度为 $\lambda$，长度为 $L$，相距 $L$。求两带电直杆间的电场力。
+
+\textbf{解：}取 $dq = \lambda\mathrm{d}x$，$dq' = \lambda\mathrm{d}x'$，两电荷元间作用力：
+\[
+\mathrm{d}F = \frac{\lambda\mathrm{d}x \cdot \lambda\mathrm{d}x'}{4\pi\varepsilon_0 (x' - x)^{2}}
+\]
+积分：
+\[
+F = \int_{2L}^{3L}\mathrm{d}x'\int_{0}^{L}\frac{\lambda^{2}}{4\pi\varepsilon_0 (x' - x)^{2}}\mathrm{d}x
+= \frac{\lambda^{2}}{4\pi\varepsilon_0}\ln\frac{4}{3}
+\]
+
+\item 在带电量为 $Q$ 的点电荷产生的静电场中，有一带电量为 $q$ 的点电荷。求 $q$ 在 $a$ 点和 $b$ 点的电势能。
+
+\textbf{解：}选无穷远为电势能零点：
+\[
+W_a = \int_a^{\infty} q\vec{E}\cdot\mathrm{d}\vec{l} = \frac{qQ}{4\pi\varepsilon_0 r_a},\quad
+W_b = \frac{qQ}{4\pi\varepsilon_0 r_b}
+\]
+
+\item（例1）两块等面积的金属平板，分别带电荷 $q_A$ 和 $q_B$，平板面积均为 $S$，两板间距离为 $d$，且满足面积的线度远大于 $d$。求静电平衡时两金属板各表面上的电荷面密度。
+
+\textbf{解：}设4个表面的电荷面密度分别为 $\sigma_1$、$\sigma_2$、$\sigma_3$、$\sigma_4$。
+电荷守恒：
+\[
+\sigma_1 S + \sigma_2 S = q_A,\quad \sigma_3 S + \sigma_4 S = q_B
+\]
+导体内场强为零：
+\[
+E_A = \frac{\sigma_1}{2\varepsilon_0} - \frac{\sigma_2}{2\varepsilon_0} - \frac{\sigma_3}{2\varepsilon_0} - \frac{\sigma_4}{2\varepsilon_0} = 0
+\]
+\[
+E_B = \frac{\sigma_1}{2\varepsilon_0} + \frac{\sigma_2}{2\varepsilon_0} + \frac{\sigma_3}{2\varepsilon_0} - \frac{\sigma_4}{2\varepsilon_0} = 0
+\]
+解得：
+\[
+\sigma_1 = \sigma_4,\quad \sigma_2 = -\sigma_3
+\]
+
+\item（书中例题8.15，p.314）求均匀电场中任一点的电势及任意两点间的电势差。
+
+\textbf{解：}均匀电场沿 $x$ 方向，$u_a - u_b = \displaystyle\int_a^b \vec{E}\cdot\mathrm{d}\vec{l} = E(x_b - x_a)$。
+选 $x = 0$ 处电势为 $u_0$，则 $u_x = u_0 - Ex$，电势沿 $x$ 方向线性减小。
+
+\item（例2）半径为 $R_1$ 的导体球带有电荷 $q$，球外有一个内、外半径为 $R_2$、$R_3$ 的同心导体球壳，壳上带有电量 $Q$。
+
+\textbf{解：}
+(1) 由电势叠加原理：
+\[
+V_1 = \frac{q}{4\pi\varepsilon_0}\left(\frac{1}{R_1} - \frac{1}{R_2} + \frac{1}{R_3}\right) + \frac{Q}{4\pi\varepsilon_0 R_3},\quad
+V_2 = \frac{Q+q}{4\pi\varepsilon_0 R_3}
+\]
+
+(2) $\Delta V = V_1 - V_2 = \dfrac{q}{4\pi\varepsilon_0}\left(\dfrac{1}{R_1} - \dfrac{1}{R_2}\right)$
+
+(3) 导线连接后，电荷分布在球壳外表面：$V_1 = V_2 = \dfrac{Q+q}{4\pi\varepsilon_0 R_3}$，$\Delta V = 0$
+
+(4) 外球接地：$V_2 = 0$，$V_1 = \dfrac{q}{4\pi\varepsilon_0}\left(\dfrac{1}{R_1} - \dfrac{1}{R_2}\right)$
+
+(5) 内球接地：$V_1 = 0$，设内球带 $q'$，由 $V_1 = 0$ 解出 $q'$
+
+\item 求电偶极子在延长线上和中垂线上一点产生的电场强度。
+
+\textbf{解：}延长线上：
+\[
+E = \frac{2xq}{4\pi\varepsilon_0 (x^{2} - l^{2}/4)^{2}} \approx \frac{2p}{4\pi\varepsilon_0 x^{3}}
+\]
+中垂线上：
+\[
+E = -\frac{q}{4\pi\varepsilon_0}\frac{l}{(r^{2} + l^{2}/4)^{3/2}} \approx -\frac{p}{4\pi\varepsilon_0 r^{3}}
+\]
+
+\item（书中例题8.18，p.316）均匀带电圆环半径为 $R$，电荷线密度为 $\lambda$。求圆环轴线上一点的电势。
+
+\textbf{解：}$dq = \lambda\mathrm{d}l$，$r = \sqrt{R^{2} + x^{2}}$，
+\[
+u_P = \int_0^{2\pi R} \frac{\lambda\mathrm{d}l}{4\pi\varepsilon_0\sqrt{R^{2}+x^{2}}}
+= \frac{2\pi R\lambda}{4\pi\varepsilon_0\sqrt{R^{2}+x^{2}}} = \frac{q}{4\pi\varepsilon_0\sqrt{R^{2}+x^{2}}}
+\]
+
+\item 半径为 $R$ 的均匀带电细圆环，带电量为 $q$。求圆环轴线上任一点 $P$ 的电场强度。
+
+\textbf{解：}$dq = \lambda\mathrm{d}l$，由对称性 $E_\perp = 0$，
+\[
+E_x = \frac{1}{4\pi\varepsilon_0}\int\frac{\mathrm{d}q}{r^{2}}\cos\theta
+= \frac{1}{4\pi\varepsilon_0}\frac{q}{r^{2}}\frac{x}{r}
+= \frac{1}{4\pi\varepsilon_0}\frac{qx}{(R^{2}+x^{2})^{3/2}}
+\]
+
+\item（书中例题8.19，p.316）计算半径为 $R$、均匀带电量为 $q$ 的圆形平面板轴线上任意一点的电势。
+
+\textbf{解：}将圆盘分割为同心细圆环，$dq = \sigma\cdot 2\pi r\mathrm{d}r$，$\sigma = \dfrac{q}{\pi R^{2}}$。
+\[
+u_P = \int_0^{R} \frac{\sigma 2\pi r\mathrm{d}r}{4\pi\varepsilon_0\sqrt{r^{2}+x^{2}}}
+= \frac{\sigma}{2\varepsilon_0}\left(\sqrt{R^{2}+x^{2}} - x\right)
+\]
+
+\item（书中例题8.21，p.319）半径为 $R$、带电量为 $q$ 的均匀带电球面。试求球内外任意一点的电势。
+
+\textbf{解：}由高斯定理：$E = 0\;(r < R)$，$E = \dfrac{q}{4\pi\varepsilon_0 r^{2}}\;(r > R)$。
+\[
+r \ge R:\; u = \int_r^{\infty} \frac{q}{4\pi\varepsilon_0 r^{2}}\mathrm{d}r = \frac{q}{4\pi\varepsilon_0 r}
+\]
+\[
+r < R:\; u = \int_R^{\infty} \frac{q}{4\pi\varepsilon_0 r^{2}}\mathrm{d}r = \frac{q}{4\pi\varepsilon_0 R}
+\]
+
+\item 面密度为 $\sigma$ 的圆板在轴线上任一点的电场强度。
+
+\textbf{解：}取圆环 $dq = 2\pi r\mathrm{d}r\cdot\sigma$，
+\[
+\mathrm{d}E = \frac{1}{4\pi\varepsilon_0}\frac{x\mathrm{d}q}{(r^{2}+x^{2})^{3/2}}
+= \frac{x\sigma}{2\varepsilon_0}\frac{r\mathrm{d}r}{(r^{2}+x^{2})^{3/2}}
+\]
+\[
+E = \frac{\sigma}{2\varepsilon_0}\left[1 - \frac{x}{\sqrt{R^{2}+x^{2}}}\right]
+\]
+
+\item 半径为 $R$、带电量为 $q$ 的均匀带电球体。求带电球体的电势分布。
+
+\textbf{解：}由高斯定理：
+\[
+r < R:\; E_1 = \frac{qr}{4\pi\varepsilon_0 R^{3}},\quad
+r \ge R:\; E_2 = \frac{q}{4\pi\varepsilon_0 r^{2}}
+\]
+\[
+u_{\text{外}} = \frac{q}{4\pi\varepsilon_0 r},\quad
+u_{\text{内}} = \int_r^R \frac{qr}{4\pi\varepsilon_0 R^{3}}\mathrm{d}r + \int_R^{\infty} \frac{q}{4\pi\varepsilon_0 r^{2}}\mathrm{d}r
+= \frac{q}{8\pi\varepsilon_0 R^{3}}(3R^{2} - r^{2})
+\]
+
+\item（例3）接地导体球附近有一点电荷，求导体上的感应电荷。
+
+\textbf{解：}接地导体球 $V = 0$。设感应电荷为 $q'_{\text{感}}$，球心 $O$ 点电势：
+\[
+V_O = \frac{q'_{\text{感}}}{4\pi\varepsilon_0 R} + \frac{q}{4\pi\varepsilon_0 d} = 0
+\]
+得：
+\[
+q'_{\text{感}} = -\frac{R}{d}q
+\]
+
+\item（例8.22）"无限长"均匀带电圆柱面的半径为 $R$，单位长度上带电量为 $\lambda$，试求其电势分布。
+
+\textbf{解：}由高斯定理：$E = 0\;(r < R)$，$E = \dfrac{\lambda}{2\pi\varepsilon_0 r}\;(r > R)$。
+选距轴线 $r_0$ 处 $P_0$ 为电势零点，$r > R$ 时：
+\[
+u_P = \int_r^{r_0} \frac{\lambda}{2\pi\varepsilon_0 r}\mathrm{d}r = \frac{\lambda}{2\pi\varepsilon_0}\ln\frac{r_0}{r}
+\]
+$r < R$ 时：
+\[
+u_P = \frac{\lambda}{2\pi\varepsilon_0}\ln\frac{r_0}{R}
+\]
+圆柱面内电势为一常量。
+
+\item（教材例题8.36，p.346）平行板电容器，其中充有两种均匀电介质。求各电介质层中的场强、极板间电势差和电容。
+
+\textbf{解：}作圆柱形高斯面，由 $\displaystyle\oint_S \vec{D}\cdot\mathrm{d}\vec{S} = \sigma_0\Delta S$ 得：
+\[
+D_1 = D_2 = \sigma_0,\quad E_1 = \frac{\sigma_0}{\varepsilon_0\varepsilon_{r1}},\quad
+E_2 = \frac{\sigma_0}{\varepsilon_0\varepsilon_{r2}}
+\]
+电势差：
+\[
+\Delta u = E_1 d_1 + E_2 d_2 = \frac{\sigma_0}{\varepsilon_0}\left(\frac{d_1}{\varepsilon_{r1}} + \frac{d_2}{\varepsilon_{r2}}\right)
+\]
+电容：
+\[
+C = \frac{q}{\Delta u} = \frac{\varepsilon_1\varepsilon_2 S}{\varepsilon_1 d_2 + \varepsilon_2 d_1}
+\]
+
+\item（书中例题8.37，p.347）球形电容器中间充满 $\varepsilon_{r1}$、$\varepsilon_{r2}$ 两层介质，分界线 $R_2$。求电容。
+
+\textbf{解：}做同心球面高斯面，$D = \dfrac{q}{4\pi r^{2}}$。
+\[
+E_1 = \frac{q}{4\pi\varepsilon_0\varepsilon_{r1} r^{2}},\quad
+E_2 = \frac{q}{4\pi\varepsilon_0\varepsilon_{r2} r^{2}}
+\]
+电势差：
+\[
+U = \int_{R_1}^{R_2} E_1\mathrm{d}r + \int_{R_2}^{R_3} E_2\mathrm{d}r
+= \frac{q}{4\pi\varepsilon_0}\left[\frac{1}{\varepsilon_{r1}}\left(\frac{1}{R_1} - \frac{1}{R_2}\right) + \frac{1}{\varepsilon_{r2}}\left(\frac{1}{R_2} - \frac{1}{R_3}\right)\right]
+\]
+\[
+C = \frac{q}{U} = \frac{4\pi\varepsilon_0}{\displaystyle\frac{1}{\varepsilon_{r1}}\left(\frac{1}{R_1} - \frac{1}{R_2}\right) + \frac{1}{\varepsilon_{r2}}\left(\frac{1}{R_2} - \frac{1}{R_3}\right)}
+\]
+
+\item（书中例题8.32，p.335）两平行长直导线半径 $a$，轴间距 $d \gg a$，线电荷密度 $\pm\lambda$。求单位长度电容。
+
+\textbf{解：}$P$ 点场强：$E = \dfrac{\lambda}{2\pi\varepsilon_0}\left(\dfrac{1}{x} + \dfrac{1}{d-x}\right)$。
+电势差：
+\[
+u_1 - u_2 = \int_a^{d-a} \frac{\lambda}{2\pi\varepsilon_0}\left(\frac{1}{x} + \frac{1}{d-x}\right)\mathrm{d}x
+= \frac{\lambda}{\pi\varepsilon_0}\ln\frac{d}{a}
+\]
+单位长度电容：$C = \dfrac{\pi\varepsilon_0}{\ln(d/a)}$
+
+\item（补充例题）同心球面电容器，半径 $R_1$、$R_2$，带 $\pm Q$，下半部充 $\varepsilon_r$ 电介质。
+
+\textbf{解：}由等势体条件，有介质和无介质处 $E$ 相同，但 $D$ 不同。
+上下半球电容并联：$C_1 = \dfrac{2\pi\varepsilon_0 R_1R_2}{R_2 - R_1}$，$C_2 = \dfrac{2\pi\varepsilon_0\varepsilon_r R_1R_2}{R_2 - R_1}$
+总电容：$C = C_1 + C_2 = 2\pi\varepsilon_0(1+\varepsilon_r)\dfrac{R_1R_2}{R_2 - R_1}$
+
+\item 长为 $L$ 的均匀带电直杆，电荷线密度为 $\lambda$。求距杆 $a$ 处 $P$ 点的电场强度。
+
+\textbf{解：}取 $dq = \lambda\mathrm{d}x$，变换变量 $x = -a\cot\theta$，$\mathrm{d}x = a\csc^{2}\theta\mathrm{d}\theta$。
+\[
+E_x = \frac{\lambda}{4\pi\varepsilon_0 a}\int_{\theta_1}^{\theta_2}\cos\theta\mathrm{d}\theta
+= \frac{\lambda}{4\pi\varepsilon_0 a}(\sin\theta_2 - \sin\theta_1)
+\]
+\[
+E_y = \frac{\lambda}{4\pi\varepsilon_0 a}\int_{\theta_1}^{\theta_2}\sin\theta\mathrm{d}\theta
+= \frac{\lambda}{4\pi\varepsilon_0 a}(\cos\theta_1 - \cos\theta_2)
+\]
+无限长直线（$\theta_1 = -\pi/2,\;\theta_2 = \pi/2$）：$E_x = 0$，$E_y = \dfrac{\lambda}{2\pi\varepsilon_0 a}$
+
+\item（书中例题8.38，p.348）平行板电容器 $S$、$d$，充 $\varepsilon_r$ 电介质，充电至 $\Delta u$。
+
+\textbf{解：}
+(1) 电容器能量：
+\[
+W = \frac12 C\Delta u^{2} = \frac12 \frac{\varepsilon_r\varepsilon_0 S}{d}\Delta u^{2}
+\]
+
+(2) 切断电源后 $Q$ 不变，抽出介质：
+\[
+C_0 = \frac{\varepsilon_0 S}{d},\quad
+W' = \frac{Q^{2}}{2C_0} = \frac{(\varepsilon_r\varepsilon_0 S\Delta u/d)^{2}}{2\varepsilon_0 S/d}
+= \frac{\varepsilon_r^{2}\varepsilon_0 S}{2d}\Delta u^{2}
+\]
+外界作功 $A = W' - W = \dfrac12 \varepsilon_r(\varepsilon_r - 1)\dfrac{\varepsilon_0 S}{d}\Delta u^{2}$
+
+\item（书中例题8.33，p.338）半径为 $a$、带电量为 $q$ 的孤立金属球的静电能。
+
+\textbf{解：}$E = \dfrac{q}{4\pi\varepsilon_0 r^{2}}\;(r > a)$。
+\[
+\mathrm{d}W = \frac12\varepsilon_0 E^{2}\cdot 4\pi r^{2}\mathrm{d}r
+= \frac{q^{2}}{8\pi\varepsilon_0 r^{2}}\mathrm{d}r
+\]
+\[
+W = \int_a^{\infty} \frac{q^{2}}{8\pi\varepsilon_0 r^{2}}\mathrm{d}r = \frac{q^{2}}{8\pi\varepsilon_0 a}
+\]
+
+\item（书中例题8.39，p.349）球形电容器充 $\varepsilon_r$ 介质，带 $\pm q$，求电场能量。
+
+\textbf{解：}$D = \dfrac{q}{4\pi r^{2}}$，$E = \dfrac{q}{4\pi\varepsilon_0\varepsilon_r r^{2}}$。
+\[
+\mathrm{d}W = \frac12 DE\cdot 4\pi r^{2}\mathrm{d}r
+= \frac{q^{2}}{8\pi\varepsilon_0\varepsilon_r r^{2}}\mathrm{d}r
+\]
+\[
+W = \int_{R_1}^{R_2} \frac{q^{2}}{8\pi\varepsilon_0\varepsilon_r r^{2}}\mathrm{d}r
+= \frac{q^{2}}{8\pi\varepsilon_0\varepsilon_r}\left(\frac{1}{R_1} - \frac{1}{R_2}\right)
+\]
+
+\item（书中例题8.35，p.339）$C_1 = 1\,\mu\text{F}$，$u_1 = 100\,\text{V}$；$C_2 = 2\,\mu\text{F}$，$u_2 = 200\,\text{V}$。求并联前后静电能。
+
+\textbf{解：}并联前：$W_1 = \dfrac12 C_1 u_1^{2} = 0.005\,\text{J}$，$W_2 = \dfrac12 C_2 u_2^{2} = 0.04\,\text{J}$
+总能量 $W = 0.045\,\text{J}$。
+并联后：$C = C_1 + C_2 = 3\,\mu\text{F}$，$Q = C_1 u_1 + C_2 u_2 = 5\times10^{-4}\,\text{C}$
+\[
+W' = \frac{Q^{2}}{2C} = \frac{(5\times10^{-4})^{2}}{2\times3\times10^{-6}} = 0.042\,\text{J}
+\]
+
+\item 已知"无限长"均匀带电直线的电荷线密度为 $+\lambda$。求距直线 $r$ 处一点 $P$ 的电场强度。
+
+\textbf{解：}电场分布具有轴对称性。过 $P$ 点作以直线为轴、高 $l$ 的圆柱形高斯面。
+\[
+\Phi_e = E\cdot 2\pi r l
+\]
+由高斯定理：$E\cdot 2\pi r l = \dfrac{1}{\varepsilon_0}\lambda l$，得：
+\[
+E = \frac{\lambda}{2\pi\varepsilon_0 r}
+\]
+
+\item 均匀带电球面，总电量为 $Q$，半径为 $R$。求电场强度分布。
+
+\textbf{解：}取同心球面为高斯面。
+$r > R$：$\displaystyle\oint\vec{E}\cdot\mathrm{d}\vec{S} = E\cdot 4\pi r^{2} = \dfrac{Q}{\varepsilon_0}$，$E = \dfrac{Q}{4\pi\varepsilon_0 r^{2}}$
+$r < R$：$\sum q_i = 0$，$E = 0$
+
+\item 已知球体半径为 $R$，带电量为 $q$（电荷体密度为 $\rho$）。求均匀带电球体的电场强度分布。
+
+\textbf{解：}$r \ge R$：$E = \dfrac{q}{4\pi\varepsilon_0 r^{2}} = \dfrac{\rho R^{3}}{3\varepsilon_0 r^{2}}$
+$r < R$：$\displaystyle\oint\vec{E}\cdot\mathrm{d}\vec{S} = E\cdot 4\pi r'^{2} = \frac{1}{\varepsilon_0}\cdot\frac{4}{3}\pi r'^{3}\rho$
+\[
+E = \frac{\rho}{3\varepsilon_0}r = \frac{qr}{4\pi\varepsilon_0 R^{3}}
+\]
+
+\item（书中例题8.11，p.304）已知"无限大"均匀带电平面上电荷面密度为 $\sigma$。求电场强度分布。
+
+\textbf{解：}电场分布具有面对称性。选取圆柱形高斯面：
+\[
+\Phi_e = 2ES = \frac{1}{\varepsilon_0}\sigma S
+\]
+得：
+\[
+E = \frac{\sigma}{2\varepsilon_0}
+\]
+
+\end{enumerate}
+
+\end{document}

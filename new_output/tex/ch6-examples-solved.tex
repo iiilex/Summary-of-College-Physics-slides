@@ -1,0 +1,285 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第6章 刚体力学} --- 例题解答}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+\item（书中例题 5.1，p.182）曲柄连杆机构，曲柄长度为 $r$，与 $x$ 轴的夹角 $\varphi = \omega t$，其中 $\omega$ 为常量。求 $T$ 形连杆在 $t$ 时刻的速度和加速度。
+
+\textbf{解：}$T$ 形连杆平动，其上任意点速度、加速度相同。取 $M$ 点：
+$x = r\cos\omega t$
+\[
+v = \frac{\mathrm{d}x}{\mathrm{d}t} = -r\omega\sin\omega t,\qquad
+a = \frac{\mathrm{d}v}{\mathrm{d}t} = -r\omega^{2}\cos\omega t
+\]
+
+\item 已知棒长 $L$、质量 $M$，在摩擦系数为 $\mu$ 的桌面转动。求摩擦力对 $y$ 轴的力矩。
+
+\textbf{解：}取线元 $\mathrm{d}m = \dfrac{M}{L}\,\mathrm{d}x$，摩擦力 $\mathrm{d}f = \mu\,\mathrm{d}m\,g = \mu\dfrac{M}{L}g\,\mathrm{d}x$。
+摩擦力矩：
+\[
+\mathrm{d}M' = -\mu\frac{M}{L}gx\,\mathrm{d}x
+\]
+\[
+M' = \int_{0}^{L} -\mu\frac{M}{L}gx\,\mathrm{d}x = -\frac12\mu MgL
+\]
+
+\item（书中例题 6.1，p.198）
+\begin{enumerate}
+  \item 均匀细棒绕端点轴：$J = \displaystyle\int_{0}^{l} x^{2}\frac{M}{L}\,\mathrm{d}x = \frac13 ML^{2}$
+  \item 均匀细棒绕中心轴：$J = \displaystyle\int_{-L/2}^{L/2} x^{2}\frac{M}{L}\,\mathrm{d}x = \frac{1}{12} ML^{2}$
+  \item 圆环绕中心轴：$J = \displaystyle\int_{0}^{2\pi R} R^{2}\frac{m}{2\pi R}\,\mathrm{d}l = mR^{2}$
+  \item 圆盘绕中心轴：$J = \displaystyle\int_{0}^{R} r^{2}\frac{2m}{R^{2}}r\,\mathrm{d}r = \frac12 mR^{2}$
+\end{enumerate}
+
+\item 已知书中例题 6.1 求了杆通过中心轴的转动惯量，用平行轴定理求均匀细棒一端点的转动惯量。
+
+\textbf{解：}由平行轴定理：
+\[
+J_{z'} = J_z + M\left(\frac{L}{2}\right)^{2}
+= \frac{1}{12}ML^{2} + \frac14 ML^{2} = \frac13 ML^{2}
+\]
+
+\item 求过圆盘边缘与圆盘中心轴平行的轴的转动惯量。
+
+\textbf{解：}圆盘对中心轴的转动惯量 $J_c = \dfrac12 mR^{2}$，两轴距离 $d = R$，由平行轴定理：
+\[
+I = I_c + md^{2} = \frac12 mR^{2} + mR^{2} = \frac32 mR^{2}
+\]
+
+\item（重点）半径为 $R$、长为 $L$、质量为 $M$ 的实心圆柱体对中心直径的转动惯量。
+
+\textbf{解：}从圆柱上切下薄圆片 $\mathrm{d}M = \dfrac{M}{L}\,\mathrm{d}x$，其对 $x$ 轴的转动惯量 $\mathrm{d}J_x = \dfrac12\,\mathrm{d}M\,R^{2}$。
+由垂直轴定理，对 $z'$ 轴：$\mathrm{d}J_{z'} = \dfrac14\,\mathrm{d}M\,R^{2}$。
+由平行轴定理，对 $z$ 轴：
+\[
+\mathrm{d}J_z = \frac14\,\mathrm{d}M\,R^{2} + \mathrm{d}M\,x^{2}
+\]
+积分：
+\[
+J = \int_{-L/2}^{L/2} \left(\frac14 R^{2} + x^{2}\right)\frac{M}{L}\,\mathrm{d}x
+= \frac14 MR^{2} + \frac{1}{12}ML^{2}
+\]
+即 $J = \dfrac{1}{12}M(3R^{2} + L^{2})$。
+
+检验：细长柱 $L \gg R$ 时 $J \approx \dfrac{1}{12}ML^{2}$（细杆）；薄盘 $L \to 0$ 时 $J = \dfrac14 MR^{2}$（圆盘直径）。
+
+\item（书中例题 6.3，p.202）已知滑轮半径为 $R$、质量为 $M$，绳子不可伸缩，绳子与滑轮间无滑动，轴处无摩擦，两个悬挂物的质量分别为 $m_1$、$m_2$。求两重物的加速度、滑轮的角加速度、绳中的张力。
+
+\textbf{解：}设 $m_1 > m_2$，$m_1$ 向下加速，$m_2$ 向上加速。
+对滑轮（转动定律）：$(T_1 - T_2)R = J\beta = \dfrac12 MR^{2}\beta$
+对 $m_1$：$m_1g - T_1 = m_1a$
+对 $m_2$：$T_2 - m_2g = m_2a$
+牵连关系：$a = R\beta$
+
+解得：
+\[
+a = \frac{m_1 - m_2}{m_1 + m_2 + \dfrac12 M}g,\quad
+\beta = \frac{a}{R},\quad
+T_1 = \frac{2m_1m_2 + \dfrac12 Mm_1}{m_1 + m_2 + \dfrac12 M}g,\quad
+T_2 = \frac{2m_1m_2 + \dfrac12 Mm_2}{m_1 + m_2 + \dfrac12 M}g
+\]
+
+\item（书中例题 6.4，p.202）两个皮带轮半径分别为 $R_1$、$R_2$，质量分别为 $m_1$、$m_2$，分别绕固定轴 $O_1$、$O_2$ 转动，用皮带相连，轮 $1$ 作用力矩 $M_1$，轮 $2$ 有负载力矩 $M_2$，皮带与轮无滑动，轴处无摩擦。求轮 $1$ 的角加速度。
+
+\textbf{解：}设轮 $1$ 受皮带张力 $T_1$、$T_2$，动力学方程：
+轮 $1$：$M_1 + (T_2 - T_1)R_1 = J_1\beta_1$
+轮 $2$：$(T_1 - T_2)R_2 - M_2 = J_2\beta_2$
+牵连关系：$\beta_1 R_1 = \beta_2 R_2$
+不计皮带质量：$T_1 = T_1'$，$T_2 = T_2'$
+解得：
+\[
+\beta_1 = \frac{2(R_2 M_1 - R_1 M_2)}{(m_1 + m_2)R_1^{2}R_2}
+\]
+
+\item（书中例题 6.5，p.202）飞轮齿轮 $1$ 绕转轴 $1$ 的转动惯量 $J_1 = 98.0\,\text{kg}\cdot\text{m}^{2}$，飞轮齿轮 $2$ 绕转轴 $2$ 的转动惯量 $J_2 = 78.4\,\text{kg}\cdot\text{m}^{2}$，两齿轮咬合传动，齿数比 $Z_1:Z_2 = 3:2$，$r_1 = 10\,\text{cm}$，轴 $1$ 从静止在 $10\,\text{s}$ 匀加速到 $1500\,\text{r/min}$。求加在轴 $1$ 上的力矩 $M$ 和齿轮间的相互作用力 $Q$。
+
+\textbf{解：}动力学方程：
+\[
+M - Qr_1 = J_1\beta_1,\qquad Qr_2 = J_2\beta_2
+\]
+齿轮传动关系：$\dfrac{r_1}{r_2} = \dfrac{Z_1}{Z_2}$，$\beta_2 = \dfrac{Z_1}{Z_2}\beta_1$
+角加速度：
+\[
+\beta_1 = \frac{1500}{60}\times 2\pi \times \frac{1}{10} = 5\pi\,\text{s}^{-2}
+\]
+解得：
+\[
+M = \left[J_1 + \left(\frac{Z_1}{Z_2}\right)^{2}J_2\right]\beta_1
+= \left(98.0 + 78.4\times\frac94\right)\times5\pi \approx 4.31\times10^{3}\,\text{N}\!\cdot\!\text{m}
+\]
+\[
+Q = \frac{J_2}{r_1}\left(\frac{Z_1}{Z_2}\right)^{2}\beta_1
+= \frac{78.4}{0.1}\times\frac94\times5\pi \approx 2.77\times10^{4}\,\text{N}
+\]
+
+\item 一根长为 $l$、质量为 $m$ 的均匀细直棒，可绕轴 $O$ 在竖直平面内转动，初始时它在水平位置。求它由此下摆 $\theta$ 角时的角速度 $\omega$。
+
+\textbf{解：}重力对 $O$ 轴的力矩 $M = mg\cdot\dfrac{l}{2}\cos\theta$，转动惯量 $J = \dfrac13 ml^{2}$。
+由转动定律：
+\[
+\beta = \frac{M}{J} = \frac{3g\cos\theta}{2l} = \frac{\mathrm{d}\omega}{\mathrm{d}t} = \omega\frac{\mathrm{d}\omega}{\mathrm{d}\theta}
+\]
+\[
+\int_{0}^{\omega} \omega\,\mathrm{d}\omega = \int_{0}^{\theta} \frac{3g\cos\theta}{2l}\,\mathrm{d}\theta
+\]
+\[
+\frac12\omega^{2} = \frac{3g}{2l}\sin\theta \;\Longrightarrow\; \omega = \sqrt{\frac{3g\sin\theta}{l}}
+\]
+
+\item 圆盘以 $\omega_0$ 在桌面上转动，受摩擦力而静止。求圆盘静止所需时间。
+
+\textbf{解：}取质元 $\mathrm{d}m = \sigma\cdot2\pi r\,\mathrm{d}r$，摩擦力矩：
+\[
+\mathrm{d}M = r\cdot\mu g\,\mathrm{d}m,\quad
+M = \int_{0}^{R} \mu g r\cdot\frac{m}{\pi R^{2}}2\pi r\,\mathrm{d}r = \frac23\mu mgR
+\]
+由转动定律 $M = -J\dfrac{\mathrm{d}\omega}{\mathrm{d}t}$，$J = \dfrac12 mR^{2}$：
+\[
+-\frac23\mu mgR = \frac12 mR^{2}\frac{\mathrm{d}\omega}{\mathrm{d}t}
+\]
+\[
+\int_{0}^{t} \mathrm{d}t = -\frac{3R}{4\mu g}\int_{\omega_0}^{0} \mathrm{d}\omega \;\Longrightarrow\; t = \frac{3R\omega_0}{4\mu g}
+\]
+
+\item（书上例题 6.6）长为 $l$ 质量分布不均匀的细杆，其线密度为 $\lambda = a + br$（$a$、$b$ 为常量），杆可绕 $A$ 端的 $z$ 轴在铅垂面内转动。将杆从水平位置释放，求杆转到铅垂位置过程中重力做的功。
+
+\textbf{解：}距转轴 $r$ 处取线元 $\mathrm{d}m = \lambda\,\mathrm{d}r$，重力对 $z$ 轴的力矩：
+\[
+\mathrm{d}M_z = -(\lambda\,\mathrm{d}r)gr\sin\theta
+\]
+总力矩：
+\[
+M_z = -g\sin\theta\int_{0}^{l} (a+br)r\,\mathrm{d}r
+= -gl^{2}\left(\frac{a}{2} + \frac{b}{3}l\right)\sin\theta
+\]
+元功 $\mathrm{d}A = M_z\,\mathrm{d}\theta$，积分：
+\[
+A = \int_{\pi/2}^{0} -gl^{2}\left(\frac{a}{2} + \frac{b}{3}l\right)\sin\theta\,\mathrm{d}\theta
+= gl^{2}\left(\frac{a}{2} + \frac{b}{3}l\right)
+\]
+
+\item（书中例题 6.8，p.209）圆盘滑轮质量 $M$、半径 $R$，绕轻绳，绳的另一端系一质量 $m$ 的物体，轴无摩擦，开始时系统静止。求物体下降 $s$ 时滑轮的角速度和角加速度。
+
+\textbf{解：}系统机械能守恒。初态动能 $0$，末态：
+\[
+mgs = \frac12 mv^{2} + \frac12 J\omega^{2}
+\]
+其中 $v = \omega R$，$J = \dfrac12 MR^{2}$，代入得：
+\[
+mgs = \frac12 mR^{2}\omega^{2} + \frac14 MR^{2}\omega^{2}
+\]
+\[
+\omega = \frac{2}{R}\sqrt{\frac{mgs}{2m+M}}
+\]
+角加速度：
+\[
+\beta = \frac{\mathrm{d}\omega}{\mathrm{d}t} = \frac{2mg}{R(2m+M)}
+\]
+
+\item（书中例题 6.13，p.217）长 $l$、质量 $M$，铅直悬挂，初始处于静止状态，杆的中心受一冲量 $I$ 作用，方向与杆垂直。求冲量作用结束时杆的角速度。
+
+\textbf{解：}冲量对转轴的冲量矩为 $\dfrac{l}{2}I$，由动量矩定理：
+\[
+J\omega = \frac{l}{2}I
+\]
+其中 $J = \dfrac13 Ml^{2}$，故
+\[
+\omega = \frac{3I}{2Ml}
+\]
+
+\item（书中例题 6.15，p.220）半径为 $R$、质量为 $4m$ 且均匀分布的转盘可绕铅垂轴无摩擦地转动，盘上站有质量为 $m$ 的四个人，两个人站在盘的边沿，两个人站在 $R/2$ 处，整个系统开始以角速度 $\omega_0$ 转动。此后，人相对于盘作圆周运动，站在边沿上的两人相对于盘的速度为 $\mu$，站在 $R/2$ 处的两人相对于盘的速度为 $2\mu$。求：
+\begin{enumerate}
+  \item 人走动后转盘的角速度；
+  \item 要使转盘停止转动，$\mu$ 的大小。
+\end{enumerate}
+
+\textbf{解：}(1) 人和盘组成的系统对轴的外力矩为零，动量矩守恒：
+\[
+J_\text{盘}\omega_0 + 2mR^{2}\omega_0 + 2m\left(\frac{R}{2}\right)^{2}\omega_0
+= J_\text{盘}\omega + 2mR^{2}\left(\frac{\mu}{R} + \omega\right) + 2m\left(\frac{R}{2}\right)^{2}\left(\frac{2\mu}{R/2} + \omega\right)
+\]
+其中 $J_\text{盘} = \dfrac12(4m)R^{2} = 2mR^{2}$，解得：
+\[
+\omega = \omega_0 - \frac{8\mu}{9R}
+\]
+
+(2) 令 $\omega = 0$，得
+\[
+\mu = \frac{9}{8}R\omega_0
+\]
+
+\item（书中例题 6.16，p.221，重点）长为 $L$、质量为 $M$ 的均匀杆，一端悬挂，由水平位置无初速度地下落，在铅直位置与质量为 $m$ 的物体 $A$ 作完全非弹性碰撞，碰后物体 $A$ 沿摩擦系数为 $\mu$ 的水平面滑动。求物体 $A$ 滑动的距离。
+
+\textbf{解：}分三个阶段分析。
+
+第一阶段（杆由水平下落至铅直）：机械能守恒
+\[
+Mg\frac{L}{2} = \frac12 J\omega^{2},\quad J = \frac13 ML^{2}
+\]
+\[
+\omega = \sqrt{\frac{3g}{L}}
+\]
+
+第二阶段（杆与 $A$ 完全非弹性碰撞）：系统对 $O$ 轴动量矩守恒
+\[
+J\omega = J\omega' + mL^{2}\omega'
+\]
+\[
+\omega' = \frac{M\sqrt{3g/L}}{M + 3m}
+\]
+
+第三阶段（$A$ 滑动至静止）：动能定理
+\[
+\frac12 m(L\omega')^{2} = \mu mg s
+\]
+\[
+s = \frac{L\omega'^{2}}{2\mu g} = \frac{3LM^{2}}{2\mu(M+3m)^{2}}
+\]
+
+\item 一个刚体系统，转动惯量 $J = \dfrac13 ml^{2}$，现有一水平力作用于距轴为 $l'$ 处。求轴对棒的作用力（轴反力）。
+
+\textbf{解：}设轴反力为 $N_x$、$N_y$。
+由转动定律：$Fl' = J\beta$
+水平方向质心运动定理：$F + N_x = ma_c = m\cdot\beta\cdot\dfrac{l}{2}$
+解得：
+\[
+N_x = \frac{3mlFl'}{2J} - F = F\left(\frac{3l'}{2l} - 1\right)
+\]
+当 $l' = \dfrac{2}{3}l$ 时 $N_x = 0$（打击中心）。
+竖直方向：$N_y = mg$。
+
+\item 一长为 $l$ 的匀质细杆，可绕通过中心的固定水平轴在铅垂面内自由转动，开始时杆静止于水平位置。一质量与杆相同的昆虫以速度 $v_0$ 垂直落到距点 $O$ 为 $l/4$ 处的杆上，昆虫落下后立即向杆的端点爬行，如图所示。若要使杆以匀角速度转动，求昆虫沿杆爬行的速度。
+
+\textbf{解：}昆虫落到杆上过程为完全非弹性碰撞，系统对 $O$ 轴动量矩守恒：
+\[
+mv_0\frac{l}{4} = \left(\frac{1}{12}ml^{2} + m\left(\frac{l}{4}\right)^{2}\right)\omega
+\]
+解得：
+\[
+\omega = \frac{12v_0}{7l}
+\]
+
+杆以匀角速度转动，由转动定律 $M_z = \dfrac{\mathrm{d}(J_z\omega)}{\mathrm{d}t} = \omega\dfrac{\mathrm{d}J_z}{\mathrm{d}t}$。
+重力矩 $M_z = mgr\cos\theta$，转动惯量 $J_z = \dfrac{1}{12}ml^{2} + mr^{2}$。
+代入得：
+\[
+mgr\cos\theta = 2m\omega r\frac{\mathrm{d}r}{\mathrm{d}t}
+\]
+昆虫爬行速度：
+\[
+v = \frac{\mathrm{d}r}{\mathrm{d}t} = \frac{g\cos\theta}{2\omega}
+= \frac{7lg}{24v_0}\cos\left(\frac{12v_0}{7l}t\right)
+\]
+
+\end{enumerate}
+
+\end{document}

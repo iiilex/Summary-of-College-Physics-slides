@@ -1,0 +1,70 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第7章 机械振动} --- 例题解答}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+\item（例 7.7）设一音叉的振动为谐振动，其角频率 $\omega = 6.28 \times 10^{2}\,\text{rad/s}$，音叉尖端的振幅 $A$ 为 $1.0\,\text{mm}$。试用旋转矢量法求以下两种情况的初相，并写出运动学方程：
+\begin{enumerate}
+  \item 当 $t = 0$ 时，音叉尖端通过平衡位置并向 $x$ 轴负方向运动；
+  \item 当 $t = 0$ 时，音叉尖端在 $x$ 轴的负方向一边，离开平衡位置距离为振幅之半，且向 $x$ 轴负方向运动。
+\end{enumerate}
+
+\textbf{解：}
+(1) $t = 0$ 时，音叉尖端在平衡位置，向 $x$ 轴负方向运动，旋转矢量在 $y$ 轴正方向：
+\[
+\varphi_1 = \frac{\pi}{2}
+\]
+运动学方程：
+\[
+x = 0.1\cos\left(6.28\times10^{2}t + \frac{\pi}{2}\right)\,\text{cm}
+\]
+
+(2) $t = 0$ 时，$x = -\dfrac{A}{2}$，向 $x$ 轴负方向运动，旋转矢量在第三象限：
+\[
+\varphi_2 = \frac{2\pi}{3}
+\]
+运动学方程：
+\[
+x = 0.1\cos\left(6.28\times10^{2}t + \frac{2\pi}{3}\right)\,\text{cm}
+\]
+
+\item（例 7.9）截面积为 $S$ 的U形管，内装有密度为 $\rho$、长度为 $l$ 的液体柱，受到扰动后管内液体发生振荡，不计各种阻力。试写出液体柱的运动微分方程。
+
+\textbf{解：} 取液体平衡时液面为原点 $O$，$x$ 轴向上为正。
+$t$ 时刻液体的动能：
+\[
+E_k = \frac12 Sl\rho \dot{x}^{2}
+\]
+重力势能（将 $x$ 小段液柱从左边移到右边所需功）：
+\[
+E_p = \rho S x^{2} g
+\]
+由机械能守恒：
+\[
+E = \frac12 Sl\rho \dot{x}^{2} + \rho S x^{2} g = \text{常量}
+\]
+对 $t$ 求导：
+\[
+Sl\rho \dot{x}\ddot{x} + 2\rho S g x\dot{x} = 0
+\]
+整理得：
+\[
+\ddot{x} + \frac{2g}{l}x = 0
+\]
+液柱的运动为谐振动，周期：
+\[
+T = 2\pi\sqrt{\frac{l}{2g}}
+\]
+
+\end{enumerate}
+
+\end{document}

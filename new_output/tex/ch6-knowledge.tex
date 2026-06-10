@@ -1,0 +1,157 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第6章 刚体力学} --- 知识点与公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{6.1 刚体运动的描述}
+
+\subsection*{刚体和自由度}
+\textbf{刚体：}形状和大小完全不变的物体，组内任意两质点间距离保持不变。
+
+\textbf{自由度：}确定物体位置所需的独立坐标数。
+\begin{itemize}
+  \item 质点：3 个自由度
+  \item 自由刚体：6 个自由度（平动 3 + 转动 3）
+\end{itemize}
+
+\subsection*{刚体的平动}
+刚体内任一直线始终保持和自身平行。
+平动特点：各质点运动情况相同，可归结为质心运动。
+
+\subsection*{刚体绕定轴转动}
+运动学方程：$\theta = f(t)$
+
+角速度：$\omega = \dfrac{\mathrm{d}\theta}{\mathrm{d}t}$，单位 rad/s
+
+角加速度：$\beta = \dfrac{\mathrm{d}\omega}{\mathrm{d}t} = \dfrac{\mathrm{d}^{2}\theta}{\mathrm{d}t^{2}}$，单位 rad/s$^{2}$
+
+角量与线量的关系：
+\[
+s = r\theta,\quad v = r\omega,\quad a_\tau = r\beta,\quad a_n = r\omega^{2}
+\]
+
+矢量关系：
+\[
+\vec{v} = \vec{\omega} \times \vec{r},\quad
+\vec{a} = \vec{\beta} \times \vec{r} + \vec{\omega} \times \vec{v}
+\]
+
+刚体上各点加速度大小：
+\[
+|\vec{a}| = r\sqrt{\beta^{2} + \omega^{4}},\quad
+\tan\alpha = \frac{|\beta|}{\omega^{2}}
+\]
+
+\section*{6.2 力矩 刚体绕定轴转动的转动定律}
+
+\subsection*{力矩}
+力对点的力矩：$\vec{M}_O = \vec{r} \times \vec{F}$
+
+力对定轴的力矩：$M_z = F_\tau r = F_\perp h$
+
+力矩求和：对同一参考点用矢量和，对同一轴用代数和。
+
+\textbf{注意：}合外力为零与合力矩为零不等价；刚体合内力矩为零。
+
+\subsection*{转动惯量}
+\[
+J = \sum_i \Delta m_i r_i^{2}\quad\text{（离散）},\qquad
+J = \int r^{2}\,\mathrm{d}m\quad\text{（连续）}
+\]
+
+单位：kg$\cdot$m$^{2}$
+
+计算三要素：总质量、质量分布、转轴位置。
+
+\textbf{常见转动惯量：}
+\begin{itemize}
+  \item 细杆绕端点：$J = \dfrac13 ML^{2}$
+  \item 细杆绕中心：$J = \dfrac{1}{12} ML^{2}$
+  \item 圆环绕中心轴：$J = MR^{2}$
+  \item 圆盘绕中心轴：$J = \dfrac12 MR^{2}$
+  \item 圆柱绕中心轴：$J = \dfrac12 MR^{2}$
+  \item 空心圆柱：$J = \dfrac12 M(R_1^{2} + R_2^{2})$
+\end{itemize}
+
+\subsection*{平行轴定理}
+\[
+J_{z'} = J_z + ML^{2}
+\]
+其中 $J_z$ 为绕过质心轴的转动惯量，$L$ 为两平行轴间垂直距离。
+
+\subsection*{垂直轴定理（薄板）}
+\[
+J_z = J_x + J_y
+\]
+其中 $x$、$y$ 轴在薄板平面内，$z$ 轴垂直于薄板。
+
+\subsection*{转动定律}
+\[
+M_z = J\beta
+\]
+作用在刚体上的合外力矩等于转动惯量与角加速度的乘积。
+
+对比：$M \to F$，$J \to m$，$\beta \to a$。
+
+\section*{6.3 绕定轴转动刚体的动能}
+
+\subsection*{转动动能}
+\[
+E_k = \frac12 J\omega^{2}
+\]
+
+\subsection*{力矩的功}
+\[
+\mathrm{d}A = M\,\mathrm{d}\theta,\qquad
+A = \int_{\theta_1}^{\theta_2} M\,\mathrm{d}\theta
+\]
+功率：$P = M\omega$
+
+\subsection*{转动动能定理}
+\[
+A = \frac12 J\omega_2^{2} - \frac12 J\omega_1^{2}
+\]
+
+\subsection*{刚体的机械能}
+\[
+E = \frac12 J\omega^{2} + mgh_c
+\]
+其中 $h_c$ 为质心高度。机械能守恒定律对包含刚体的系统仍成立。
+
+\section*{6.4 刚体的动量矩和动量矩守恒定律}
+
+\subsection*{刚体定轴转动的动量矩}
+\[
+L_z = J_z\omega
+\]
+
+\subsection*{动量矩定理}
+微分形式：$M_z\,\mathrm{d}t = \mathrm{d}(J\omega)$
+积分形式：
+\[
+\int_{t_1}^{t_2} M_z\,\mathrm{d}t = J\omega_2 - J\omega_1
+\]
+
+\subsection*{动量矩守恒定律}
+当 $M_z = 0$ 时，$L = J\omega = \text{常矢量}$。
+
+注：守恒条件为合外力矩为零，不是冲量矩为零。
+动量矩守恒定律与动量守恒定律彼此独立。
+
+\subsection*{进动}
+高速自转的陀螺在重力矩作用下发生进动。
+
+进动角速度：
+\[
+\Omega = \frac{|\vec{M}|}{|\vec{L}|\sin\theta} = \frac{|\vec{M}|}{J\omega\sin\theta} \propto \frac{1}{\omega}
+\]
+适用条件：高速自转（$\omega \gg \Omega$）。
+
+\end{document}

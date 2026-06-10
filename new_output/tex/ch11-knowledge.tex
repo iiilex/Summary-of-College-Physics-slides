@@ -1,0 +1,95 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第11章 变化的磁场和变化的电场} --- 知识点与公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{11.1 电磁感应}
+
+法拉第电磁感应定律：$\varepsilon = -\dfrac{\mathrm{d}\Phi}{\mathrm{d}t}$（$\Phi = \displaystyle\int_S \vec{B}\cdot\mathrm{d}\vec{S}$）
+
+$N$ 匝线圈：$\varepsilon = -N\dfrac{\mathrm{d}\Phi}{\mathrm{d}t} = -\dfrac{\mathrm{d}\Psi}{\mathrm{d}t}$
+
+感应电荷：$q_i = \dfrac{1}{R}(\Phi_1 - \Phi_2)$
+
+\section*{11.2 感应电动势}
+
+\subsection*{动生电动势}
+$\varepsilon_i = \displaystyle\int (\vec{v}\times\vec{B})\cdot\mathrm{d}\vec{l}$
+
+导体棒匀强磁场平动：$\varepsilon = Blv$
+
+导体棒匀强磁场转动：$\varepsilon = \dfrac12 B\omega L^{2}$
+
+\subsection*{感生电动势}
+$\varepsilon_i = \displaystyle\int \vec{E}_v\cdot\mathrm{d}\vec{l} = -\int_S \dfrac{\partial\vec{B}}{\partial t}\cdot\mathrm{d}\vec{S}$
+
+有旋电场：$\displaystyle\oint_L \vec{E}\cdot\mathrm{d}\vec{l} = -\int_S \dfrac{\partial\vec{B}}{\partial t}\cdot\mathrm{d}\vec{S}$
+
+长直螺线管内有旋电场：
+$r < R$：$E_v = \dfrac{r}{2}\dfrac{\partial B}{\partial t}$
+$r > R$：$E_v = \dfrac{R^{2}}{2r}\dfrac{\partial B}{\partial t}$
+
+\section*{11.3 自感和互感}
+
+\subsection*{自感}
+自感电动势：$\varepsilon_L = -L\dfrac{\mathrm{d}I}{\mathrm{d}t}$
+
+自感系数：$L = \dfrac{\Psi}{I}$
+
+长直螺线管：$L = \mu_0 n^{2} V = \mu_0\dfrac{N^{2}}{L}\pi R^{2}$
+
+螺绕环：$L = \dfrac{\mu_0 N^{2}h}{2\pi}\ln\dfrac{R_2}{R_1}$
+
+同轴电缆（单位长度）：$L = \dfrac{\mu_0}{2\pi}\ln\dfrac{R_2}{R_1}$
+
+$RL$ 电路放电：$i = I_0 e^{-Rt/L}$
+
+\subsection*{互感}
+互感电动势：$\varepsilon_{21} = -M\dfrac{\mathrm{d}I_1}{\mathrm{d}t}$，$\varepsilon_{12} = -M\dfrac{\mathrm{d}I_2}{\mathrm{d}t}$
+
+互感系数：$M_{12} = M_{21} = M$，$M = k\sqrt{L_1 L_2}$
+
+线圈串联：顺接 $L = L_1 + L_2 + 2M$，反接 $L = L_1 + L_2 - 2M$
+
+\section*{11.4 磁场能量}
+
+自感磁能：$W_m = \dfrac12 LI^{2}$
+
+磁场能量密度：$w_m = \dfrac12 \vec{B}\cdot\vec{H} = \dfrac{B^{2}}{2\mu}$
+
+磁场能量：$W_m = \displaystyle\int_V w_m\,\mathrm{d}V$
+
+\section*{11.5 麦克斯韦电磁场理论}
+
+\subsection*{位移电流}
+位移电流密度：$\vec{j}_D = \dfrac{\partial\vec{D}}{\partial t}$
+
+位移电流：$I_D = \displaystyle\int_S \dfrac{\partial\vec{D}}{\partial t}\cdot\mathrm{d}\vec{S}$
+
+全电流安培环路定理：
+\[
+\oint_L \vec{H}\cdot\mathrm{d}\vec{l} = I_C + I_D = \int_S \left(\vec{j} + \frac{\partial\vec{D}}{\partial t}\right)\cdot\mathrm{d}\vec{S}
+\]
+
+\subsection*{麦克斯韦方程组}
+\[
+\begin{aligned}
+\oint_S \vec{D}\cdot\mathrm{d}\vec{S} &= \sum q \\
+\oint_S \vec{B}\cdot\mathrm{d}\vec{S} &= 0 \\
+\oint_L \vec{E}\cdot\mathrm{d}\vec{l} &= -\int_S \frac{\partial\vec{B}}{\partial t}\cdot\mathrm{d}\vec{S} \\
+\oint_L \vec{H}\cdot\mathrm{d}\vec{l} &= \int_S \left(\vec{j} + \frac{\partial\vec{D}}{\partial t}\right)\cdot\mathrm{d}\vec{S}
+\end{aligned}
+\]
+
+洛伦兹力：$\vec{F} = q(\vec{E} + \vec{v}\times\vec{B})$
+
+物质方程：$\vec{D} = \varepsilon\vec{E}$，$\vec{B} = \mu\vec{H}$，$\vec{j} = \sigma\vec{E}$
+
+\end{document}

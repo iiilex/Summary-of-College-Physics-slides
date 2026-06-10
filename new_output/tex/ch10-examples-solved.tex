@@ -1,0 +1,131 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第10章 恒定磁场} --- 例题解答}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+\item（例题1）计算长为 $L$ 的载流直导线在均匀磁场 $B$ 中所受的力。
+
+\textbf{解：}$F = \displaystyle\int_L IB\sin\theta\,\mathrm{d}l = IB\sin\theta\,L = IBL_{\perp}$，方向由右手螺旋法则确定。
+
+\item（例题2）计算载流曲线在均匀磁场 $B$ 中所受的力。
+
+\textbf{解：}$\mathrm{d}\vec{F} = I\mathrm{d}\vec{l}\times\vec{B}$，$\mathrm{d}F_{\parallel} = 0$，$\mathrm{d}F_{\perp} = IB\mathrm{d}l_{\perp}$，$F = \displaystyle\int IB\mathrm{d}l_{\perp} = IBL_{\perp}$。
+结论：任意弯曲载流导线在均匀磁场中所受的力等效于起点到终点的直导线受力。
+
+\item 在均匀磁场中放置一任意形状的导线，电流强度为 $I$，求此段载流导线受的磁力。
+
+\textbf{解：}$\mathrm{d}F_x = IB\mathrm{d}y$，$\mathrm{d}F_y = IB\mathrm{d}x$。
+$F_x = \displaystyle\int_0^0 IB\mathrm{d}y = 0$，$F_y = \displaystyle\int_0^L IB\mathrm{d}x = IBL$，方向沿 $y$ 向。
+
+\item 求两平行无限长直导线之间的相互作用力。
+
+\textbf{解：}电流 $I_2$ 处于 $I_1$ 的磁场中，$B_1 = \dfrac{\mu_0 I_1}{2\pi a}$，单位长度受力 $f_{12} = I_2B_1 = \dfrac{\mu_0 I_1 I_2}{2\pi a}$。
+同理 $f_{21} = f_{12}$，同向电流相吸，反向电流相斥。
+
+\item（例9.13，p.390）无限长载流直导线 $I_1$ 沿半径为 $R$ 的圆形载流导线 $I_2$ 的直径 $AB$ 放置。
+
+\textbf{解：}
+(1) 半圆弧 $ACB$ 上取电流元 $I_2\mathrm{d}l$，$B = \dfrac{\mu_0 I_1}{2\pi R\sin\theta}$，
+$\mathrm{d}F = I_2B\mathrm{d}l$。由对称性 $F_y = 0$，
+$F_x = \displaystyle\int_0^{\pi R} \dfrac{\mu_0 I_1 I_2}{2\pi R\sin\theta}\sin\theta\,\mathrm{d}l = \dfrac12 \mu_0 I_1 I_2$
+
+(2) 整个圆环：$F = \mu_0 I_1 I_2$
+
+\item 一半径为 $R$、载有电流 $I$ 的线圈，放在均匀的外磁场 $B$ 中，求此线圈中的张力。
+
+\textbf{解：}取电流元 $I\mathrm{d}l = IR\mathrm{d}\theta$，$\mathrm{d}F = I\mathrm{d}lB$。
+$2T\sin\dfrac{\mathrm{d}\theta}{2} = IB\mathrm{d}l$，$\sin\dfrac{\mathrm{d}\theta}{2} \approx \dfrac{\mathrm{d}\theta}{2}$，$\mathrm{d}l = R\mathrm{d}\theta$，得 $T = IBR$。
+
+\item 求一载流导线框在无限长直导线磁场中的受力和运动趋势。
+
+\textbf{解：}$f_1 = I_2b\dfrac{\mu_0 I_1}{2\pi a}$（左），$f_3 = I_2b\dfrac{\mu_0 I_1}{4\pi a}$（右），
+$f_2 = f_4 = \displaystyle\int_a^{2a} \dfrac{\mu_0 I_1}{2\pi x}I_2\,\mathrm{d}x = \dfrac{\mu_0 I_1 I_2}{2\pi}\ln 2$。
+合力 $\vec{F} = \vec{f}_1 + \vec{f}_3$，向左运动。
+
+\item（例9.15，p.399）半圆形载流线圈在匀强磁场中。
+
+\textbf{解：}
+(1) 取电流元 $I\mathrm{d}l$，$\mathrm{d}F = BI\sin(\pi/2 + \alpha)\mathrm{d}l$，
+$\mathrm{d}M = x\mathrm{d}F = BIR^{2}\cos^{2}\alpha\,\mathrm{d}\alpha$，
+$M = \displaystyle\int_{-\pi/2}^{\pi/2} BIR^{2}\cos^{2}\alpha\,\mathrm{d}\alpha = \dfrac{\pi}{2}IR^{2}B$
+
+(2) $A = I\Delta\Phi = I\cdot\dfrac{\pi R^{2}B}{2} = \dfrac{\pi R^{2}IB}{2}$
+
+\item 求绕轴旋转的带电圆盘轴线上的磁场和圆盘的磁矩。
+
+\textbf{解：}$\sigma = \dfrac{q}{\pi R^{2}}$，$\mathrm{d}q = \sigma\cdot 2\pi r\mathrm{d}r$，
+$\mathrm{d}I = \dfrac{\mathrm{d}q}{2\pi/\omega} = \omega\sigma r\mathrm{d}r$，
+$\mathrm{d}B = \dfrac{\mu_0 r^{2}\mathrm{d}I}{2(r^{2}+x^{2})^{3/2}} = \dfrac{\mu_0\sigma\omega r^{3}\mathrm{d}r}{2(r^{2}+x^{2})^{3/2}}$，
+$B = \dfrac{\mu_0\sigma\omega}{2}\left[\dfrac{R^{2}+2x^{2}}{\sqrt{x^{2}+R^{2}}} - 2x\right]$
+
+磁矩：$p_m = \displaystyle\int_0^R \pi r^{3}\omega\sigma\,\mathrm{d}r = \dfrac{\pi\omega R^{4}}{4}\sigma = \dfrac{\omega qR^{2}}{4}$
+
+\item（书中例题9.7，p.375）均匀带电细棒运动在 $O$ 点产生的磁场。
+
+\textbf{解：}$\mathrm{d}q = \dfrac{q}{L}\mathrm{d}y$，$\mathrm{d}B = \dfrac{\mu_0}{4\pi}\dfrac{v\mathrm{d}q}{y^{2}} = \dfrac{\mu_0}{4\pi}\dfrac{qv\mathrm{d}y}{Ly^{2}}$，
+$B = \dfrac{\mu_0}{4\pi}\displaystyle\int_a^{a+L} \dfrac{qv\mathrm{d}y}{Ly^{2}} = \dfrac{\mu_0 qv}{4\pi L}\left(\dfrac{1}{a} - \dfrac{1}{a+L}\right) = 5.0\times10^{-16}\,\text{T}$
+
+\item 导线绕 $O$ 点以 $\omega$ 转动，求 $O$ 点的磁感应强度。
+
+\textbf{解：}线段1、2（半圆弧）：$B_1 = B_2 = \dfrac14\mu_0\lambda\omega$
+线段3、4（径向）：$B_3 = B_4 = \dfrac{\mu_0\lambda\omega}{4\pi}\ln\dfrac{b}{a}$
+总：$B = \dfrac12\left(1 + \dfrac{1}{\pi}\ln\dfrac{b}{a}\right)\mu_0\lambda\omega$
+
+\item（例题1）求半球面的磁通量。
+
+\textbf{解：}半球面与圆面构成闭合曲面。由高斯定理：
+$\displaystyle\oint_{S+S_1} \vec{B}\cdot\mathrm{d}\vec{S} = 0$，$\Phi_S = -\Phi_{S_1} = -\pi R^{2}B\cos\alpha$
+
+\item（例题：9.18，p.419）无限长圆柱铜线外有磁介质。
+
+\textbf{解：}取同心圆环路。
+$0 \le r \le R_1$：$H_1 2\pi r = \dfrac{Ir^{2}}{R_1^{2}}$，$H_1 = \dfrac{Ir}{2\pi R_1^{2}}$，$B_1 = \mu_0 H_1$
+$R_1 \le r \le R_2$：$H_2 = \dfrac{I}{2\pi r}$，$B_2 = \mu_0\mu_r\dfrac{I}{2\pi r}$
+$r > R_2$：$H_3 = \dfrac{I}{2\pi r}$，$B_3 = \mu_0\dfrac{I}{2\pi r}$
+
+\item（例题2）无限长直导线矩形面积磁通量。
+
+\textbf{解：}$B = \dfrac{\mu_0 I}{2\pi x}$，$\mathrm{d}\Phi = B l\mathrm{d}x$，
+$\Phi = \displaystyle\int_a^{a+b} \dfrac{\mu_0 I}{2\pi x}l\mathrm{d}x = \dfrac{\mu_0 Il}{2\pi}\ln\dfrac{a+b}{a}$
+
+\item 一无限长载流直导线，外包围磁介质 $\mu_r > 1$。
+
+\textbf{解：}(1) $H = \dfrac{I}{2\pi r}$，$B = \mu_0\mu_r\dfrac{I}{2\pi r}$
+(2) 内界面：$i_1' = \dfrac{(\mu_r - 1)I}{2\pi R_1}$，外界面：$i_2' = \dfrac{(\mu_r - 1)I}{2\pi R_2}$
+
+\item 求无限长圆柱面电流的磁场分布。
+
+\textbf{解：}取同心圆环路。
+$r > R$：$B\cdot 2\pi r = \mu_0 I$，$B = \dfrac{\mu_0 I}{2\pi r}$
+$r < R$：$\sum I = 0$，$B = 0$
+
+\item（例题9.9，p.384）无限长载流螺线管。
+
+\textbf{解：}取矩形安培环路 $abcd$。$ab$ 段 $B\perp\mathrm{d}l$，$bc$ 段 $B = 0$，$cd$ 段 $B\perp\mathrm{d}l$，$da$ 段 $B$ 恒定。
+$\displaystyle\oint \vec{B}\cdot\mathrm{d}\vec{l} = BL = \mu_0 nLI$，$B = \mu_0 nI$，管外 $B = 0$。
+
+\item 求螺绕环的磁场和磁通量。
+
+\textbf{解：}内部取环路：$\displaystyle\oint \vec{B}\cdot\mathrm{d}\vec{l} = B\cdot 2\pi r = \mu_0 NI$，$B = \dfrac{\mu_0 NI}{2\pi r}$
+截面很小时：$B_{\text{内}} = \mu_0 nI$
+外部：$\sum I = 0$，$B_{\text{外}} = 0$
+磁通量：$\Phi_m = \displaystyle\int_{R_1}^{R_2} \dfrac{\mu_0 NI}{2\pi r}h\mathrm{d}r = \dfrac{\mu_0 hNI}{2\pi}\ln\dfrac{R_2}{R_1}$
+
+\item 求无限大平面电流的磁场。
+
+\textbf{解：}取矩形安培环路。
+$\displaystyle\oint \vec{B}\cdot\mathrm{d}\vec{l} = 2Bab = \mu_0 ab i$，$B = \dfrac{\mu_0 i}{2}$
+推广：有厚度时，外部 $B = \dfrac{\mu_0 j'd}{2}$，内部 $B = \mu_0 j x$
+
+\end{enumerate}
+
+\end{document}

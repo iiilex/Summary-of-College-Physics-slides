@@ -1,0 +1,195 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第3章 功和能} --- 知识点与公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{3.1 功}
+
+\subsection*{一、恒力的功}
+\[
+A = Fs\cos\theta = \vec{F}\cdot\vec{S}
+\]
+
+\subsection*{二、变力的功}
+元功：
+\[
+\mathrm{d}A = \vec{F}\cdot\mathrm{d}\vec{r}
+\]
+从 $a$ 到 $b$ 沿路径 $L$ 的总功：
+\[
+A = \int_{a(L)}^{b} \vec{F}\cdot\mathrm{d}\vec{r}
+\]
+
+直角坐标系：
+\[
+A = \int_{a(L)}^{b} (F_x\,\mathrm{d}x + F_y\,\mathrm{d}y + F_z\,\mathrm{d}z)
+\]
+
+自然坐标系（$|\mathrm{d}\vec{r}| = \mathrm{d}s$）：
+\[
+A = \int_{a(L)}^{b} F\cos\theta\,\mathrm{d}s
+\]
+
+\textbf{说明：}
+\begin{itemize}
+  \item 功是标量，有正负
+  \item 合力的功等于各分力的功的代数和
+  \item 功的值一般与路径有关
+\end{itemize}
+
+\subsection*{三、功率}
+平均功率：
+\[
+P = \frac{\Delta A}{\Delta t}
+\]
+瞬时功率：
+\[
+P = \frac{\mathrm{d}A}{\mathrm{d}t} = \vec{F}\cdot\vec{v} = Fv\cos\theta
+\]
+
+\section*{3.2 几种常见力的功}
+
+\subsection*{一、重力的功}
+\[
+A = \int_{z_1}^{z_2} (-mg)\,\mathrm{d}z = mg(z_1 - z_2)
+\]
+结论：重力的功只与始末位置的高度差有关，与路径无关。
+
+\subsection*{二、弹性力的功}
+弹簧弹性力 $F = -kx$：
+\[
+A = \int_{x_1}^{x_2} -kx\,\mathrm{d}x = \frac12 kx_1^{2} - \frac12 kx_2^{2}
+\]
+结论：弹性力的功只与始末位置有关，与路径无关。
+
+\subsection*{三、万有引力的功}
+\[
+\mathrm{d}A = -G\frac{mM}{r^{2}}\,\mathrm{d}r
+\]
+\[
+A = \int_{r_1}^{r_2} -G\frac{mM}{r^{2}}\,\mathrm{d}r = GmM\left(\frac{1}{r_2} - \frac{1}{r_1}\right)
+\]
+结论：万有引力的功只与始末位置有关，与路径无关。
+
+\subsection*{四、摩擦力的功}
+\[
+A = -\mu mg s
+\]
+结论：摩擦力的功与路径有关。
+
+\section*{3.3 动能定理}
+
+\subsection*{一、质点动能定理}
+\[
+\mathrm{d}A = \vec{F}\cdot\mathrm{d}\vec{r} = m\vec{v}\cdot\mathrm{d}\vec{v}
+\]
+\[
+A = \frac12 mv_2^{2} - \frac12 mv_1^{2} = E_{k2} - E_{k1}
+\]
+作用于质点的合力在某一路程中所作的功，等于质点在同一路程始末两状态动能的增量。
+
+说明：
+\begin{itemize}
+  \item 动能 $E_k = \dfrac12 mv^{2}$ 是标量，是状态量
+  \item 功是过程量
+  \item 合力作正功时动能增加；合力作负功时动能减少
+  \item 动能定理只适用于惯性系
+\end{itemize}
+
+\subsection*{二、质点系动能定理}
+\[
+\sum_i A_i = \sum_i \frac12 m_i v_{i2}^{2} - \sum_i \frac12 m_i v_{i1}^{2}
+\]
+\[
+A_{\text{外}} + A_{\text{内}} = \Delta E_k
+\]
+
+\textbf{注意：}内力和为零，但内力功的和不一定为零。功是标量，其和为代数和。成对内力可改变系统的动能（如炸弹爆炸）。
+
+\section*{3.4 势能 机械能守恒定律}
+
+\subsection*{一、保守力}
+如果力所做的功与路径无关，只决定于物体的始末相对位置，这样的力称为保守力。
+保守力沿闭合路径一周所做的功为零：
+\[
+\oint_{L} \vec{F}\cdot\mathrm{d}\vec{r} = 0
+\]
+\begin{itemize}
+  \item 保守力：重力、万有引力、弹性力
+  \item 非保守力：摩擦力
+\end{itemize}
+
+\subsection*{二、势能}
+在保守力场中，质点从某点到势能零点，保守力所作功的大小为该点的势能：
+\[
+E_p = \int_{M}^{M_0} \vec{F}\cdot\mathrm{d}\vec{r}
+\]
+
+\textbf{重力势能}（选地面为零点）：
+\[
+E_p = mgy
+\]
+
+\textbf{弹性势能}（选原长为零点）：
+\[
+E_p = \frac12 kx^{2}
+\]
+
+\textbf{万有引力势能}（选无穷远为零点）：
+\[
+E_p = -G\frac{mM}{r}
+\]
+
+注意：
+\begin{itemize}
+  \item 势能大小由相对位置决定，势能零点选取是任意的
+  \item 保守力作正功时，动能增加、势能减少
+  \item 保守力作负功时，动能减少、势能增加
+  \item 保守力的功 $A = -\Delta E_p$
+\end{itemize}
+
+\subsection*{三、势能曲线与保守力}
+保守力是势能的负梯度：
+\[
+\vec{F} = -\nabla E_p = -\left(\frac{\partial E_p}{\partial x}\vec{i} + \frac{\partial E_p}{\partial y}\vec{j} + \frac{\partial E_p}{\partial z}\vec{k}\right)
+\]
+势能曲线上某点斜率的负值，就是该点对应的保守力。
+
+判断保守力的三维条件（交叉偏导相等）：
+\[
+\frac{\partial F_x}{\partial y} = \frac{\partial F_y}{\partial x},\quad
+\frac{\partial F_y}{\partial z} = \frac{\partial F_z}{\partial y},\quad
+\frac{\partial F_z}{\partial x} = \frac{\partial F_x}{\partial z}
+\]
+
+\subsection*{四、机械能守恒定律}
+对质点系：
+\[
+A_{\text{外}} + A_{\text{非内}} = \Delta E_k + \Delta E_p = \Delta E
+\]
+当 $A_{\text{外}} + A_{\text{非内}} = 0$ 时，$\Delta E = 0$，即机械能守恒。
+
+说明：
+\begin{itemize}
+  \item 守恒条件：外力和非保守内力作功之和为零
+  \item 守恒定律是对一个系统而言的
+  \item 守恒是对整个过程而言的，不能只考虑始末两状态
+\end{itemize}
+
+\section*{3.5 能量守恒定律}
+能量不能消失，也不能创造，只能从一种形式转换为另一种形式。对一个封闭系统，各种形式的能量可以互相转换，但总和保持不变。
+
+\begin{itemize}
+  \item 能量守恒定律适用于任何变化过程
+  \item 功是能量交换或转换的一种度量
+  \item 机械能守恒定律是能量守恒定律在机械运动范围内的体现
+\end{itemize}
+
+\end{document}

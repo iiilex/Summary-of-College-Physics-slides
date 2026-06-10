@@ -1,0 +1,303 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第2章 牛顿运动定律} --- 例题解答}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+\item 如图所示，一质点 $m$ 旁边放一长度为 $L$、质量为 $M$ 的杆，杆离质点近端距离为 $l$。求该系统的万有引力大小。
+
+\textbf{解：}杆不能视为质点，需用微积分。取杆上距质点 $x$ 处的一质量元 $\mathrm{d}M = \dfrac{M}{L}\,\mathrm{d}x$，该质量元与质点的万有引力大小为
+\[
+\mathrm{d}f = G\frac{m\,\mathrm{d}M}{x^{2}} = G\frac{mM}{L}\frac{\mathrm{d}x}{x^{2}}
+\]
+整个杆与质点的万有引力为
+\[
+f = \int_{l}^{l+L} \mathrm{d}f = G\frac{mM}{L}\int_{l}^{l+L}\frac{\mathrm{d}x}{x^{2}}
+= G\frac{mM}{L}\left(-\frac{1}{x}\right)\bigg|_{l}^{l+L}
+= G\frac{mM}{L}\left(\frac{1}{l} - \frac{1}{l+L}\right)
+= G\frac{mM}{l(l+L)}
+\]
+当 $l \gg L$ 时，$f \to G\dfrac{mM}{l^{2}}$，退化为质点间万有引力公式。
+
+\item 已知一物体的质量为 $m$，运动方程为 $\vec{r} = A\cos\omega t\,\vec{i} + B\sin\omega t\,\vec{j}$。求物体受到的力。
+
+\textbf{解：}
+\[
+\vec{v} = \frac{\mathrm{d}\vec{r}}{\mathrm{d}t} = -A\omega\sin\omega t\,\vec{i} + B\omega\cos\omega t\,\vec{j}
+\]
+\[
+\vec{a} = \frac{\mathrm{d}\vec{v}}{\mathrm{d}t} = -A\omega^{2}\cos\omega t\,\vec{i} - B\omega^{2}\sin\omega t\,\vec{j}
+= -\omega^{2}(A\cos\omega t\,\vec{i} + B\sin\omega t\,\vec{j}) = -\omega^{2}\vec{r}
+\]
+由牛顿第二定律：
+\[
+\vec{F} = m\vec{a} = -m\omega^{2}\vec{r}
+\]
+力的大小与位矢大小成正比，方向指向原点，为有心力。
+
+\item 设一高速运动的带电粒子沿竖直方向以 $v_0$ 向上运动，从时刻 $t=0$ 开始粒子受到 $F = F_0 t$ 水平力的作用，$F_0$ 为常量，粒子质量为 $m$。求粒子的运动轨迹。
+
+\textbf{解：}水平方向（$x$）：
+\[
+a_x = \frac{F_0 t}{m},\quad \frac{\mathrm{d}v_x}{\mathrm{d}t} = \frac{F_0 t}{m}
+\]
+\[
+\int_{0}^{v_x} \mathrm{d}v_x = \int_{0}^{t} \frac{F_0}{m}t\,\mathrm{d}t \;\Longrightarrow\; v_x = \frac{F_0 t^{2}}{2m}
+\]
+\[
+\frac{\mathrm{d}x}{\mathrm{d}t} = \frac{F_0 t^{2}}{2m} \;\Longrightarrow\; \int_{0}^{x} \mathrm{d}x = \int_{0}^{t} \frac{F_0 t^{2}}{2m}\,\mathrm{d}t \;\Longrightarrow\; x = \frac{F_0}{6m}t^{3}
+\]
+
+竖直方向（$y$）：$a_y = 0$，$y = v_0 t$。
+
+消去 $t$：$t = \dfrac{y}{v_0}$，代入得
+\[
+x = \frac{F_0}{6m}\left(\frac{y}{v_0}\right)^{3} = \frac{F_0}{6m v_0^{3}}\,y^{3}
+\]
+轨迹为立方抛物线。
+
+\item（重点）质量为 $m$ 的物体以速度 $v_0$ 投入粘性流体中，受到阻力 $f = -cv$（$c$ 为常数）而减速，若物体不受其它力，求物体的运动速度。
+
+\textbf{解：}由牛顿第二定律：
+\[
+-cv = m\frac{\mathrm{d}v}{\mathrm{d}t} \;\Longrightarrow\; -\frac{c}{m}\,\mathrm{d}t = \frac{\mathrm{d}v}{v}
+\]
+积分：
+\[
+-\frac{c}{m}\int_{0}^{t} \mathrm{d}t = \int_{v_0}^{v} \frac{\mathrm{d}v}{v}
+\]
+\[
+-\frac{c}{m}t = \ln\frac{v}{v_0} \;\Longrightarrow\; v = v_0 e^{-\frac{c}{m}t}
+\]
+速度随时间指数衰减。
+
+\item（重点）光滑的桌面上一质量为 $M$、长为 $L$ 的匀质链条，有极小一段被推出桌子边缘。求链条刚刚完全离开桌面时的速度。
+
+\textbf{解：}链条所受重力为变力。设下垂部分长度为 $x$，该段质量 $m(x) = \dfrac{M}{L}x$，所受重力 $F = \dfrac{M}{L}xg$。
+
+由牛顿第二定律：
+\[
+\frac{M}{L}xg = M\frac{\mathrm{d}v}{\mathrm{d}t} = Mv\frac{\mathrm{d}v}{\mathrm{d}x}
+\]
+\[
+\frac{g}{L}x\,\mathrm{d}x = v\,\mathrm{d}v
+\]
+积分：
+\[
+\int_{0}^{L} \frac{g}{L}x\,\mathrm{d}x = \int_{0}^{v} v\,\mathrm{d}v
+\]
+\[
+\frac{g}{L}\cdot\frac{L^{2}}{2} = \frac{v^{2}}{2} \;\Longrightarrow\; v = \sqrt{gL}
+\]
+
+\item 以初速度 $v_0$ 竖直向上抛出一质量为 $m$ 的小球，小球除受重力外，还受一个大小为 $amv^{2}$ 的粘滞阻力。求小球上升的最大高度。
+
+\textbf{解：}取竖直向上为正方向，合力为
+\[
+f = -mg - amv^{2} = -m(g + av^{2})
+\]
+由牛顿第二定律：
+\[
+-m(g + av^{2}) = m\frac{\mathrm{d}v}{\mathrm{d}t} = mv\frac{\mathrm{d}v}{\mathrm{d}y}
+\]
+\[
+-\frac{v\,\mathrm{d}v}{g + av^{2}} = \mathrm{d}y
+\]
+积分：
+\[
+\int_{v_0}^{0} -\frac{v\,\mathrm{d}v}{g + av^{2}} = \int_{0}^{H} \mathrm{d}y
+\]
+\[
+\frac{1}{2a}\int_{v_0}^{0} \frac{\mathrm{d}(g + av^{2})}{g + av^{2}} = -\int_{0}^{H} \mathrm{d}y
+\]
+\[
+\frac{1}{2a}\ln\frac{g}{g + av_0^{2}} = -H
+\]
+\[
+H = \frac{1}{2a}\ln\frac{g + av_0^{2}}{g}
+\]
+
+\item（书中例题 2.10，p.77）求第二宇宙速度。
+
+\textbf{解：}地球对飞船的万有引力 $F = G\dfrac{Mm}{x^{2}}$，利用 $G = \dfrac{gR^{2}}{M}$ 得
+\[
+F = \frac{mgR^{2}}{x^{2}}
+\]
+运动微分方程：
+\[
+m\frac{\mathrm{d}v}{\mathrm{d}t} = -\frac{mgR^{2}}{x^{2}} \;\Longrightarrow\; v\frac{\mathrm{d}v}{\mathrm{d}x} = -\frac{gR^{2}}{x^{2}}
+\]
+\[
+v\,\mathrm{d}v = -gR^{2}\frac{\mathrm{d}x}{x^{2}}
+\]
+积分：
+\[
+\int_{v_0}^{v} v\,\mathrm{d}v = \int_{R}^{x} -gR^{2}\frac{\mathrm{d}x}{x^{2}}
+\]
+\[
+\frac12(v^{2} - v_0^{2}) = gR^{2}\left(\frac{1}{x} - \frac{1}{R}\right)
+\]
+\[
+v^{2} = v_0^{2} - 2gR^{2}\left(\frac{1}{R} - \frac{1}{x}\right)
+\]
+飞船脱离地球引力条件：$x \to \infty$ 时 $v = 0$，代入得
+\[
+0 = v_0^{2} - 2gR \;\Longrightarrow\; v_0 = \sqrt{2gR}
+\]
+取 $R = 6370\,\text{km}$，$g = 9.8\,\text{m/s}^{2}$，得
+\[
+v_0 = \sqrt{2 \times 9.8 \times 6.37\times10^{6}} \approx 11.2\,\text{km/s}
+\]
+此即第二宇宙速度。
+
+\item（书中例题 2.14，p.82）长为 $L$ 质量为 $M$ 的均匀柔绳，盘绕在光滑的水平面上，从静止开始，以恒定加速度 $a$ 竖直向上提绳。
+\begin{enumerate}
+  \item 当提起的高度为 $y$ 时，作用在绳端力的大小是多少？
+  \item 当以恒定速度 $v$ 竖直向上提绳，当提起的高度为 $y$ 时，作用在绳端力的大小又是多少？
+\end{enumerate}
+
+\textbf{解：}被提起绳段质量 $m = \dfrac{M}{L}y$，为变质量问题。
+牛顿第二定律的普适形式：
+\[
+F - mg = \frac{\mathrm{d}(mv)}{\mathrm{d}t} = \frac{\mathrm{d}m}{\mathrm{d}t}v + m\frac{\mathrm{d}v}{\mathrm{d}t}
+\]
+代入 $m = \dfrac{M}{L}y$，$\dfrac{\mathrm{d}m}{\mathrm{d}t} = \dfrac{M}{L}v$，$\dfrac{\mathrm{d}v}{\mathrm{d}t} = a$：
+\[
+F - \frac{M}{L}yg = \frac{M}{L}v^{2} + \frac{M}{L}ya
+\]
+\[
+F = \frac{M}{L}(yg + v^{2} + ya)
+\]
+
+(1) 恒定加速度 $a$：$v^{2} = 2ay$，代入得
+\[
+F = \frac{M}{L}(yg + 2ay + ya) = \frac{M}{L}y(g + 3a)
+\]
+
+(2) 恒定速度 $v$：$a = 0$，代入得
+\[
+F = \frac{M}{L}(yg + v^{2})
+\]
+
+\item 装沙子后总质量为 $M$ 的车由静止开始运动，运动过程中合外力始终为 $f$，每秒漏沙量为 $\rho$。求车运动的速度。
+
+\textbf{解：}取车和沙子为研究对象，$t$ 时刻质量 $m = M - \rho t$。
+由牛顿第二定律普适形式：
+\[
+f = \frac{\mathrm{d}(mv)}{\mathrm{d}t} = \frac{\mathrm{d}m}{\mathrm{d}t}v + m\frac{\mathrm{d}v}{\mathrm{d}t}
+\]
+$\dfrac{\mathrm{d}m}{\mathrm{d}t} = -\rho$，故
+\[
+f = -\rho v + (M - \rho t)\frac{\mathrm{d}v}{\mathrm{d}t}
+\]
+\[
+(M - \rho t)\frac{\mathrm{d}v}{\mathrm{d}t} = f + \rho v
+\]
+\[
+\frac{\mathrm{d}v}{f + \rho v} = \frac{\mathrm{d}t}{M - \rho t}
+\]
+积分：
+\[
+\int_{0}^{v} \frac{\mathrm{d}v}{f + \rho v} = \int_{0}^{t} \frac{\mathrm{d}t}{M - \rho t}
+\]
+\[
+\frac{1}{\rho}\ln\frac{f + \rho v}{f} = -\frac{1}{\rho}\ln\frac{M - \rho t}{M}
+\]
+\[
+\frac{f + \rho v}{f} = \frac{M}{M - \rho t}
+\]
+\[
+v = \frac{f}{\rho}\left(\frac{M}{M - \rho t} - 1\right)
+\]
+
+\item（书中例题 2.9，p.76，非质点问题）试证明在圆柱形容器内，以匀角速度 $\omega$ 绕中心轴作匀速旋转的流体表面为旋转抛物面。
+
+\textbf{证明：}取流体表面一小体元 $\Delta m$ 作为研究对象。
+受力：重力 $mg$（竖直向下），支持力 $N$（垂直于液面）。
+选坐标系 $Oxy$，$O$ 为容器中心与液面交点。
+
+$x$ 方向：$N\sin\theta = \Delta m\,x\omega^{2}$（向心力）
+$y$ 方向：$N\cos\theta = \Delta m\,g$
+
+两式相除：
+\[
+\tan\theta = \frac{x\omega^{2}}{g}
+\]
+由导数的几何意义 $\tan\theta = \dfrac{\mathrm{d}y}{\mathrm{d}x}$，得
+\[
+\mathrm{d}y = \frac{\omega^{2}}{g}x\,\mathrm{d}x
+\]
+积分：
+\[
+\int_{0}^{y} \mathrm{d}y = \frac{\omega^{2}}{g}\int_{0}^{x} x\,\mathrm{d}x
+\]
+\[
+y = \frac{\omega^{2}}{2g}x^{2}
+\]
+为抛物线方程。由旋转对称性，液面为旋转抛物面，证毕。
+
+\item 质量分别为 $m_1$ 和 $m_2$ 的两物体用轻细绳相连接后，悬挂在一个固定在电梯内的定滑轮的两边。滑轮和绳的质量以及所有摩擦均不计。当电梯以 $a_0 = g/2$ 的加速度下降时，求 $m_1$ 和 $m_2$ 的加速度和绳中的张力。
+
+\textbf{解：}取电梯为参考系（非惯性系），引入惯性力 $-ma_0$（方向与 $a_0$ 相反，即向上）。
+设 $m_1 > m_2$，$m_1$ 相对电梯加速度 $a'$ 向下，$m_2$ 相对电梯加速度 $a'$ 向上。
+
+对 $m_1$：$m_1g - T - m_1a_0 = m_1a'$
+对 $m_2$：$m_2g - T - m_2a_0 = -m_2a'$
+
+两式联立解得：
+\[
+a' = \frac{m_1 - m_2}{m_1 + m_2}(g - a_0),\qquad
+T = \frac{2m_1 m_2}{m_1 + m_2}(g - a_0)
+\]
+代入 $a_0 = g/2$：
+\[
+a' = \frac{m_1 - m_2}{m_1 + m_2}\cdot\frac{g}{2},\qquad
+T = \frac{2m_1 m_2}{m_1 + m_2}\cdot\frac{g}{2} = \frac{m_1 m_2}{m_1 + m_2}g
+\]
+对地加速度：
+\[
+a_1 = a' + a_0 = \frac{m_1 - m_2}{m_1 + m_2}\cdot\frac{g}{2} + \frac{g}{2},\qquad
+a_2 = -a' + a_0 = -\frac{m_1 - m_2}{m_1 + m_2}\cdot\frac{g}{2} + \frac{g}{2}
+\]
+
+\item 一光滑斜面固定在升降机的底板上，当升降机以匀加速度 $a_0$ 上升时，质量为 $m$ 的物体从斜面顶端开始下滑。求物体对斜面的压力和物体相对斜面的加速度。
+
+\textbf{解：}方法一（地面惯性系）：
+物体对地加速度 $\vec{a} = \vec{a}_r + \vec{a}_0$，由牛顿第二定律：
+\[
+m\vec{g} + \vec{N} = m(\vec{a}_r + \vec{a}_0)
+\]
+沿斜面方向：$mg\sin\alpha = m(a_r - a_0\sin\alpha)$
+垂直斜面方向：$N - mg\cos\alpha = ma_0\cos\alpha$
+
+解得：
+\[
+N = m(g + a_0)\cos\alpha,\qquad a_r = (g + a_0)\sin\alpha
+\]
+
+方法二（升降机非惯性系）：
+引入惯性力 $\vec{F}_0 = -m\vec{a}_0$，在非惯性系中：
+\[
+m\vec{g} + \vec{N} + \vec{F}_0 = m\vec{a}_r
+\]
+沿斜面：$mg\sin\alpha + ma_0\sin\alpha = ma_r$
+垂直斜面：$N = mg\cos\alpha + ma_0\cos\alpha$
+
+同样得：
+\[
+N = m(g + a_0)\cos\alpha,\qquad a_r = (g + a_0)\sin\alpha
+\]
+
+由牛顿第三定律，物体对斜面的压力大小等于 $N$，方向垂直斜面向下。
+
+\end{enumerate}
+
+\end{document}

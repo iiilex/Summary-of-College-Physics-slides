@@ -1,0 +1,162 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第4章 冲量和动量} --- 例题解答}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+\item（书中例题 4.4，p.146，重点）已知质量为 $M$、长为 $L$ 的匀质链条，上端悬挂，下端刚和秤盘接触，使链条自由下落。求下落长度 $x$ 时秤的读数。
+
+\textbf{解：}秤盘读数 $N$ 由两部分组成：
+(1) 已落在盘上的链条重量：$m g = \dfrac{M}{L} x g$
+(2) $\mathrm{d}t$ 时间内落下的 $\mathrm{d}m$ 对盘产生的冲力 $F$。
+
+由动量定理，$\mathrm{d}m$ 速度由 $v$ 变为 $0$：
+\[
+F\,\mathrm{d}t = v\,\mathrm{d}m - 0,\quad \mathrm{d}m = \frac{M}{L}\,\mathrm{d}x,\quad v = \sqrt{2gx}
+\]
+\[
+F = \frac{\mathrm{d}m}{\mathrm{d}t} v = \frac{M}{L}\frac{\mathrm{d}x}{\mathrm{d}t} v = \frac{M}{L} v^{2} = \frac{M}{L}\cdot 2gx
+\]
+总读数：
+\[
+N = \frac{M}{L} gx + 2\frac{M}{L} gx = 3\frac{M}{L} gx
+\]
+即秤的读数是落在秤盘上链条重量的 3 倍。
+
+\item 一粒子弹水平地穿过并排静止放置在光滑水平面上的木块，已知两木块的质量分别为 $m_1$、$m_2$，子弹穿过两木块的时间各为 $\Delta t_1$、$\Delta t_2$，设子弹在木块中所受的阻力为恒力 $F$。求子弹穿过后，两木块各以多大速度运动。
+
+\textbf{解：}子弹穿过第一木块时，两木块以相同速度 $v_1$ 运动：
+\[
+F\Delta t_1 = (m_1 + m_2)v_1 - 0 \;\Longrightarrow\; v_1 = \frac{F\Delta t_1}{m_1 + m_2}
+\]
+子弹穿过第二木块时，研究第二木块：
+\[
+F\Delta t_2 = m_2 v_2 - m_2 v_1
+\]
+\[
+v_2 = v_1 + \frac{F\Delta t_2}{m_2} = \frac{F\Delta t_1}{m_1 + m_2} + \frac{F\Delta t_2}{m_2}
+\]
+
+\item（书中例题 4.7，p.154）已知长 $L = 4\,\text{m}$，质量 $M = 150\,\text{kg}$ 的船静止在湖面上，人的质量 $m = 50\,\text{kg}$，人从船头走到船尾。不计水的阻力。求人和船相对岸各移动的距离。
+
+\textbf{解：}人与船组成系统，水平方向合外力为零，动量守恒。
+\[
+MV = mv
+\]
+设 $S$ 为船对岸移动距离，$s$ 为人对岸移动距离，则
+\[
+M\int_0^t V\,\mathrm{d}t = m\int_0^t v\,\mathrm{d}t \;\Longrightarrow\; MS = ms
+\]
+且 $S + s = L$，联立解得：
+\[
+S = \frac{m}{M+m}L = \frac{50}{150+50}\times 4 = 1\,\text{m},\quad
+s = L - S = 3\,\text{m}
+\]
+
+\item（书中例题 4.8，p.155）求木块 $m$ 相对于斜劈 $M$ 的速度。
+
+\textbf{解：}水平方向合外力为零，动量守恒：
+\[
+mv_x - MV = 0
+\]
+系统机械能守恒，选水平面为重力势能零点：
+\[
+mgH = mgh + \frac12 MV^{2} + \frac12 m(v_x^{2} + v_y^{2})
+\]
+其中 $v_x = v_r\cos\theta - V$，$v_y = -v_r\sin\theta$。
+解得：
+\[
+V = m\sqrt{\frac{2g(H-h)\cos^{2}\theta}{(M+m)(M+m\sin^{2}\theta)}},\quad
+v_r = \sqrt{\frac{2g(H-h)(M+m)}{M+m\sin^{2}\theta}}
+\]
+
+\item 一行李质量为 $m$，垂直地轻放在传送带上，传送带的速率为 $v$，它与行李间的摩擦因数为 $\mu$。试计算：
+\begin{enumerate}
+  \item 行李在传送带上滑动多长时间？
+  \item 行李在这段时间内运动多远？
+  \item 有多少能量被摩擦所耗费？
+\end{enumerate}
+
+\textbf{解：}
+(1) 滑动摩擦力 $\mu mg$，由动量定理：
+\[
+\mu mg t = mv - 0 \;\Longrightarrow\; t = \frac{v}{\mu g}
+\]
+
+(2) 由动能定理：
+\[
+\mu mg x = \frac12 mv^{2} - 0 \;\Longrightarrow\; x = \frac{v^{2}}{2\mu g}
+\]
+
+(3) 传送带移动距离 $x' = vt = \dfrac{v^{2}}{\mu g}$，一对摩擦力做功：
+\[
+\Delta E = \mu mg(x - x') = \mu mg\left(\frac{v^{2}}{2\mu g} - \frac{v^{2}}{\mu g}\right) = -\frac12 mv^{2}
+\]
+负号表示能量耗散为内能。
+
+\item（火箭飞行问题）开始时火箭质量为 $M_0$，火箭壳体的质量为 $M$，燃料相对火箭喷出的速度为 $u$，开始时火箭静止，不计重力和其它力。求燃料烧尽后火箭的速度。
+
+\textbf{解：}取火箭和喷出燃料为系统，动量守恒。
+$t$ 时刻：火箭质量 $m$，速度 $v$；$t+\mathrm{d}t$ 时刻：火箭质量 $m-\mathrm{d}m$，速度 $v+\mathrm{d}v$，喷出燃料 $\mathrm{d}m$ 速度 $v-u$。
+动量守恒：
+\[
+mv = (m-\mathrm{d}m)(v+\mathrm{d}v) + \mathrm{d}m(v-u)
+\]
+化简得 $m\,\mathrm{d}v = u\,\mathrm{d}m$，即
+\[
+\mathrm{d}v = u\frac{\mathrm{d}m}{m}
+\]
+积分：
+\[
+\int_0^v \mathrm{d}v = u\int_{M_0}^{M} \frac{\mathrm{d}m}{m}
+\]
+\[
+v = u\ln\frac{M_0}{M}
+\]
+此即齐奥尔科夫斯基公式。火箭最终速度取决于喷气速度和壳体质量与初始总质量之比。
+
+\item 由 $m_1$ 和 $m_2$ 组成的质点组，坐标分别为 $(x_1, y_1)$、$(x_2, y_2)$。求其质心坐标。
+
+\textbf{解：}
+\[
+x_c = \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2},\quad
+y_c = \frac{m_1 y_1 + m_2 y_2}{m_1 + m_2}
+\]
+示例：若 $m_1 = 1$，$m_2 = 9$，$x_1 = 0$，$x_2 = 10$，则 $x_c = \dfrac{1\times0 + 9\times10}{1+9} = 9$（靠近质量大的质点一侧）。
+
+\item（书中例题 4.13，p.164）求质量为 $M$、长为 $L$ 的匀质细杆的重心。
+
+\textbf{解：}取杆左端为原点，体元 $\mathrm{d}m = \dfrac{M}{L}\,\mathrm{d}x$，质心坐标：
+\[
+x_c = \frac{\int x\,\mathrm{d}m}{M} = \frac{1}{L}\int_0^L x\,\mathrm{d}x = \frac{L}{2}
+\]
+匀质细杆的重心在杆的中点。
+
+\item（书中例题 4.14，p.166）用质心运动定理重解 4.7 题：长 $L = 4\,\text{m}$，质量 $M = 150\,\text{kg}$ 的船静止在湖面上，人的质量 $m = 50\,\text{kg}$，人从船头走到船尾。求人和船相对岸各移动的距离。
+
+\textbf{解：}人和船组成质点系，水平方向合外力为零，质心加速度为零，质心位置保持不变。
+
+走动前：人坐标 $x_1$，船质心坐标 $x_2$。
+走动后：船对岸移动 $S$，则 $x_2' = x_2 - S$；人对船移动 $L$，人对岸移动 $L - S$，则 $x_1' = x_1 + L - S$。
+
+由 $x_c = x_c'$：
+\[
+\frac{m x_1 + M x_2}{m + M} = \frac{m(x_1 + L - S) + M(x_2 - S)}{m + M}
+\]
+解得：
+\[
+S = \frac{mL}{m + M} = \frac{50\times4}{50 + 150} = 1\,\text{m}
+\]
+人对岸移动距离：$L - S = 3\,\text{m}$。
+
+\end{enumerate}
+
+\end{document}

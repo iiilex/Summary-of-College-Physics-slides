@@ -1,0 +1,122 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第11章 变化的磁场和变化的电场} --- 例题解答}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+\item 匀强磁场中，导线可在导轨上滑动，求回路中感应电动势。
+
+\textbf{解：}$\Phi(t) = Bls(t)$，$\varepsilon = -\dfrac{\mathrm{d}\Phi}{\mathrm{d}t} = -Bl\dfrac{\mathrm{d}s}{\mathrm{d}t} = -Blv$。
+若 $B = B(t) = B_0 t$，则 $\varepsilon = -(B_0 l s + B_0 t l v)$。
+
+\item（书中例题10.2，p.443）半圆导线回路，$B = 4t^{2} + 2t + 3$，$R = 2\,\Omega$，$\varepsilon_0 = 2.0\,\text{V}$。
+
+\textbf{解：}$\Phi = (4t^{2} + 2t + 3)\dfrac{\pi r^{2}}{2}$，$\varepsilon_i = -\dfrac{\mathrm{d}\Phi}{\mathrm{d}t} = -(8t + 2)\dfrac{\pi r^{2}}{2}$。
+$t = 10\,\text{s}$ 时，$\varepsilon_i = -5.2\,\text{V}$（顺时针）。
+回路电流：$i = \dfrac{\varepsilon_i - \varepsilon_0}{R} = \dfrac{5.2 - 2}{2} = 1.6\,\text{A}$
+
+\item 在无限长直载流导线的磁场中，运动的导体线框。
+
+\textbf{解：}$\Phi = \displaystyle\int_l^{l+a} \dfrac{\mu_0 I}{2\pi x}b\,\mathrm{d}x = \dfrac{\mu_0 I b}{2\pi}\ln\dfrac{l+a}{l}$，
+$\varepsilon = -\dfrac{\mathrm{d}\Phi}{\mathrm{d}t} = \dfrac{\mu_0 I a b v}{2\pi l(l+a)}$（顺时针）
+
+\item（书中例题10.3，p.444）长直导线变化电流，矩形线框。
+
+\textbf{解：}$\Phi = \dfrac{\mu i L}{2\pi}\ln\dfrac{b}{a}$，$\varepsilon_i = -N\dfrac{\mathrm{d}\Phi}{\mathrm{d}t} = -\dfrac{\mu N L}{2\pi}\ln\dfrac{b}{a}(12t + 6)\times10^{-1}$。
+$t = 60\,\text{s}$ 时 $\varepsilon_i = -0.56\,\text{V}$（逆时针），$I = \dfrac{\varepsilon - \varepsilon_i}{R} = \dfrac{2 - 0.56}{2} = 0.72\,\text{A}$
+
+\item 铜棒在匀强磁场 $B$ 中绕 $O$ 转动。
+
+\textbf{解：}$\varepsilon_i = \displaystyle\int_0^R (\vec{v}\times\vec{B})\cdot\mathrm{d}\vec{l} = -\int_0^R l\omega B\,\mathrm{d}l = -\dfrac12 B R^{2}\omega$（方向 $A \to O$）
+
+\item（书中例题10.5，p.541）圆盘发电机。
+
+\textbf{解：}盘心到边缘：$\varepsilon = \displaystyle\int_0^R B\omega r\,\mathrm{d}r = \dfrac12 B\omega R^{2}$，
+$\Delta U = -\dfrac12 B\omega R^{2}$。
+代入 $B = 0.70\,\text{T}$，$R = 0.20\,\text{m}$，$\omega = 2\pi\times50\,\text{s}^{-1}$：
+$|\Delta U| = \dfrac12 \times 0.70 \times 2\pi \times 50 \times (0.20)^{2} = 4.4\,\text{V}$
+
+\item（书中例题10.6，p.452）圆形线圈绕直径旋转。
+
+\textbf{解：}$\xi_{OA} = \displaystyle\int_0^{\pi/2} \omega r\sin\theta\cdot B\cos(\pi/2 - \theta)\cdot r\mathrm{d}\theta = \dfrac{\omega r^{2}B\pi}{4}$。
+整个线圈：$\xi = \displaystyle\int_0^{2\pi} \dfrac12 \omega r^{2}B\sin^{2}\theta\,\mathrm{d}\theta = \dfrac{\omega r^{2}B\pi}{2}$，
+电流 $I = \dfrac{\omega r^{2}B\pi}{2R}$
+
+\item（书中例题10.7，p.453）三角形线圈在长直导线磁场中运动。
+
+\textbf{解：}$AC$ 段电动势为 $0$。
+$CD$ 段：$\xi_{CD} = \displaystyle\int_C^D (\vec{v}\times\vec{B})\cdot\mathrm{d}\vec{l} = -\displaystyle\int vB\sin\theta_2\,\mathrm{d}l$，方向由具体计算确定。
+
+\item（书中例题10.8，p.455）长直螺线管变化磁场。
+
+\textbf{解：}
+(1) $r < R$：$\varepsilon_i = E_v\cdot 2\pi r = \dfrac{\partial B}{\partial t}\pi r^{2}$，$E_v = \dfrac{r}{2}\dfrac{\partial B}{\partial t}$
+$r > R$：$\varepsilon_i = E_v\cdot 2\pi r = \dfrac{\partial B}{\partial t}\pi R^{2}$，$E_v = \dfrac{R^{2}}{2r}\dfrac{\partial B}{\partial t}$
+
+(2) 导体棒 $ab$：$\varepsilon_{ab} = \displaystyle\int E_v\cos\alpha\,\mathrm{d}l = \dfrac{h}{2}\dfrac{\partial B}{\partial t}L = \dfrac{L}{2}\sqrt{R^{2} - \left(\dfrac{L}{2}\right)^{2}}\dfrac{\partial B}{\partial t}$
+
+\item（书中例题10.9，p.457）薄壁导体柱壳感应电流。
+
+\textbf{解：}$B = \mu_0\dfrac{N}{L}I$，$\Phi = \mu_0\dfrac{N}{L}I\pi r^{2}$，
+$\varepsilon = -\dfrac{\mathrm{d}\Phi}{\mathrm{d}t} = \dfrac{\mu_0 N\pi r^{2}I_0\omega}{L}\cos\omega t$，
+$I = \dfrac{\mu_0 N\pi r^{2}I_0\omega}{LR}\cos\omega t$
+
+\item（书中例题10.11，p.465）空心长直螺线管自感。
+
+\textbf{解：}$B = \mu_0 nI = \mu_0\dfrac{N}{L}I$，$\Psi = NBS = \mu_0\dfrac{N^{2}}{L}I\pi R^{2}$，
+$L = \dfrac{\Psi}{I} = \mu_0\dfrac{N^{2}}{L}\pi R^{2} = \mu_0 n^{2}V$
+
+\item 两平行长直导线单位长度自感。
+
+\textbf{解：}$B_p = \dfrac{\mu_0 I}{2\pi r} + \dfrac{\mu_0 I}{2\pi(d-r)}$，
+$\Phi = \displaystyle\int_a^{d-a} \left[\dfrac{\mu_0 I}{2\pi r} + \dfrac{\mu_0 I}{2\pi(d-r)}\right]h\,\mathrm{d}r = \dfrac{\mu_0 I h}{\pi}\ln\dfrac{d-a}{a}$，
+$L = \dfrac{\Phi}{Ih} = \dfrac{\mu_0}{\pi}\ln\dfrac{d-a}{a}$
+
+\item（书中例题10.13，p.466）螺绕环自感。
+
+\textbf{解：}$B = \dfrac{\mu_0 NI}{2\pi r}$，$\Phi = \displaystyle\int_{R_1}^{R_2} \dfrac{\mu_0 NI}{2\pi r}h\,\mathrm{d}r = \dfrac{\mu_0 NI h}{2\pi}\ln\dfrac{R_2}{R_1}$，
+$L = \dfrac{N\Phi}{I} = \dfrac{\mu_0 N^{2}h}{2\pi}\ln\dfrac{R_2}{R_1}$
+
+\item 同轴电缆单位长度自感。
+
+\textbf{解：}$R_1 < r < R_2$：$B = \dfrac{\mu_0\mu_r I}{2\pi r}$，$r < R_1$、$r > R_2$：$B = 0$。
+$\Phi = \displaystyle\int_{R_1}^{R_2} \dfrac{\mu_0\mu_r I}{2\pi r}\,\mathrm{d}l\,\mathrm{d}r = \dfrac{\mu_0\mu_r I l}{2\pi}\ln\dfrac{R_2}{R_1}$，
+$L = \dfrac{\Phi}{Il} = \dfrac{\mu_0\mu_r}{2\pi}\ln\dfrac{R_2}{R_1}$
+
+\item（书中例题10.14，p.468）两同轴螺线管互感。
+
+\textbf{解：}$B_1 = \mu n_1 I_1$，$\Psi_{21} = n_2 l_2 B_1 S = \mu n_1 n_2 l_2 \pi R^{2}I_1$，
+$M_{21} = \dfrac{\Psi_{21}}{I_1} = \mu n_1 n_2 l_2 \pi R^{2} = \mu n_1 n_2 V_2$
+同理 $M_{12} = M_{21} = M$。
+
+\item（书中例题10.15，p.469）矩形线圈对直导线互感电动势。
+
+\textbf{解：}$B = \dfrac{\mu_0 i}{2\pi r}$，$\Phi = \displaystyle\int_a^b \dfrac{\mu_0 i L}{2\pi r}\,\mathrm{d}r = \dfrac{\mu_0 i L}{2\pi}\ln\dfrac{b}{a}$，
+$M = \dfrac{\Psi}{i} = \dfrac{\mu_0 NL}{2\pi}\ln\dfrac{b}{a}$，
+$\varepsilon_M = -M\dfrac{\mathrm{d}I}{\mathrm{d}t} = \dfrac{\mu_0 N L I_0\omega}{2\pi}\ln\dfrac{b}{a}\sin\omega t$
+
+\item（书中例题10.16，p.470）两同轴线圈互感。
+
+\textbf{解：}
+(1) $B = \dfrac{\mu_0}{2}\dfrac{IR^{2}}{(R^{2}+d^{2})^{3/2}}$，$\Phi_{\text{小}} = BS = \dfrac{\mu_0}{2}\dfrac{I\pi R^{2}r^{2}}{(R^{2}+d^{2})^{3/2}}$，
+$M = \dfrac{\Phi_{\text{小}}}{I} = \dfrac{\pi\mu_0 R^{2}r^{2}}{2(R^{2}+d^{2})^{3/2}} \approx \dfrac{\pi\mu_0 R^{2}r^{2}}{2d^{3}}$
+
+(2) $\varepsilon = -M\dfrac{\mathrm{d}I}{\mathrm{d}t} = \dfrac{\pi\mu_0 R^{2}r^{2}I_0\omega}{2d^{3}}\cos\omega t$
+
+\item 平行板电容器充电时的位移电流和磁场。
+
+\textbf{解：}$E = \dfrac{\sigma}{\varepsilon_0}$，$j_D = \dfrac{\partial D}{\partial t} = \dfrac{I_C}{\pi R^{2}}$。
+$P_1$（$r_1 > R$，导线外）：$H_1 2\pi r_1 = I_C$，$B_1 = \dfrac{\mu_0 I_C}{2\pi r_1}$
+$P_2$（$r_2 < R$，极板间）：$H_2 2\pi r_2 = \pi r_2^{2} j_D$，$B_2 = \dfrac{\mu_0 I_C}{2\pi}\dfrac{r_2}{R^{2}}$
+
+\end{enumerate}
+
+\end{document}

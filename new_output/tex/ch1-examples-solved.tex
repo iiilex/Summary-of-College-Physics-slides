@@ -1,0 +1,271 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第1章 质点运动学} --- 例题解答}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+\item 如图所示，以速度 $v$ 用绳跨一定滑轮拉湖面上的船，已知绳初长 $l_0$，岸高 $h$。求船的运动方程。
+
+\textbf{解：}取坐标系如图，船位沿 $x$ 轴。
+绳长随时间变化：$l(t) = l_0 - vt$。
+由几何关系 $l^{2} = x^{2} + h^{2}$，得
+\[
+x(t) = \sqrt{(l_0 - vt)^{2} - h^{2}}
+\]
+此即船的运动方程。
+
+\item 已知一质点运动方程 $\vec{r} = 2t\,\vec{i} + (2 - t^{2})\,\vec{j}$。求：
+\begin{enumerate}
+  \item $t = 1\,\text{s}$ 到 $t = 2\,\text{s}$ 质点的位移；
+  \item $t = 2\,\text{s}$ 时 $\vec{v}$、$\vec{a}$；
+  \item 轨迹方程。
+\end{enumerate}
+
+\textbf{解：}
+\begin{enumerate}
+  \item $t = 1\,\text{s}$：$\vec{r}_1 = 2\vec{i} + \vec{j}$，
+    $t = 2\,\text{s}$：$\vec{r}_2 = 4\vec{i} - 2\vec{j}$。
+    位移 $\Delta\vec{r} = \vec{r}_2 - \vec{r}_1 = 2\vec{i} - 3\vec{j}$。
+  \item $\vec{v} = \dfrac{\mathrm{d}\vec{r}}{\mathrm{d}t} = 2\vec{i} - 2t\vec{j}$，
+    $\vec{a} = \dfrac{\mathrm{d}\vec{v}}{\mathrm{d}t} = -2\vec{j}$。
+    $t = 2\,\text{s}$：$\vec{v}_2 = 2\vec{i} - 4\vec{j}$，$\vec{a}_2 = -2\vec{j}$。
+  \item 由 $x = 2t$，$y = 2 - t^{2}$ 消去 $t$，得轨迹方程 $y = 2 - \dfrac{x^{2}}{4}$。
+\end{enumerate}
+
+\item（书中例题 1.1, 1.4，p.6; p.15）一质点作匀速圆周运动，半径为 $r$，角速度为 $\omega$。求用直角坐标、位矢表示的质点运动学方程。
+
+\textbf{解：}以圆心 $O$ 为原点，设 $t = 0$ 时质点位于 $(r, 0)$，则
+\[
+x = r\cos\omega t,\quad y = r\sin\omega t
+\]
+位矢表示为
+\[
+\vec{r} = r\cos\omega t\,\hat{i} + r\sin\omega t\,\hat{j}
+\]
+消去 $t$ 得轨迹：$x^{2} + y^{2} = r^{2}$。
+速度：
+\[
+v_x = -r\omega\sin\omega t,\quad v_y = r\omega\cos\omega t,\quad |\vec{v}| = r\omega
+\]
+加速度：
+\[
+a_x = -r\omega^{2}\cos\omega t,\quad a_y = -r\omega^{2}\sin\omega t,\quad |\vec{a}| = r\omega^{2} = \frac{v^{2}}{r}
+\]
+
+\item（书中例题 1.2, 1.6，p.7; p.17，重点）直杆 $AB$ 两端可以分别在两固定且相互垂直的直导线槽上滑动，已知杆的倾角 $\varphi = \omega t$ 随时间变化，其中 $\omega$ 为常量。求杆中 $M$ 点的运动轨迹方程和加速度。
+
+\textbf{解：}设 $M$ 距 $A$ 端为 $a$、距 $B$ 端为 $b$，杆长 $l = a + b$。
+运动学方程：
+\[
+x = a\cos\omega t,\quad y = b\sin\omega t
+\]
+消去 $t$ 得轨迹方程（椭圆）：
+\[
+\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = 1
+\]
+速度：
+\[
+v_x = -a\omega\sin\omega t,\quad v_y = b\omega\cos\omega t
+\]
+加速度：
+\[
+a_x = -a\omega^{2}\cos\omega t,\quad a_y = -b\omega^{2}\sin\omega t
+\]
+用位矢表示为 $\vec{a} = -\omega^{2}\vec{r}$。
+
+\item 已知 $a = 100 - 4t^{2}$，且 $t = 0$ 时 $v = 0$，$x = 0$。求速度 $v$ 和运动学方程。
+
+\textbf{解：}
+\[
+v = \int a\,\mathrm{d}t = \int (100 - 4t^{2})\,\mathrm{d}t = 100t - \frac{4}{3}t^{3} + C
+\]
+由 $t = 0$，$v = 0$ 得 $C = 0$，故 $v = 100t - \dfrac{4}{3}t^{3}$。
+\[
+x = \int v\,\mathrm{d}t = \int \left(100t - \frac{4}{3}t^{3}\right)\mathrm{d}t = 50t^{2} - \frac{1}{3}t^{4} + C'
+\]
+由 $t = 0$，$x = 0$ 得 $C' = 0$，故 $x = 50t^{2} - \dfrac{1}{3}t^{4}$。
+
+\item 已知质点作匀加速直线运动，加速度为 $a$，求质点的运动方程。
+
+\textbf{解：}由 $\vec{a} = \dfrac{\mathrm{d}\vec{v}}{\mathrm{d}t}$，标量形式 $\mathrm{d}v = a\,\mathrm{d}t$，积分
+\[
+\int_{v_0}^{v} \mathrm{d}v = \int_{0}^{t} a\,\mathrm{d}t \;\Longrightarrow\; v = v_0 + at
+\]
+再由 $\dfrac{\mathrm{d}x}{\mathrm{d}t} = v$，积分
+\[
+\int_{x_0}^{x} \mathrm{d}x = \int_{0}^{t} (v_0 + at)\,\mathrm{d}t \;\Longrightarrow\; x = x_0 + v_0 t + \frac12 at^{2}
+\]
+
+\item（书中例题 1.9，p.21）在地球表面附近，质点以初速度 $v_0$ 倾斜抛出。不计空气阻力、风力、地球自转等影响，加速度即为重力加速度 $g$。设质点在 $Oxy$ 铅垂平面内作无阻力抛体运动，$a_x = 0$，$a_y = -g$。当 $t = t_0$ 时，$v_{0x} = v_0\cos\alpha$，$v_{0y} = v_0\sin\alpha$，$x_0 = y_0 = 0$，$g$、$v_0$ 均为常量。试求质点速度沿 $x$、$y$ 轴的投影和质点的运动学方程。
+
+\textbf{解：}
+\[
+a_x = \frac{\mathrm{d}v_x}{\mathrm{d}t} = 0,\quad
+a_y = \frac{\mathrm{d}v_y}{\mathrm{d}t} = -g
+\]
+积分得 $v_x = C_1$，$v_y = -gt + C_2$。
+代入初始条件 $t = t_0$ 时 $v_x = v_0\cos\alpha$，$v_y = v_0\sin\alpha$，得
+\[
+C_1 = v_0\cos\alpha,\quad C_2 = v_0\sin\alpha + gt_0
+\]
+故
+\[
+v_x = v_0\cos\alpha,\quad v_y = v_0\sin\alpha - g(t - t_0)
+\]
+再积分得运动学方程：
+\[
+x = v_0(t - t_0)\cos\alpha,\quad
+y = v_0(t - t_0)\sin\alpha - \frac12 g(t - t_0)^{2}
+\]
+若 $t_0 = 0$，则
+\[
+v_x = v_0\cos\alpha,\quad v_y = v_0\sin\alpha - gt
+\]
+\[
+x = v_0 t\cos\alpha,\quad y = v_0 t\sin\alpha - \frac12 gt^{2}
+\]
+消去 $t$ 得轨迹（抛物线）：
+\[
+y = x\tan\alpha - \frac{g}{2v_0^{2}\cos^{2}\alpha}\,x^{2}
+\]
+
+\item 一汽车在半径 $R = 200\,\text{m}$ 的圆弧形公路上行驶，其运动学方程为 $s = 20t - 0.2t^{2}\;(\text{SI})$。求汽车在 $t = 1\,\text{s}$ 时的速度和加速度大小。
+
+\textbf{解：}
+\[
+v = \frac{\mathrm{d}s}{\mathrm{d}t} = 20 - 0.4t,\quad v(1) = 19.6\,\text{m/s}
+\]
+\[
+a_{\tau} = \frac{\mathrm{d}v}{\mathrm{d}t} = -0.4\,\text{m/s}^{2},\quad
+a_n = \frac{v^{2}}{R} = \frac{(20 - 0.4t)^{2}}{200}
+\]
+$t = 1\,\text{s}$：
+\[
+a_n = \frac{(19.6)^{2}}{200} = 1.9208\,\text{m/s}^{2}
+\]
+\[
+a = \sqrt{a_{\tau}^{2} + a_n^{2}} = \sqrt{(-0.4)^{2} + (1.9208)^{2}} \approx 1.44\,\text{m/s}^{2}
+\]
+
+\item 将一根光滑的钢丝弯成一个竖直平面内的曲线，质点可沿钢丝向下滑动。已知质点运动的切向加速度为 $a_{\tau} = -g\sin\theta$，$g$ 为重力加速度，$\theta$ 为切向与水平方向的夹角，初始速度 $v_0$，初始位置为 $y_0$。求质点在钢丝上各处的运动速度。
+
+\textbf{解：}
+\[
+a_{\tau} = \frac{\mathrm{d}v}{\mathrm{d}t} = -g\sin\theta = \frac{\mathrm{d}v}{\mathrm{d}s}\frac{\mathrm{d}s}{\mathrm{d}t} = v\frac{\mathrm{d}v}{\mathrm{d}s}
+\]
+\[
+v\,\mathrm{d}v = -g\sin\theta\,\mathrm{d}s
+\]
+由图中几何关系 $\sin\theta\,\mathrm{d}s = \mathrm{d}y$，代入得
+\[
+v\,\mathrm{d}v = -g\,\mathrm{d}y
+\]
+积分：
+\[
+\int_{v_0}^{v} v\,\mathrm{d}v = -\int_{y_0}^{y} g\,\mathrm{d}y
+\]
+\[
+\frac12(v^{2} - v_0^{2}) = -g(y - y_0)
+\]
+\[
+v^{2} = v_0^{2} + 2g(y_0 - y)
+\]
+
+\item 一质点在水平面内以顺时针方向沿半径为 $2\,\text{m}$ 的圆形轨道运动。此质点的角速度与运动时间的平方成正比，即 $\omega = kt^{2}$，$k$ 为待定常数。已知质点在 $2\,\text{s}$ 末的线速度为 $32\,\text{m/s}$。求 $t = 0.5\,\text{s}$ 时质点的线速度和加速度。
+
+\textbf{解：}由 $v = R\omega$，$t = 2\,\text{s}$ 时 $v = 32\,\text{m/s}$：
+\[
+\omega(2) = \frac{v}{R} = \frac{32}{2} = 16\,\text{rad/s}
+\]
+\[
+k = \frac{\omega}{t^{2}} = \frac{16}{4} = 4\,\text{s}^{-3}
+\]
+故 $\omega = 4t^{2}$，$v = R\omega = 8t^{2}$。
+$t = 0.5\,\text{s}$：
+\[
+v = 8 \times (0.5)^{2} = 2.0\,\text{m/s}
+\]
+\[
+a_{\tau} = \frac{\mathrm{d}v}{\mathrm{d}t} = 16t = 8.0\,\text{m/s}^{2}
+\]
+\[
+a_n = \frac{v^{2}}{R} = \frac{2^{2}}{2} = 2.0\,\text{m/s}^{2}
+\]
+\[
+a = \sqrt{a_n^{2} + a_{\tau}^{2}} = \sqrt{2^{2} + 8^{2}} \approx 8.25\,\text{m/s}^{2}
+\]
+\[
+\theta = \arctan\frac{a_n}{a_{\tau}} = \arctan\frac{2}{8} \approx 14.0^{\circ}
+\]
+
+\item（例 1.17）一细杆可绕过其一端的水平轴在铅直平面内自由转动。当杆与水平线夹角为 $\theta$ 时，其角加速度 $\beta = \dfrac{3g}{2l}\cos\theta$，$l$ 为杆长。试求：
+\begin{enumerate}
+  \item 杆自静止由 $\theta_0 = \dfrac{\pi}{6}$ 开始转至 $\theta = \dfrac{\pi}{3}$ 时杆的角速度；
+  \item 杆的端点 $A$ 和中点 $B$ 的线速度大小。
+\end{enumerate}
+
+\textbf{解：}
+\begin{enumerate}
+  \item $\beta = \dfrac{\mathrm{d}\omega}{\mathrm{d}t} = \dfrac{3g}{2l}\cos\theta$。利用 $\omega = \dfrac{\mathrm{d}\theta}{\mathrm{d}t}$，有
+    \[
+    \beta = \frac{\mathrm{d}\omega}{\mathrm{d}t} = \frac{\mathrm{d}\omega}{\mathrm{d}\theta}\frac{\mathrm{d}\theta}{\mathrm{d}t} = \omega\frac{\mathrm{d}\omega}{\mathrm{d}\theta}
+    \]
+    故 $\omega\,\mathrm{d}\omega = \beta\,\mathrm{d}\theta = \dfrac{3g}{2l}\cos\theta\,\mathrm{d}\theta$。
+    积分：
+    \[
+    \int_{0}^{\omega} \omega\,\mathrm{d}\omega = \int_{\pi/6}^{\pi/3} \frac{3g}{2l}\cos\theta\,\mathrm{d}\theta
+    \]
+    \[
+    \frac12\omega^{2} = \frac{3g}{2l}\Bigl(\sin\frac{\pi}{3} - \sin\frac{\pi}{6}\Bigr)
+    = \frac{3g}{2l}\Bigl(\frac{\sqrt{3}}{2} - \frac12\Bigr)
+    \]
+    \[
+    \omega = \sqrt{\frac{3g}{2l}(\sqrt{3} - 1)}
+    \]
+  \item 端点 $A$ 和中点 $B$ 的线速度：
+    \[
+    v_A = l\omega = l\sqrt{\frac{3g}{2l}(\sqrt{3} - 1)} = \sqrt{\frac{3gl}{2}(\sqrt{3} - 1)}
+    \]
+    \[
+    v_B = \frac{l}{2}\omega = \frac{l}{2}\sqrt{\frac{3g}{2l}(\sqrt{3} - 1)} = \frac12\sqrt{\frac{3gl}{2}(\sqrt{3} - 1)}
+    \]
+\end{enumerate}
+
+\item 一个带篷子的卡车，篷高 $h = 2\,\text{m}$，当它停在马路边时，雨滴可落入车内达 $d = 1\,\text{m}$，而当它以 $15\,\text{km/h}$ 的速率运动时，雨滴恰好不能落入车中。求雨滴的速度矢量。
+
+\textbf{解：}雨滴对地的绝对速度 $\vec{v}_a$ 与竖直方向夹角为 $\alpha$。
+车静止时，雨滴水平方向落入距离 $d$，有
+\[
+\tan\alpha = \frac{d}{h} = \frac{1}{2},\quad \alpha = \arctan(0.5) \approx 26.6^{\circ}
+\]
+车运动时，雨滴恰好不落入，即相对速度为竖直向下。
+牵连速度 $v_e = 15\,\text{km/h}$，矢量关系 $\vec{v}_a = \vec{v}_r + \vec{v}_e$。
+由几何关系：
+\[
+v_a = \frac{v_e}{\cos\alpha} \quad\text{(实际应为 } v_e/\cos\alpha \text{，需注意方位)}
+\]
+实际上，雨滴相对于车竖直下落意味着 $\vec{v}_r$ 竖直向下，
+因此 $\vec{v}_a$ 的水平分量等于 $v_e$（沿车行方向反向）：
+\[
+v_a\sin\alpha = v_e
+\]
+\[
+v_a = \frac{v_e}{\sin\alpha}
+\]
+而 $\sin\alpha = \dfrac{d}{\sqrt{h^{2}+d^{2}}} = \dfrac{1}{\sqrt{5}} \approx 0.447$，故
+\[
+v_a = \frac{15}{0.447} \approx 33.5\,\text{km/h} = 9.3\,\text{m/s}
+\]
+方向：与竖直方向夹角 $\alpha = \arctan(d/h) \approx 26.6^{\circ}$，斜向下指向车行方向。
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,100 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第9章 静电场} --- 知识点与公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{9.1--9.4 静电场基本概念}
+
+\subsection*{库仑定律}
+\[
+\vec{F}_{12} = \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^{2}}\hat{r}_{12}^{0}
+\]
+
+\subsection*{电场强度}
+定义：$\vec{E} = \dfrac{\vec{F}}{q_0}$
+
+点电荷电场：$\vec{E} = \dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{r^{2}}\hat{r}^{0}$
+
+叠加原理：$\vec{E} = \sum\limits_i \vec{E}_i$（分立），$\vec{E} = \displaystyle\int \dfrac{\mathrm{d}q}{4\pi\varepsilon_0 r^{2}}\hat{r}^{0}$（连续）
+
+电偶极矩：$\vec{p} = q\vec{l}$，延长线上 $E = \dfrac{1}{2\pi\varepsilon_0}\dfrac{\vec{p}}{x^{3}}$，中垂线上 $E = -\dfrac{1}{4\pi\varepsilon_0}\dfrac{\vec{p}}{r^{3}}$
+
+\subsection*{高斯定理}
+电通量：$\Phi_e = \displaystyle\int_S \vec{E}\cdot\mathrm{d}\vec{S}$
+
+高斯定理：$\displaystyle\oint_S \vec{E}\cdot\mathrm{d}\vec{S} = \frac{1}{\varepsilon_0}\sum q_i$（内）
+
+常见对称性电场：
+\begin{itemize}
+  \item 无限大均匀带电平面：$E = \dfrac{\sigma}{2\varepsilon_0}$
+  \item 无限长均匀带电直线：$E = \dfrac{\lambda}{2\pi\varepsilon_0 r}$
+  \item 均匀带电球面（$r \ge R$）：$E = \dfrac{q}{4\pi\varepsilon_0 r^{2}}$，（$r < R$）：$E = 0$
+  \item 均匀带电球体（$r \ge R$）：$E = \dfrac{q}{4\pi\varepsilon_0 r^{2}}$，（$r < R$）：$E = \dfrac{qr}{4\pi\varepsilon_0 R^{3}}$
+\end{itemize}
+
+\subsection*{静电场的环路定理 电势}
+环路定理：$\displaystyle\oint_L \vec{E}\cdot\mathrm{d}\vec{l} = 0$
+
+电势：$u_a = \displaystyle\int_a^{\infty} \vec{E}\cdot\mathrm{d}\vec{l}$（选无穷远为零势点）
+
+点电荷电势：$u = \dfrac{q}{4\pi\varepsilon_0 r}$
+
+电势叠加：$u = \sum\limits_i u_i$（分立），$u = \displaystyle\int \dfrac{\mathrm{d}q}{4\pi\varepsilon_0 r}$（连续）
+
+电场与电势关系：$\vec{E} = -\nabla u$
+
+常见电势分布：
+\begin{itemize}
+  \item 均匀带电圆环轴线：$u = \dfrac{q}{4\pi\varepsilon_0\sqrt{R^{2}+x^{2}}}$
+  \item 均匀带电圆盘轴线：$u = \dfrac{\sigma}{2\varepsilon_0}\left(\sqrt{R^{2}+x^{2}} - x\right)$
+  \item 均匀带电球面（$r \ge R$）：$u = \dfrac{q}{4\pi\varepsilon_0 r}$，（$r < R$）：$u = \dfrac{q}{4\pi\varepsilon_0 R}$
+  \item 均匀带电球体（$r \ge R$）：$u = \dfrac{q}{4\pi\varepsilon_0 r}$，（$r < R$）：$u = \dfrac{q}{8\pi\varepsilon_0 R^{3}}(3R^{2} - r^{2})$
+\end{itemize}
+
+\section*{9.5--9.6 静电场中的导体}
+
+\subsection*{静电平衡条件}
+导体内部 $\vec{E} = 0$，导体是等势体，表面 $\vec{E} \perp$ 表面。
+
+电荷分布：电荷只分布在导体表面，孤立导体 $\sigma \propto \dfrac{1}{R}$。
+
+静电屏蔽：空腔导体可屏蔽内外电场。
+
+\subsection*{电容}
+孤立导体电容：$C = \dfrac{Q}{u}$
+
+孤立导体球：$C = 4\pi\varepsilon_0 R$
+
+平行板电容器：$C = \dfrac{\varepsilon_0 S}{d}$
+
+同心球面电容器：$C = \dfrac{4\pi\varepsilon_0 R_1 R_2}{R_2 - R_1}$
+
+同轴圆柱电容器：$C = \dfrac{2\pi\varepsilon_0 L}{\ln(R_2/R_1)}$
+
+串联：$\dfrac{1}{C} = \sum \dfrac{1}{C_i}$，并联：$C = \sum C_i$
+
+\section*{9.7--9.8 静电场中的电介质}
+
+\subsection*{电介质的极化}
+极化强度 $\vec{P}$，电极化率 $\chi_e$，$\vec{P} = \chi_e\varepsilon_0\vec{E}$
+
+\subsection*{电位移矢量}
+$\vec{D} = \varepsilon_0\vec{E} + \vec{P}$（普通），$\vec{D} = \varepsilon\vec{E}$（各向同性介质）
+
+$\varepsilon = \varepsilon_0\varepsilon_r$，$\varepsilon_r = 1 + \chi_e$
+
+介质中高斯定理：$\displaystyle\oint_S \vec{D}\cdot\mathrm{d}\vec{S} = \sum q_i$（自由电荷）
+
+\subsection*{电场能量}
+能量密度：$w_e = \dfrac12 \varepsilon_0 E^{2}$（真空），$w = \dfrac12 \vec{D}\cdot\vec{E}$（介质）
+
+电场能量：$W = \displaystyle\int_V w\,\mathrm{d}V = \dfrac12 CU^{2} = \dfrac{Q^{2}}{2C}$
+
+\end{document}

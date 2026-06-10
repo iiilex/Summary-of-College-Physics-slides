@@ -1,0 +1,92 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第7章 机械振动} --- 知识点与公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{7.1 简谐振动}
+
+\subsection*{简谐振动方程}
+动力学特征：$F = -kx$
+
+微分方程：$\dfrac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}} + \omega^{2}x = 0$，其中 $\omega = \sqrt{\dfrac{k}{m}}$
+
+运动方程：$x = A\cos(\omega t + \varphi)$
+
+\subsection*{描述简谐振动的特征量}
+振幅 $A$：最大位移的绝对值。
+
+周期 $T = \dfrac{2\pi}{\omega}$，弹簧振子 $T = 2\pi\sqrt{\dfrac{m}{k}}$
+
+频率 $\nu = \dfrac{1}{T} = \dfrac{\omega}{2\pi}$
+
+角频率 $\omega = \dfrac{2\pi}{T} = 2\pi\nu$
+
+相位 $\omega t + \varphi$，初相 $\varphi$（由初始条件确定）
+
+由初条件求振幅和初相：
+\[
+A = \sqrt{x_0^{2} + \frac{v_0^{2}}{\omega^{2}}},\quad
+\tan\varphi = -\frac{v_0}{\omega x_0}
+\]
+
+\subsection*{旋转矢量法}
+旋转矢量 $\vec{A}$ 以角速度 $\omega$ 逆时针旋转，其在 $x$ 轴上的投影为简谐振动。
+
+\subsection*{简谐振动的能量}
+动能：$E_k = \dfrac12 mv^{2} = \dfrac12 kA^{2}\sin^{2}(\omega t + \varphi)$
+
+势能：$E_p = \dfrac12 kx^{2} = \dfrac12 kA^{2}\cos^{2}(\omega t + \varphi)$
+
+总能：$E = E_k + E_p = \dfrac12 kA^{2}$（守恒）
+
+平均值：$\bar{E}_k = \bar{E}_p = \dfrac12 E = \dfrac14 kA^{2}$
+
+\section*{7.2 简谐振动的合成}
+
+\subsection*{同方向同频率}
+合振动：$x = A\cos(\omega t + \varphi)$
+\[
+A = \sqrt{A_1^{2} + A_2^{2} + 2A_1A_2\cos(\varphi_2 - \varphi_1)},\quad
+\tan\varphi = \frac{A_1\sin\varphi_1 + A_2\sin\varphi_2}{A_1\cos\varphi_1 + A_2\cos\varphi_2}
+\]
+
+同相（$\Delta\varphi = 2k\pi$）：$A = A_1 + A_2$（最大）
+反相（$\Delta\varphi = (2k+1)\pi$）：$A = |A_1 - A_2|$（最小）
+
+\subsection*{同方向不同频率（拍）}
+拍频：$\nu = |\nu_2 - \nu_1|$
+
+\subsection*{相互垂直的简谐振动}
+\[
+\frac{x^{2}}{A_1^{2}} + \frac{y^{2}}{A_2^{2}} - \frac{2xy}{A_1A_2}\cos(\varphi_2 - \varphi_1) = \sin^{2}(\varphi_2 - \varphi_1)
+\]
+
+\section*{7.3 阻尼振动}
+$F = -kx - \gamma v$
+
+微分方程：$\dfrac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}} + 2\beta\dfrac{\mathrm{d}x}{\mathrm{d}t} + \omega_0^{2}x = 0$
+
+$\beta = \dfrac{\gamma}{2m}$ 为阻尼系数，$\omega_0 = \sqrt{\dfrac{k}{m}}$ 为固有角频率。
+
+弱阻尼（$\beta < \omega_0$）：$x = A_0 e^{-\beta t}\cos(\omega t + \varphi)$，$\omega = \sqrt{\omega_0^{2} - \beta^{2}}$
+
+\section*{7.4 受迫振动 共振}
+微分方程：$\dfrac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}} + 2\beta\dfrac{\mathrm{d}x}{\mathrm{d}t} + \omega_0^{2}x = f_0\cos\omega t$
+
+稳定解：$x = A\cos(\omega t + \varphi)$
+\[
+A = \frac{f_0}{\sqrt{(\omega_0^{2} - \omega^{2})^{2} + 4\beta^{2}\omega^{2}}}
+\]
+
+共振角频率：$\omega_r = \sqrt{\omega_0^{2} - 2\beta^{2}}$
+
+共振振幅：$A_r = \dfrac{f_0}{2\beta\sqrt{\omega_0^{2} - \beta^{2}}}$
+
+\end{document}

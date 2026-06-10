@@ -1,0 +1,193 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第2章 牛顿运动定律} --- 知识点与公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{一、牛顿运动三定律}
+
+\subsection*{1. 牛顿第一定律（惯性定律）}
+任何质点都保持静止或匀速直线运动状态，直到其它物体作用的力迫使它改变这种状态为止。
+
+\textbf{惯性}——质点不受力时保持静止或匀速直线运动状态的性质，其大小用质量量度。
+
+\textbf{力}——使质点改变运动状态的原因。
+
+质点处于静止或匀速直线运动时：
+\[
+\sum \vec{F}_i = 0 \quad\text{(静力学基本方程)}
+\]
+
+\subsection*{2. 牛顿第二定律}
+\[
+\sum \vec{F}_i = \frac{\mathrm{d}(m\vec{v})}{\mathrm{d}t} = \frac{\mathrm{d}m}{\mathrm{d}t}\vec{v} + m\frac{\mathrm{d}\vec{v}}{\mathrm{d}t}
+\]
+
+当质量不随时间变化时：
+\[
+\sum \vec{F}_i = m\frac{\mathrm{d}\vec{v}}{\mathrm{d}t} = m\vec{a}
+\]
+
+直角坐标系分量形式：
+\[
+\sum F_{ix} = m\frac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}},\quad
+\sum F_{iy} = m\frac{\mathrm{d}^{2}y}{\mathrm{d}t^{2}},\quad
+\sum F_{iz} = m\frac{\mathrm{d}^{2}z}{\mathrm{d}t^{2}}
+\]
+
+自然坐标系分量形式：
+\[
+\sum F_n = ma_n = m\frac{v^{2}}{\rho},\qquad
+\sum F_{\tau} = ma_{\tau} = m\frac{\mathrm{d}v}{\mathrm{d}t}
+\]
+
+\textbf{讨论：}
+\begin{itemize}
+  \item 第二定律只适用于质点
+  \item 质量不能当常量的两种情况：变质量问题（火箭、雨滴）；高速运动（相对论效应，$v > 10^{6}\,\text{m/s}$）
+\end{itemize}
+
+\subsection*{3. 牛顿第三定律}
+\[
+\vec{F} = -\vec{F}'
+\]
+\begin{itemize}
+  \item 成对性——物体之间的作用是相互的
+  \item 同时性——相互作用相互依存，同生同灭
+  \item 适用于接触力；非接触力（如万有引力）存在延迟效应
+\end{itemize}
+
+\section*{二、力学中常见的几种力}
+
+\subsection*{1. 万有引力}
+\[
+F = G\frac{m_1 m_2}{r^{2}},\quad G = 6.67\times10^{-11}\,\text{m}^{3}\!\cdot\!\text{kg}^{-1}\!\cdot\!\text{s}^{-2}
+\]
+矢量形式：
+\[
+\vec{F}_{21} = -G\frac{m_1 m_2}{r^{2}}\,\vec{r}^{\,0}
+\]
+
+说明：
+\begin{itemize}
+  \item 引力质量与惯性质量对同一物体总是相等
+  \item 定律只直接适用于两质点
+  \item 质量均匀分布球体与质点可直接使用公式
+  \item 一般物体与质点间的引力需用微积分计算
+\end{itemize}
+
+重力（地球表面附近）：
+\[
+P = G\frac{Mm}{R^{2}}(1 - 0.0035\cos^{2}\phi)
+\]
+其中 $\phi$ 为地理纬度。
+
+\subsection*{2. 弹性力}
+两宏观物体接触发生微小形变时产生。
+
+胡克定律（弹簧）：
+\[
+\vec{f} = -kx\,\vec{i}
+\]
+
+绳子受拉伸时内部出现弹性张力。
+
+\subsection*{3. 摩擦力}
+
+\textbf{静摩擦力：}两物体保持相对静止但有相对运动趋势时产生。
+\[
+f_{\text{max}} = \mu_0 N
+\]
+$\mu_0$ 为最大静摩擦系数，$N$ 为正压力。
+
+\textbf{滑动摩擦力：}
+\[
+f = \mu N
+\]
+$\mu$ 为滑动摩擦系数。
+
+\section*{三、牛顿运动定律的应用}
+
+\subsection*{动力学问题分类}
+\begin{enumerate}
+  \item 已知运动情况 $\to$ 求力（微分问题）
+  \item 已知力 $\to$ 求运动情况（积分问题）
+  \item 已知部分运动与部分力 $\to$ 求未知部分
+\end{enumerate}
+
+\textbf{加速度}是连接运动学与动力学的桥梁。
+
+\subsection*{求解一般步骤}
+\begin{enumerate}
+  \item 选取研究对象（隔离法）
+  \item 分析受力和运动情况，画受力分析图
+  \item 建立坐标系
+  \item 列方程求解（牛二定律 + 约束方程）
+  \item 讨论分析结果的物理意义
+\end{enumerate}
+
+\subsection*{变力问题的处理方法}
+
+\textbf{(1) 力随时间变化：$F = f(t)$}
+\[
+m\frac{\mathrm{d}v_x}{\mathrm{d}t} = f(t),\quad
+v_x = \frac{1}{m}\int f(t)\,\mathrm{d}t + C
+\]
+再积分得运动学方程。
+
+\textbf{(2) 力随速度变化：$F = f(v)$}
+\[
+\frac{\mathrm{d}t}{m} = \frac{\mathrm{d}v}{f(v)},\quad
+t - t_0 = m\int\frac{1}{f(v)}\,\mathrm{d}v
+\]
+
+\textbf{(3) 力随位移变化：$F = f(x)$}
+\[
+f(x) = mv\frac{\mathrm{d}v}{\mathrm{d}x},\quad
+\int f(x)\,\mathrm{d}x = \frac12 m(v^{2} - v_0^{2})
+\]
+
+\subsection*{变质量问题的处理方法}
+牛顿第二定律的普适形式：
+\[
+\vec{F}_{\text{合}} = \frac{\mathrm{d}(m\vec{v})}{\mathrm{d}t}
+= \frac{\mathrm{d}m}{\mathrm{d}t}\vec{v} + m\frac{\mathrm{d}\vec{v}}{\mathrm{d}t}
+\]
+
+\section*{四、牛顿运动定律的适用范围}
+
+\subsection*{惯性系}
+牛顿运动定律适用的参照系称为惯性系。
+\begin{itemize}
+  \item 地面参考系通常视为惯性系
+  \item 相对于惯性系作匀速直线运动的参照系都是惯性系
+\end{itemize}
+
+\subsection*{适用范围}
+牛顿运动定律适用于\textbf{宏观物体的低速运动}。
+\begin{itemize}
+  \item 高速运动 $\to$ 相对论力学
+  \item 微观粒子 $\to$ 量子力学
+\end{itemize}
+
+\subsection*{惯性力（非惯性系）}
+在非惯性系 $S'$ 中引入虚拟力——惯性力：
+\[
+\vec{F}_0 = -m\vec{a}_e
+\]
+其中 $\vec{a}_e$ 为 $S'$ 系相对惯性系的平动加速度。
+
+在非惯性系中，牛顿第二定律形式上成立：
+\[
+\vec{F} + \vec{F}_0 = m\vec{a}_r
+\]
+
+\textbf{注意：}惯性力是虚拟力，没有施力者，也没有反作用力，不满足牛顿第三定律。
+
+\end{document}

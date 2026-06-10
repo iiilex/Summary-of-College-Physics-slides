@@ -1,0 +1,172 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第4章 冲量和动量} --- 知识点与公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{4.1 质点动量定理}
+
+\subsection*{一、冲量和动量}
+牛顿第二定律普适形式：
+\[
+\vec{F} = \frac{\mathrm{d}(m\vec{v})}{\mathrm{d}t} = \frac{\mathrm{d}\vec{P}}{\mathrm{d}t}
+\]
+其中 $\vec{P} = m\vec{v}$ 为动量。
+
+冲量：
+\[
+\vec{I} = \int_{t_0}^{t_1} \vec{F}\,\mathrm{d}t
+\]
+
+冲量是矢量，方向由 $\vec{F}$ 对时间的积分决定，是过程量。
+
+\subsection*{二、质点动量定理}
+\[
+m\vec{v}_2 - m\vec{v}_1 = \int_{t_1}^{t_2} \vec{F}\,\mathrm{d}t
+\]
+质点动量的增量等于合力对质点作用的冲量。
+
+分量形式：
+\[
+mv_{2x} - mv_{1x} = \int_{t_1}^{t_2} F_x\,\mathrm{d}t,\quad
+mv_{2y} - mv_{1y} = \int_{t_1}^{t_2} F_y\,\mathrm{d}t,\quad
+mv_{2z} - mv_{1z} = \int_{t_1}^{t_2} F_z\,\mathrm{d}t
+\]
+
+平均力：
+\[
+\overline{F} = \frac{\int_{t_0}^{t_1} F(t)\,\mathrm{d}t}{t_1 - t_0},\quad
+I = \overline{F}(t_1 - t_0)
+\]
+
+\section*{4.2 质点系动量定理}
+质点系动量：
+\[
+\vec{P} = \sum_i m_i\vec{v}_i
+\]
+
+质点系动量定理：
+\[
+\sum m_i\vec{v}_i - \sum m_i\vec{v}_{i0} = \sum \int_{t_0}^{t} \vec{F}_i\,\mathrm{d}t
+\]
+某段时间内，质点系动量的增量等于所有外力在同一时间内冲量的矢量和。
+
+\textbf{注意：}内力可改变系统内单个质点的动量，但不能改变系统的总动量。
+
+\section*{4.3 质点系动量守恒定律}
+当 $\sum \vec{F}_i = 0$ 时：
+\[
+\sum m_i\vec{v}_i = \text{常矢量}
+\]
+
+分量形式：
+\begin{align*}
+\sum F_x &= 0 \Rightarrow \sum m_i v_{ix} = \text{常量} \\
+\sum F_y &= 0 \Rightarrow \sum m_i v_{iy} = \text{常量} \\
+\sum F_z &= 0 \Rightarrow \sum m_i v_{iz} = \text{常量}
+\end{align*}
+
+\textbf{说明：}
+\begin{itemize}
+  \item 动量守恒定律独立于牛顿定律，适用于高速和微观领域
+  \item 与空间平移不变性相联系，是物理学最普适的定律之一
+  \item 运用时需统一惯性参考系，正确分析运动过程
+\end{itemize}
+
+\section*{碰撞问题}
+碰撞过程中系统动量守恒。
+
+\subsection*{(1) 完全弹性碰撞（动量守恒 + 动能守恒）}
+\[
+m_1 v_1 + m_2 v_2 = m_1 v_{10} + m_2 v_{20}
+\]
+\[
+\frac12 m_1 v_1^{2} + \frac12 m_2 v_2^{2} = \frac12 m_1 v_{10}^{2} + \frac12 m_2 v_{20}^{2}
+\]
+解得：
+\[
+v_1 = \frac{(m_1 - m_2)v_{10} + 2m_2 v_{20}}{m_1 + m_2},\quad
+v_2 = \frac{(m_2 - m_1)v_{20} + 2m_1 v_{10}}{m_1 + m_2}
+\]
+
+\subsection*{(2) 完全非弹性碰撞（动量守恒，动能不守恒）}
+碰后以共同速度运动：
+\[
+v = \frac{m_1 v_{10} + m_2 v_{20}}{m_1 + m_2}
+\]
+
+\subsection*{(3) 非完全弹性碰撞（动量守恒，动能不守恒）}
+回复系数：
+\[
+e = \frac{v_2 - v_1}{v_{10} - v_{20}}
+\]
+
+\section*{变质量问题的处理方法}
+设 $t$ 时刻质量 $m$、速度 $v$，外力 $F$，$dm$ 并入前速度为 $u$（或 $v_r = u - v$ 为相对速度）：
+\[
+F\,\mathrm{d}t = m\,\mathrm{d}v - v_r\,\mathrm{d}m
+\]
+或写为：
+\[
+F + v_r\frac{\mathrm{d}m}{\mathrm{d}t} = m\frac{\mathrm{d}v}{\mathrm{d}t}
+\]
+
+\textbf{火箭问题：}不计外力，$v_r = u$（喷气相对火箭速度）：
+\[
+m\frac{\mathrm{d}v}{\mathrm{d}t} = -u\frac{\mathrm{d}m}{\mathrm{d}t}
+\]
+齐奥尔科夫斯基公式：
+\[
+v = u\ln\frac{M_0}{M}
+\]
+其中 $M_0$ 为初始总质量，$M$ 为燃料烧尽后壳体质量。
+
+\textbf{火箭 vs 漏沙小车：}
+\begin{itemize}
+  \item 火箭：质量减少，$v_r \neq 0$，带走动量，产生推力 $\to$ 动量守恒
+  \item 漏沙：质量减少，$v_r = 0$，不带走动量，无推力 $\to$ 牛顿第二定律
+\end{itemize}
+
+\section*{4.4 质心与质心运动定理}
+
+\subsection*{质心的定义}
+质点系：
+\[
+\vec{r}_C = \frac{\sum_i m_i \vec{r}_i}{\sum_i m_i}
+\]
+连续体：
+\[
+\vec{r}_C = \frac{\int \vec{r}\,\mathrm{d}m}{\int \mathrm{d}m} = \frac{\int \rho\,\vec{r}\,\mathrm{d}V}{\int \rho\,\mathrm{d}V}
+\]
+
+\subsection*{质心运动定理}
+\[
+\vec{F}_{\text{外}} = \frac{\mathrm{d}\vec{P}}{\mathrm{d}t} = m_C \frac{\mathrm{d}^{2}\vec{r}_C}{\mathrm{d}t^{2}} = m_C \vec{a}_C
+\]
+\[
+\int_{t_0}^{t} \vec{F}_{\text{外}}\,\mathrm{d}t = m_C \vec{v}_C - m_C \vec{v}_{C0}
+\]
+
+\textbf{说明：}
+\begin{itemize}
+  \item 质心位矢是加权平均，靠近质量大的一侧
+  \item 内力不改变质心运动状态
+  \item 若体系动量守恒，则质心运动状态不变
+  \item 在地球表面附近小物体，质心和重心一致
+\end{itemize}
+
+\subsection*{质心坐标系}
+原点在质心，坐标轴与惯性系坐标轴保持平行的平动坐标系。
+\begin{itemize}
+  \item 孤立体系或合外力为零的体系，质心系为惯性系
+  \item 受外力作用的体系，质心系为非惯性系
+  \item 在质心系中，动量矩定理仍然适用
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,265 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+\usepackage{enumitem}
+
+\title{\textbf{第1章 质点运动学} --- 知识点与公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{一、质点运动学的基本概念}
+
+\textbf{质点：}有质量而无形状和大小的几何点（理想模型）。
+
+两种可看作质点的情况：
+\begin{itemize}
+  \item 两相互作用物体间距离远大于本身线度
+  \item 作平动的物体
+\end{itemize}
+
+\textbf{参照系：}参照物 + 坐标系 + 时钟。
+不同参考系下，物体的运动状态和轨迹可能不同；
+同一参考系下，运动状态与坐标系选择无关。
+
+\section*{二、确定质点位置的常用方法}
+
+\subsection*{1. 直角坐标法}
+\[
+P(x, y, z)
+\]
+
+\subsection*{2. 位矢法}
+\[
+\vec{r} = x\vec{i} + y\vec{j} + z\vec{k}
+\]
+\[
+|\vec{r}| = \sqrt{x^{2} + y^{2} + z^{2}}
+\]
+方向余弦：
+\[
+\cos\alpha = \frac{x}{|\vec{r}|},\quad
+\cos\beta = \frac{y}{|\vec{r}|},\quad
+\cos\gamma = \frac{z}{|\vec{r}|}
+\]
+
+\subsection*{3. 自然坐标法}
+已知运动轨迹时，$S = f(t)$
+
+\section*{三、运动学方程}
+\[
+\vec{r} = \vec{r}(t) = x(t)\vec{i} + y(t)\vec{j} + z(t)\vec{k}
+\]
+直角坐标分量形式：
+\[
+x = x(t),\quad y = y(t),\quad z = z(t)
+\]
+自然坐标形式：$s = f(t)$
+
+\textbf{意义：}已知运动学方程，可求轨迹、速度和加速度。
+
+\section*{四、位移、速度和加速度}
+
+\subsection*{位移}
+\[
+\Delta\vec{r} = \vec{r}(t+\Delta t) - \vec{r}(t)
+\]
+注意：
+\begin{itemize}
+  \item 位移是矢量，路程是标量，$\Delta\vec{r} \neq \Delta s$
+  \item $\Delta t \to 0$时，$\mathrm{d}s = |\mathrm{d}\vec{r}|$
+  \item $|\Delta\vec{r}| \geq \Delta r$（位移的大小 $\geq$ 位矢大小的变化）
+\end{itemize}
+
+\subsection*{速度}
+平均速度：
+\[
+\langle\vec{v}\rangle = \frac{\Delta\vec{r}}{\Delta t}
+\]
+瞬时速度：
+\[
+\vec{v} = \lim_{\Delta t\to 0}\frac{\Delta\vec{r}}{\Delta t} = \frac{\mathrm{d}\vec{r}}{\mathrm{d}t}
+\]
+瞬时速率：
+\[
+v = \left|\frac{\mathrm{d}\vec{r}}{\mathrm{d}t}\right| = \frac{\mathrm{d}s}{\mathrm{d}t}
+\]
+注意：$\displaystyle\frac{\mathrm{d}s}{\mathrm{d}t} \neq \frac{\mathrm{d}r}{\mathrm{d}t}$
+
+\subsection*{加速度}
+平均加速度：
+\[
+\langle\vec{a}\rangle = \frac{\Delta\vec{v}}{\Delta t}
+\]
+瞬时加速度：
+\[
+\vec{a} = \lim_{\Delta t\to 0}\frac{\Delta\vec{v}}{\Delta t} = \frac{\mathrm{d}\vec{v}}{\mathrm{d}t} = \frac{\mathrm{d}^{2}\vec{r}}{\mathrm{d}t^{2}}
+\]
+
+加速度方向总是指向轨迹曲线凹的一面。
+\begin{itemize}
+  \item $\vec{a}$ 与 $\vec{v}$ 夹角 $0^\circ$ 或 $180^\circ$：直线运动
+  \item $\vec{a}$ 与 $\vec{v}$ 夹角 $90^\circ$：圆周运动
+  \item $\vec{a}$ 与 $\vec{v}$ 夹角 $<90^\circ$：速率增大
+  \item $\vec{a}$ 与 $\vec{v}$ 夹角 $>90^\circ$：速率减小
+\end{itemize}
+
+\section*{五、直角坐标表示法}
+
+\subsection*{位移}
+\[
+\Delta\vec{r} = \Delta x\,\vec{i} + \Delta y\,\vec{j} + \Delta z\,\vec{k}
+\]
+
+\subsection*{速度}
+\[
+\vec{v} = \frac{\mathrm{d}x}{\mathrm{d}t}\vec{i} + \frac{\mathrm{d}y}{\mathrm{d}t}\vec{j} + \frac{\mathrm{d}z}{\mathrm{d}t}\vec{k}
+= v_x\vec{i} + v_y\vec{j} + v_z\vec{k}
+\]
+\[
+|\vec{v}| = \sqrt{v_x^{2} + v_y^{2} + v_z^{2}}
+\]
+方向余弦：
+\[
+\cos\alpha = \frac{v_x}{|\vec{v}|},\quad
+\cos\beta = \frac{v_y}{|\vec{v}|},\quad
+\cos\gamma = \frac{v_z}{|\vec{v}|}
+\]
+
+\subsection*{加速度}
+\[
+\vec{a} = \frac{\mathrm{d}v_x}{\mathrm{d}t}\vec{i} + \frac{\mathrm{d}v_y}{\mathrm{d}t}\vec{j} + \frac{\mathrm{d}v_z}{\mathrm{d}t}\vec{k}
+= \frac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}}\vec{i} + \frac{\mathrm{d}^{2}y}{\mathrm{d}t^{2}}\vec{j} + \frac{\mathrm{d}^{2}z}{\mathrm{d}t^{2}}\vec{k}
+\]
+\[
+|\vec{a}| = \sqrt{a_x^{2} + a_y^{2} + a_z^{2}}
+\]
+
+\section*{六、运动学两类问题}
+
+\textbf{第一类问题：}已知运动学方程 $\vec{r}(t)$，求导得 $\vec{v}$、$\vec{a}$。
+
+\textbf{第二类问题：}已知加速度 $\vec{a}$ 和初始条件，积分得 $\vec{v}$、$\vec{r}$。
+
+\begin{center}
+\begin{tabular}{c|c}
+\hline
+第一类问题 & 第二类问题 \\
+\hline
+运动学方程 & \\
+$\downarrow$ 求导 & 积分 $+$ 初始条件 $\downarrow$ \\
+速度 & \\
+$\downarrow$ 求导 & 积分 $+$ 初始条件 $\downarrow$ \\
+加速度 & \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{七、自然坐标表示法（平面曲线运动）}
+
+\subsection*{速度}
+\[
+\vec{v} = \frac{\mathrm{d}s}{\mathrm{d}t}\,\vec{\tau} = v\,\vec{\tau}
+\]
+
+\subsection*{加速度}
+\[
+\vec{a} = \frac{\mathrm{d}v}{\mathrm{d}t}\,\vec{\tau} + \frac{v^{2}}{\rho}\,\vec{n}
+= \vec{a}_{\tau} + \vec{a}_{n}
+\]
+其中：
+\begin{itemize}
+  \item 切向加速度 $\displaystyle a_{\tau} = \frac{\mathrm{d}v}{\mathrm{d}t} = \frac{\mathrm{d}^{2}s}{\mathrm{d}t^{2}}$，反映速度大小变化
+  \item 法向加速度 $\displaystyle a_{n} = \frac{v^{2}}{\rho}$，反映速度方向变化
+  \item $\rho$ 为曲率半径，$\vec{n}$ 指向曲率圆中心
+\end{itemize}
+
+总加速度大小：
+\[
+a = \sqrt{a_{\tau}^{2} + a_{n}^{2}},\qquad
+\tan\theta = \frac{a_{n}}{a_{\tau}}
+\]
+
+直线运动和圆周运动是平面曲线运动的特例。
+
+\section*{八、圆周运动的角量描述}
+
+\subsection*{角位置与角位移}
+\[
+\theta = \theta(t),\quad \Delta\theta
+\]
+逆时针为正，单位：rad
+
+\subsection*{角速度}
+\[
+\vec{\omega} = \lim_{\Delta t\to 0}\frac{\Delta\theta}{\Delta t}\,\vec{k} = \frac{\mathrm{d}\theta}{\mathrm{d}t}\,\vec{k}
+\]
+单位：rad/s，方向由右手螺旋法则确定。
+
+\subsection*{角加速度}
+\[
+\vec{\beta} = \frac{\mathrm{d}\vec{\omega}}{\mathrm{d}t} = \frac{\mathrm{d}^{2}\theta}{\mathrm{d}t^{2}}\,\vec{k}
+\]
+单位：rad/s$^{2}$
+
+\subsection*{角量与线量的关系}
+\[
+s = R\theta,\qquad v = R\omega,\qquad
+a_{\tau} = R\beta,\qquad a_{n} = R\omega^{2}
+\]
+
+矢量关系：
+\begin{align*}
+\mathrm{d}\vec{r} &= \mathrm{d}\theta\,\vec{k} \times \vec{r} \\
+\vec{v} &= \vec{\omega} \times \vec{r} \\
+\vec{a} &= \vec{\beta} \times \vec{r} + \vec{\omega} \times \vec{v}
+\end{align*}
+其中 $\vec{a}_{\tau} = \vec{\beta} \times \vec{r}$，$\vec{a}_{n} = \vec{\omega} \times \vec{v}$
+
+\subsection*{匀变速圆周运动基本公式}
+\[
+\omega = \omega_0 + \beta t,\qquad
+\theta = \theta_0 + \omega_0 t + \frac12\beta t^{2},\qquad
+\omega^{2} = \omega_0^{2} + 2\beta(\theta - \theta_0)
+\]
+
+对应线量形式：
+\[
+v = v_0 + at,\qquad
+s = s_0 + v_0 t + \frac12 at^{2},\qquad
+v^{2} = v_0^{2} + 2a(s - s_0)
+\]
+
+\section*{九、相对运动（伽利略变换）}
+
+适用条件：低速宏观，参照系间只发生平动。
+
+\subsection*{基本概念}
+\begin{itemize}
+  \item 绝对参照系 $s$，相对参照系 $s'$
+  \item 绝对运动：质点对 $s$ 系的运动
+  \item 相对运动：质点对 $s'$ 系的运动
+  \item 牵连运动：$s'$ 系对 $s$ 系的运动
+\end{itemize}
+
+\subsection*{位移变换}
+\[
+\Delta\vec{r} = \Delta\vec{r}' + \vec{u}\Delta t
+\]
+
+\subsection*{速度变换}
+\[
+\vec{v}_{\text{绝对}} = \vec{v}_{\text{相对}} + \vec{v}_{\text{牵连}}
+\]
+
+\subsection*{加速度变换}
+\[
+\vec{a}_{\text{绝对}} = \vec{a}_{\text{相对}} + \vec{a}_{\text{牵连}}
+\]
+
+\textbf{注意：}伽利略变换不能用于高速问题和电磁问题。
+
+\end{document}

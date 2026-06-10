@@ -1,0 +1,88 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第5章 质点的动量矩与动量矩守恒} --- 知识点与公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{5.1 力矩}
+
+力矩是引起质点绕某定点转动状态变化的原因。
+
+力对点的力矩：
+\[
+\vec{M}_O = \vec{r} \times \vec{F}
+\]
+大小：$|\vec{M}_O| = rF\sin\alpha$，方向由右手螺旋法则确定。
+
+力对定轴的力矩：
+\[
+M_z = F_\tau r = F_\perp h
+\]
+
+\section*{5.2 质点的动量矩}
+
+\subsection*{1. 质点的动量矩（角动量）}
+\[
+\vec{L}_O = \vec{r} \times \vec{P} = \vec{r} \times m\vec{v}
+\]
+大小：
+\[
+L_O = rp\sin\phi = mrv\sin\varphi
+\]
+单位：kg$\cdot$m$^2$/s，方向由右手螺旋法则确定。
+
+特例：质点作圆周运动时 $L = rp = mrv$
+
+\textbf{说明：}
+\begin{itemize}
+  \item 动量矩与质点的动量及位矢（取决于固定点选择）有关
+  \item 质点对某点的动量矩在通过该点的任意轴上的投影等于对该轴的动量矩
+\end{itemize}
+
+\subsection*{2. 质点的动量矩定理}
+质点所受合力矩的冲量矩等于质点的动量矩的增量：
+\[
+\int_{t_1}^{t_2} \vec{M}\,\mathrm{d}t = \vec{L}_2 - \vec{L}_1
+\]
+
+\subsection*{3. 质点动量矩守恒定律}
+若质点系所受合外力矩为零，则系统的总动量矩为常矢量：
+\[
+\vec{M}_{\text{外}} = \sum_i \vec{r}_i \times \vec{f}_{i\text{外}} = 0 \;\Longrightarrow\; \vec{L} = \text{常矢量}
+\]
+
+\textbf{讨论：}
+\begin{itemize}
+  \item 动量矩守恒定律适用于宏观、微观、高速、低速
+  \item 与空间各向同性（空间旋转对称性）相联系
+  \item 质点只受有心力时，对力心的力矩恒为零，动量矩守恒
+  \item 由动量矩守恒可导出行星运动的开普勒第二定律（面积速度守恒）
+\end{itemize}
+
+\section*{5.3 质心系的动量矩}
+
+在质心系中，动量矩定理仍然适用（不论质心系是否为惯性系）：
+\[
+\vec{M}_c = \frac{\mathrm{d}\vec{L}_c}{\mathrm{d}t}
+\]
+因惯性力对质心的力矩恒为零。
+
+体系的动量矩等于轨道动量矩与固有动量矩之和：
+\[
+\vec{L} = \vec{L}_C + \vec{L}_{CM}
+\]
+其中：
+\begin{itemize}
+  \item $\vec{L}_C = \vec{r}_C \times m_C \vec{v}_C$ ——轨道角动量（质量集中在质心绕定点的运动）
+  \item $\vec{L}_{CM} = \sum_i (\vec{r}_{Ci} \times m_i \vec{v}_{Ci})$ ——固有角动量（各质点绕质心的运动）
+\end{itemize}
+
+例：地球的动量矩 = 地球自转角动量 + 地球绕日公转轨道角动量。
+
+\end{document}

@@ -1,0 +1,99 @@
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{第8章 机械波} --- 例题解答}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+\item 一平面简谐波沿 $x$ 轴正方向传播，已知其波函数为 $y = 0.04\cos\pi(50t - 0.10x)\,\text{m}$。
+求：(1) 振幅、波长、周期及波速；(2) 质点振动的最大速度。
+
+\textbf{解：}
+(1) 比较法：化为标准形式 $y = A\cos2\pi\left(\dfrac{t}{T} - \dfrac{x}{\lambda}\right)$
+\[
+y = 0.04\cos2\pi\left(\frac{50}{2}t - \frac{0.10}{2}x\right)
+\]
+\[
+A = 0.04\,\text{m},\quad T = \frac{2}{50} = 0.04\,\text{s},\quad
+\lambda = \frac{2}{0.10} = 20\,\text{m},\quad u = \frac{\lambda}{T} = 500\,\text{m/s}
+\]
+
+(2) 质点振动速度：
+\[
+v = \frac{\partial y}{\partial t} = -0.04 \times 50\pi\sin\pi(50t - 0.10x)
+\]
+\[
+v_{\max} = 0.04 \times 50\pi = 6.28\,\text{m/s}
+\]
+
+\item 已知 $A = 1.0\,\text{m}$，$T = 2.0\,\text{s}$，$\lambda = 4.0\,\text{m}$，$t = 0$ 时原点处质点位于平衡位置沿 $y$ 轴正向运动。求波动方程。
+
+\textbf{解：}
+(1) 取波动方程 $y = A\cos\left[2\pi\left(\dfrac{t}{T} - \dfrac{x}{\lambda}\right) + \varphi\right]$
+$t = 0$, $x = 0$ 时 $y = 0$ 且向 $y$ 正方向运动，$\varphi = -\dfrac{\pi}{2}$
+\[
+y = 1.0\cos\left[2\pi\left(\frac{t}{2.0} - \frac{x}{4.0}\right) - \frac{\pi}{2}\right]\,(\text{m})
+\]
+
+(2) $t = 1.0\,\text{s}$ 时：
+\[
+y = 1.0\cos\left[2\pi\left(\frac{1.0}{2.0} - \frac{x}{4.0}\right) - \frac{\pi}{2}\right]
+= 1.0\sin\frac{\pi}{2}x\,(\text{m})
+\]
+
+(3) $x = 1.0\,\text{m}$ 处：
+\[
+y = 1.0\cos\left[2\pi\left(\frac{t}{2.0} - \frac{1.0}{4.0}\right) - \frac{\pi}{2}\right]
+= 1.0\cos\left(\pi t - \pi\right)\,(\text{m})
+\]
+
+\item 平面简谐波 $t$ 时刻波形如图，波速 $u$，沿 $x$ 方向传播，振幅 $A$，频率 $f$。
+
+\textbf{解：}
+(1) 以 $D$ 为原点：
+\[
+y(x,t) = A\cos\left[2\pi f\left(t - \frac{x}{u}\right) + \pi\right]
+\]
+
+(2) 以 $B$ 为原点（$B$ 为波节反射点）：
+入射波：$y_{\lambda}(x,t) = A\cos\left[2\pi f\left(t - \dfrac{x}{u/2}\right) - \dfrac{\pi}{2}\right]$
+反射波：$y_{\text{反}}(x,t) = A\cos\left[2\pi f\left(t - \dfrac{x}{u/1}\right) + \dfrac{\pi}{2}\right]$
+
+(3) 合成波（驻波）：
+\[
+y = y_{\lambda} + y_{\text{反}} = 2A\cos\left(2\pi\frac{x}{u} + \frac{\pi}{2}\right)\cos 2\pi ft
+= -2A\sin\frac{2\pi x}{u}\cos 2\pi ft
+\]
+
+波腹：$\left|\sin\dfrac{2\pi x}{u}\right| = 1$，$x = \dfrac{2k+1}{4}\lambda$（$k = -1,-2,\dots$）
+
+波节：$\left|\sin\dfrac{2\pi x}{u}\right| = 0$，$x = \dfrac{k}{2}\lambda$（$k = 0,-1,-2,\dots$）
+
+\item 一警笛发射频率 $1500\,\text{Hz}$，以 $22\,\text{m/s}$ 运动，人以 $6\,\text{m/s}$ 跟踪其后（声速 $u = 330\,\text{m/s}$）。
+
+\textbf{解：}
+波源和观察者同时运动（人跟踪在警笛后方，$v_0$ 与 $v_s$ 同向）：
+\[
+\nu_R = \frac{u + v_0}{u + v_s}\nu_0 = \frac{330 + 6}{330 + 22} \times 1500 = 1432\,\text{Hz}
+\]
+
+警笛后方空气中（观察者静止）：
+\[
+\nu = \frac{u}{u + v_s}\nu_0 = \frac{330}{330 + 22} \times 1500 = 1406\,\text{Hz}
+\]
+
+波长：
+\[
+\lambda = \frac{u}{\nu} = \frac{330}{1406} = 0.235\,\text{m}
+\]
+
+\end{enumerate}
+
+\end{document}
